@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="565dp"
+    android:layout_gravity="center"
+    android:background="@drawable/round_background_popup"
+    android:orientation="vertical"
+    tools:context=".Activity.Popup_emptyActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginTop="120dp"
+        app:srcCompat="@drawable/ic_warning_black_48dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="400dp"
+        android:layout_height="130dip"
+        android:gravity="center"
+        android:text="사용 불가능한&#10;결제수단 입니다"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/black"
+        android:textSize="40dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="155dp" />
+
+    <TextView
+        android:id="@+id/empty_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/round_button_000000"
+        android:bufferType="spannable"
+        android:gravity="center"
+        android:onClick="onbtnCancelClicked"
+        android:text="다른 결제수단 선택"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

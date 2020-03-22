@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="450dp"
+    android:layout_height="390dp"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/round_background_popup"
+    tools:context=".Activity.Pay.CouponReceipt.CouponFailActivity">
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="25dp"
+        app:srcCompat="@drawable/ic_ico_black_o" />
+
+    <TextView
+        android:id="@+id/CouponFail_text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:text="적립실패"
+        android:textColor="@color/dark_gray"
+        android:textSize="40dp" />
+
+    <TextView
+        android:id="@+id/CouponFail_text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="전화번호를 다시 확인하세요."
+        android:textColor="@color/dark_gray"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/CouponFail_text3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/dark_gray"
+        android:text="비회원이거나, 전화번호를 잘못 입력하셨습니다."
+        android:gravity="center"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/CouponFail_text4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="비회원은 회원가입 이후 적립이 가능합니다."
+        android:bufferType="spannable"
+        android:textColor="@color/dark_gray"
+        android:textSize="20dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/CouponFail_btn_skip"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_button_left_c1c1c1"
+            android:text="건너뛰기"
+            android:onClick="onClick"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/CouponFail_btn_retry"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_button_right_000000"
+            android:text="재시도"
+            android:onClick="onClick"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+    </LinearLayout>
+</LinearLayout>

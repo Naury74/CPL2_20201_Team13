@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Waiting.Waiting_MainActivity"
+    android:orientation="vertical"
+    android:background="#F8F8F8"
+    android:theme="@style/AppTheme">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:fontFamily="@font/notosans_black"
+            android:gravity="center"
+            android:text="BEST MENU"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
+            android:id="@+id/viewpager_best_wait"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            >
+        </cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout_wait"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp"
+            android:layout_gravity="right|top"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></android.support.design.widget.TabLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@null"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="6"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/Waiting_Main_btn_to_mainact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:src="@drawable/ic_to_order"
+            android:text="주문하기"
+            android:textSize="50dp"
+            android:textStyle="" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <ImageButton
+            android:id="@+id/Waiting_Main_btn_nopay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:src="@drawable/ic_take_waiting"
+            android:textSize="30dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <ImageButton
+            android:id="@+id/Waiting_Main_btn_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:src="@drawable/ic_wait_to_order"
+            android:textSize="30dp" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Admin.Admin_userActivity"
+    android:background="#F2F2F2"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginVertical="30dp">
+
+        <ImageButton
+            android:id="@+id/admin_user_btn_left"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="2"
+            android:background="@null"
+            android:src="@drawable/ic_pass_left" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:gravity="center"
+            android:text="내 계정"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/admin_user_btn_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginEnd="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/ripple_null_white"
+            android:src="@drawable/admin_user_edit"
+            android:visibility="gone"
+            tools:visibility="gone" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/admin_user_nonedit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="60dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <View
+            android:id="@+id/admin_line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:background="@color/black" />
+
+        <TextView
+            android:id="@+id/admin_bizname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="상호명"
+            android:textColor="#9A9797"
+            android:textSize="23dp" />
+
+        <TextView
+            android:id="@+id/admin_bizname_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="35dp"
+            android:text="CSPMobileLab"
+            android:textColor="@color/black"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/admin_biznnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="사업자등록번호"
+            android:textColor="#9A9797"
+            android:textSize="23dp" />
+
+        <TextView
+            android:id="@+id/admin_biznnum_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="35dp"
+            android:text="8423500051"
+            android:textColor="@color/black"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/admin_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="비밀번호"
+            android:textColor="#9A9797"
+            android:textSize="23dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/admin_password_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="35dp"
+            android:inputType="textPassword"
+            android:text="1234567"
+            android:textColor="@color/black"
+            android:textSize="26dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/admin_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="이메일주소"
+            android:textColor="#9A9797"
+            android:textSize="23dp" />
+
+        <TextView
+            android:id="@+id/admin_email_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="35dp"
+            android:text="twosomeplace@naver.com"
+            android:textColor="@color/black"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/admin_phonenum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="휴대폰번호"
+            android:textColor="#9A9797"
+            android:textSize="23dp" />
+
+        <TextView
+            android:id="@+id/admin_phonenum_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="35dp"
+            android:text="010-1234-5678"
+            android:textColor="@color/black"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/admin_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="사업장주소"
+            android:textColor="#9A9797"
+            android:textSize="23dp" />
+
+        <TextView
+            android:id="@+id/admin_address_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="35dp"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:text="대구시 달서구 달서대로 675계명문화대학교 복지관 1층"
+            android:textColor="@color/black"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/admin_device_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="관리자 기기번호"
+            android:textColor="#9A9797"
+            android:textSize="23dp" />
+
+        <TextView
+            android:id="@+id/admin_device_num_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="35dp"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:text="001"
+            android:textColor="@color/black"
+            android:textSize="26dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/admin_user_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="60dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/admin_bizname_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="상호명"
+            android:textColor="#9A9797"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/admin_bizname_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/admin_biznnum_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="사업자등록번호"
+            android:textColor="#9A9797"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/admin_biznnum_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:enabled="false"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="26dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/admin_password_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="비밀번호"
+                    android:textColor="#9A9797"
+                    android:textSize="26dp" />
+
+                <EditText
+                    android:id="@+id/admin_password_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:inputType="textPassword"
+                    android:padding="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="26dp" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/admin_password_edit_confirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="비밀번호확인"
+                    android:textColor="#9A9797"
+                    android:textSize="26dp" />
+
+                <EditText
+                    android:id="@+id/admin_password_edit_confirm_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:padding="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="26dp" />
+
+                <TextView
+                    android:id="@+id/password_check_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:bufferType="spannable"
+                    android:textColor="@color/rounded_red" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/admin_email_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="이메일주소"
+            android:textColor="#9A9797"
+            android:textSize="26dp" />
+
+        <EditText
+            android:id="@+id/admin_email_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/admin_phonenum_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="휴대폰번호"
+            android:textColor="#9A9797"
+            android:textSize="26dp" />
+
+        <EditText
+            android:id="@+id/admin_phonenum_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/admin_address_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="사업장주소"
+            android:textColor="#9A9797"
+            android:textSize="26dp" />
+
+        <EditText
+            android:id="@+id/admin_address_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:padding="5dp"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:textColor="@color/black"
+            android:textSize="26dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/admin_user_edit_btns"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="0dp"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        tools:visibility="gone">
+
+        <Button
+            android:id="@+id/admin_edit_cancel_btn"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/ripple_light_gray2_c1c1c1"
+            android:text="취소"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/admin_edit_confirm_btn"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/ripple_admin_confirm"
+
+            android:text="저장"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+</LinearLayout>

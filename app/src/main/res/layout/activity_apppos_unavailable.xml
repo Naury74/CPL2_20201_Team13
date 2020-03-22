@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:id="@+id/activity_reader_unavailable_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                app:srcCompat="@drawable/warning_triangle_icon_red_svg" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="70dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="서비스 불가"
+                android:textColor="@color/black"
+                android:textSize="45dp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+
+            <TextView
+                android:id="@+id/apppos_status_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="카드단말기 어플리케이션이&#10;설치되지 않았습니다."
+                android:lineSpacingExtra="10dp"
+                android:textColor="@color/black"
+                android:textSize="32dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+
+            <TextView
+                android:id="@+id/apppos_status_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="설치 후 사용해주세요."
+                android:textColor="@color/black"
+                android:textSize="32dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/apppos_unavailable_button_finish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="click_to_finish"
+            android:text="종료" />
+        <Button
+            android:id="@+id/apppos_unavailable_button_toconfig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@drawable/ripple_black"
+            android:onClick="click_to_apppos_market"
+            android:padding="15dp"
+            android:text="설치"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

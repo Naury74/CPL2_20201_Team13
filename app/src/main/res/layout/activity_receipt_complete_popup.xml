@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dip"
+    android:layout_height="400dip"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_centerInParent="true"
+    android:background="@drawable/round_background_popup"
+    android:orientation="vertical"
+    tools:context=".Activity.Pay.CouponReceipt.ReceiptCompletePopupActivity">
+
+    <LinearLayout
+        android:id="@+id/receipt_complete_Layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:weightSum="7">
+
+        <TextView
+            android:id="@+id/receipt_complete_textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_weight="0.5"
+            android:bufferType="spannable"
+            android:gravity="center"
+            android:text="발행완료"
+            android:textColor="@color/black"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/receipt_complete_textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:bufferType="spannable"
+            android:gravity="center"
+            android:text="전자영수증이&#10;문자를 통해 발행되었습니다."
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/receipt_complete_textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="10dp"
+            android:bufferType="spannable"
+            android:text="모바일 오더 앱에 회원가입하시면&#10;포인트 조회 및 사용이 가능합니다."
+            android:textAlignment="center"
+            android:textColor="#707070"
+            android:textSize="15dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4" />
+
+        <Button
+            android:id="@+id/btnFinish_receipt_complete"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_weight="1.5"
+            android:background="@drawable/round_button_000000"
+            android:text="확 인"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

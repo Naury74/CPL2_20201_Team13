@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="corners_radius">5dp</dimen>
+    <dimen name="corners_radius_bottom_background">6dp</dimen>
+    <dimen name="popup_long_width">350dp</dimen>
+    <dimen name="popup_long_height">569dp</dimen>
+    <dimen name="popup_short_width">350dp</dimen>
+    <dimen name="popup_short_height">380dp</dimen>
+    <dimen name="popup_button_height">40dp</dimen>
+    <!--멀티토글용-->
+    <dimen name="button_pressed_z_material">4dp</dimen>
+    <dimen name="button_elevation_material">2dp</dimen>
+    <dimen name="button_internal_padding">1dp</dimen>
+    <dimen name="button_min_height">7dp</dimen>
+    <dimen name="button_text_padding">2dp</dimen>
+    <dimen name="button_bottom_margin">5dp</dimen>
+</resources>

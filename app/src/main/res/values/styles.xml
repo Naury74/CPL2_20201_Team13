@@ -1,0 +1,96 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/black</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="NoTitleDialog" parent="@style/Theme.AppCompat.Dialog">
+        <item name="windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:buttonStyle">?android:attr/borderlessButtonStyle</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+    <style name="NoTitleDialog_with_editText" parent="@style/Theme.AppCompat.Dialog">
+        <item name="windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:buttonStyle">?android:attr/borderlessButtonStyle</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="colorAccent">#3978C1</item>
+        <item name="colorControlNormal">#3978C1</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="TabTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/dark_gray</item>                                <!-- 배경 -->
+
+        <item name="android:textColorPrimary">@color/white</item>       <!-- 탭바 선택된 텍스트 -->
+        <item name="android:textColorSecondary">@color/light_gray</item>     <!-- 탭바 텍스트 -->
+
+        <item name="colorAccent">@color/dark_gray</item>                    <!-- 하단 움직이는 바 색-->
+    </style>
+
+    <style name="TabTheme3" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#f5a623</item>                                <!-- 배경 -->
+
+        <item name="android:textColorPrimary">@android:color/white</item>       <!-- 탭바 선택된 텍스트 -->
+        <item name="android:textColorSecondary">@android:color/black</item>     <!-- 탭바 텍스트 -->
+
+        <item name="colorAccent">@android:color/white</item>                    <!-- 하단 움직이는 바 색-->
+    </style>
+
+    <style name="TabTheme_PLUS_basic" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#f5a623</item>                                <!-- 배경 -->
+        <item name="android:textColorPrimary">@android:color/white</item>       <!-- 탭바 선택된 텍스트 -->
+        <item name="android:textColorSecondary">@android:color/black</item>     <!-- 탭바 텍스트 -->
+
+        <item name="colorAccent">@android:color/white</item>                    <!-- 하단 움직이는 바 색-->
+    </style>
+
+    <!-- 결제중입니다 화면 -->
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:gravity">center</item>
+        <!-- 상하단바 제거-->
+        <item name="android:windowActionBar">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <!--하단바투명 - 현재안되고있음-->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+<!--멀티토글용-->
+    <style name="WhiteBoldText" parent="@android:style/Widget">
+        <item name="android:textColor">?attr/colorControlNormal</item>
+        <item name="android:bufferType">spannable</item>
+    </style>
+
+    <style name="PrimaryNormalText" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:bufferType">spannable</item>
+    </style>
+
+    <style name="ToggleStyle">
+        <item name="android:padding">@dimen/button_text_padding</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textColorSecondary">?attr/colorControlNormal</item>
+        <item name="android:minHeight">@dimen/button_min_height</item>
+        <item name="android:bufferType">spannable</item>
+    </style>
+</resources>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="500dp"
+    android:orientation="vertical"
+    android:background="@drawable/round_background_popup"
+    tools:context=".Activity.Pay.KakaoPay_popupActivity">
+
+    <LinearLayout
+        android:id="@+id/Card_announce_card_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/kakaopay_announce_textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="결제 안내"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/kakaopay_announce_imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/kakaopay_gif" />
+
+        <TextView
+            android:id="@+id/kakaopay_announce_textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:bufferType="spannable"
+            android:gravity="center"
+            android:text="'결제 진행' 버튼을 누른 후 ,\n매장 결제 코드를 띄운 스마트폰을\n기기 하단 카메라에 비춰주세요 "
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/kakaopay_announce_btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:background="@drawable/round_button_left_c1c1c1"
+                android:text="취소"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/kakaopay_announce_btn_next"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:background="@drawable/round_button_right_eb5061"
+                android:text="결제 진행" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

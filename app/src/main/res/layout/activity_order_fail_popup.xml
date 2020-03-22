@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_background_popup"
+    android:orientation="vertical"
+    tools:context=".Activity.Pay.Order_fail_popupActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/warning_icon_card_fail"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/warning_triangle_icon_red" />
+
+        <TextView
+            android:id="@+id/order_error_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="장애 발생"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/order_fail_reason_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:bufferType="spannable"
+            android:gravity="center"
+            android:visibility="visible"
+            android:text="인터넷 연결 불량"
+            android:textColor="@color/red"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/order_fail_info1_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:bufferType="spannable"
+            android:gravity="center"
+            android:text="결제 금액 0원이\n환불되었습니다."
+            tools:visibility="gone"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/order_fail_info2_textview"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            tools:visibility="gone"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:text="카운터에 문의하세요."
+            android:bufferType="spannable"
+            android:gravity="center"
+            android:layout_marginBottom="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/order_fail_btn_retry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@drawable/round_button_000000"
+            android:text="다시 시도"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+</LinearLayout>

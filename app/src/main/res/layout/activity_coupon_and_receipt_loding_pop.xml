@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="300dp"
+    android:layout_centerInParent="true"
+    android:background="@drawable/round_background_popup"
+    android:orientation="vertical"
+    tools:context=".Activity.Pay.CouponReceipt.CouponAndReceiptLoadingPopupActivity">
+
+    <LinearLayout
+        android:id="@+id/CNRLodingLayout_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/CNRLoding_loding_dot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="90dp" />
+
+        <TextView
+            android:id="@+id/CNRLodingtextView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:bufferType="spannable"
+            android:gravity="center"
+            android:text="적립중"
+            android:textColor="@color/black"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/CNRLodingtextView2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="35dp"-->
+<!--            android:bufferType="spannable"-->
+<!--            android:gravity="center"-->
+<!--            android:text="잠시만 기다려주세요"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="25dp"-->
+<!--            tools:visibility="visible" />-->
+
+        <LinearLayout
+            android:id="@+id/CNRLodingLayout_for_coupon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/warning_icon" />
+
+            <TextView
+                android:id="@+id/CNRLodingtextView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/CNRLodingLayout_1"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="0dp"
+                android:bufferType="spannable"
+                android:lineSpacingExtra="5dp"
+                android:text="적립된 포인트는 모바일 주문 앱에서&#10; 조회 및 사용이 가능합니다."
+                android:textColor="#323232"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="264dp"
+    android:layout_height="345dp"
+    android:background="@drawable/round_background_popup"
+    android:gravity="center|bottom"
+    android:orientation="vertical"
+    tools:context=".Activity.SelectedRemovePopupActivity">
+
+    <TextView
+        android:id="@+id/SelectedRemoveText"
+        android:layout_width="264dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:bufferType="spannable"
+        android:gravity="center"
+        android:paddingHorizontal="5dp"
+        android:layout_marginBottom="120dp"
+        android:text="&quot;아이스 카페라떼&quot;를&#10;주문 목록에서&#10; 삭제하시겠습니까?"
+        android:textColor="@color/black"
+        android:textSize="22dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom">
+
+        <Button
+            android:id="@+id/SelectedRemoveCancelButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/popup_button_height"
+            android:layout_gravity="bottom"
+            android:layout_weight="2"
+            android:background="@drawable/round_button_left_c1c1c1"
+            android:gravity="center"
+            android:text="아니오"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/SelectedRemoveDoneButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/popup_button_height"
+            android:layout_gravity="bottom"
+            android:layout_weight="2"
+            android:background="@drawable/round_button_right_000000"
+            android:gravity="center"
+            android:text="삭제"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+</LinearLayout>

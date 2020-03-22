@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="400dp"
+    android:layout_height="600dp"
+    android:orientation="vertical"
+    tools:context=".Fragment.HomeFragment_2">
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/home_announce_1" />
+
+    <TextView
+        android:id="@+id/HomeFragment_2_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:bufferType="spannable"
+        android:gravity="center"
+        android:text="해당 안내가 종료 되고 나면&#10;하단 팝업에서&#10;Mobile Kiosk를 선택해주세요."
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+</LinearLayout>

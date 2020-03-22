@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Waiting.Waiting_nopayActivity"
+    android:orientation="vertical"
+    android:background="#F2F2F2"
+    android:theme="@style/AppTheme">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#323132"
+        android:fontFamily="@font/notosans_black"
+        android:gravity="center"
+        android:text="대기번호표 받기"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="60dp"
+            android:fontFamily="@font/notosans_black"
+            android:gravity="center"
+            android:text="현재 대기 : 13팀"
+            android:textColor="@color/rounded_red"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/noti_black" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="휴대폰 번호를 입력하시면&#10;순서가 가까워질 때 알려드립니다."
+            android:textColor="@color/black"
+            android:layout_marginTop="25dp"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/phonenumber_edit2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="60dp"
+            android:layout_marginTop="40dp"
+            android:editable="false"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/nopaynumberPad_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_numberpad"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:tag="numberPad_1"
+                android:text="1"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nopaynumberPad_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_numberpad"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:tag="numberPad_2"
+                android:text="2"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nopaynumberPad_3"
+                android:layout_width="0dp"
+
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_numberpad"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:tag="numberPad_3"
+                android:text="3"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+
+                android:textSize="25dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/nopaynumberPad_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_numberpad"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:tag="numberPad_4"
+                android:text="4"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nopaynumberPad_5"
+                android:layout_width="0dp"
+
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_numberpad"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:tag="numberPad_5"
+
+                android:text="5"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nopaynumberPad_6"
+                android:layout_width="0dp"
+
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_numberpad"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:tag="numberPad_6"
+
+                android:text="6"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+
+                android:textSize="25dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/nopaynumberPad_7"
+                android:layout_width="0dp"
+
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_numberpad"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:tag="numberPad_7"
+
+                android:text="7"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nopaynumberPad_8"
+                android:layout_width="0dp"
+
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_numberpad"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:tag="numberPad_8"
+
+                android:text="8"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nopaynumberPad_9"
+                android:layout_width="0dp"
+
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_numberpad"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:tag="numberPad_9"
+                android:text="9"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/nopaynumberPad_no1"
+                android:layout_width="0dp"
+
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_numberpad"
+                android:clickable="false"
+                android:focusable="true"
+                android:gravity="center"
+                android:tag="numberPad_no1"
+                android:textAlignment="center"
+
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nopaynumberPad_0"
+                android:layout_width="0dp"
+
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_numberpad"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:tag="numberPad_0"
+
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/nopaynumberPad_10"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_numberpad"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:src="@drawable/ic_backspace_black_24dp"
+                android:tag="numberPad_10"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/couponLayout_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/couponLayout_1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Waiting_nopay_btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1"
+            android:background="@drawable/ripple_light_gray2_c1c1c1"
+            android:text="취소"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Waiting_nopay_btnFinish"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1"
+            android:background="@drawable/ripple_black"
+            android:text="확인"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

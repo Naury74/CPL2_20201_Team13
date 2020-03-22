@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="5"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:id="@+id/best_new_rootlayout"
+    tools:context=".Activity.BestNewMenuActivity">
+
+    <TextView
+        android:id="@+id/best_mb_name"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:background="@color/dark_gray"
+        android:text="베스킨라빈스 성서점"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/best_bestmenu"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:text="BEST MENU"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
+            android:id="@+id/viewpager_best"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            >
+        </cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="10dp"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp"></android.support.design.widget.TabLayout>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/new_bestmenu"
+        android:drawableLeft="@drawable/bn_new_title_custonmise"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="#EB5061"
+        android:textAlignment="center"
+        android:layout_gravity="left"
+        android:layout_weight="0.1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/new_menu_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#40F7F7F6"></android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/allmenu_bestmenu"
+        android:text="주문화면 이동"
+        android:textAlignment="center"
+        android:drawableRight="@drawable/ic_pass_right"
+        android:drawablePadding="20dp"
+        android:layout_weight="0.1"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:background="?android:attr/selectableItemBackground"
+        android:textSize="20dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:gravity="center_vertical"
+        android:clickable="true"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/snow"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:visibility="gone">
+
+
+        <ListView
+            android:id="@+id/selected_items"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:divider="@null"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarFadeDuration="0" />
+
+    </LinearLayout>
+</LinearLayout>

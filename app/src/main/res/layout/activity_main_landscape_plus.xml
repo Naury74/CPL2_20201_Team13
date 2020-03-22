@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="0dp"
+    android:layout_marginRight="0dp"
+    android:orientation="horizontal"
+    android:theme="@style/AppTheme"
+    tools:context=".Activity.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/sliding_tabs_frame"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="11"
+        android:background="@color/dark_gray">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.5"
+                android:background="@color/nullcolor"
+                android:gravity="center"
+                android:text="카폐 뿜"
+                android:textColor="@color/white"
+                android:textSize="30dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4" />
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="19.5"
+                android:background="@color/black"
+                android:gravity="top">
+
+                <q.rorbin.verticaltablayout.VerticalTabLayout
+                    android:id="@+id/vertical_tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    app:indicator_color="#FFFFFF"
+                    app:indicator_corners="4dp"
+                    app:indicator_gravity="fill"
+                    app:tab_height="50dp"
+                    app:tab_mode="scrollable" />
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/sliding_tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:foregroundGravity="center"
+                    android:orientation="vertical"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="5dp"
+                    app:tabMinWidth="100dp"
+                    app:tabMode="fixed"
+                    tools:visibility="gone"></android.support.design.widget.TabLayout>
+
+
+            </android.support.design.widget.AppBarLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/menus_frame"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/sliding_tabs_frame"
+
+        android:layout_weight="26">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:background="@android:color/white" />
+
+        <Button
+            android:id="@+id/hidden_menu_button2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right|top"
+            android:background="@color/transparent" />
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_toRightOf="@+id/menus_frame"
+        android:layout_weight="11"
+        android:background="@color/snow"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <TextView
+                android:id="@+id/selected_items_select_title"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:background="@color/black"
+                android:gravity="center"
+                android:text="주문목록"
+                android:textColor="@color/white" />
+
+            <FrameLayout
+                android:id="@+id/selected_items_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_below="@+id/selected_items_select_title"
+                android:layout_weight="90">
+
+                <ListView
+                    android:id="@+id/selected_items"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:divider="@null"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"
+                    android:scrollbarFadeDuration="0" />
+
+                <ImageView
+                    android:id="@+id/scroll_up"
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="right|top"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    app:srcCompat="@drawable/ic_main_scroll_up" />
+
+                <ImageView
+                    android:id="@+id/scroll_down"
+                    android:layout_width="20dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="right|bottom"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="15dp"
+                    app:srcCompat="@drawable/ic_main_scroll_down" />
+
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_below="@+id/selected_items_layout"
+                android:layout_gravity="bottom"
+                android:layout_weight="7"
+                android:background="@null"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancelButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_light_gray"
+                    android:text="취소"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/payButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_main_confirm"
+                    android:text="주문하기"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

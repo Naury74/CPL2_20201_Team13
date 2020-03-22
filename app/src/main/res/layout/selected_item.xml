@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="7dp"
+    android:orientation="vertical"
+    android:background="@null">
+
+    <LinearLayout
+        android:id="@+id/listline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        android:background="@null">
+
+        <TextView
+            android:id="@+id/menuName"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@null"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/minusButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_vector_button_minus"
+            android:background="@null"
+            />
+
+        <TextView
+            android:id="@+id/countView"
+            android:textStyle="bold"
+            android:layout_width="40dp"
+
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:background="@null"/>
+
+        <ImageButton
+            android:id="@+id/plusButton"
+            android:layout_width="30dp"
+            android:scaleType="center"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_vector_button_plus"
+            android:background="@null"/>
+
+        <TextView
+            android:id="@+id/priceView"
+            android:textStyle="bold"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:background="@null"/>
+
+        <Button
+            android:id="@+id/changeButton"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:background="@drawable/rounded_stroke_red_fill_white"
+            android:text="변경"
+            android:textColor="@color/rounded_red"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/rounded_stroke_white_fill_red"
+            android:text="삭제"
+            android:textColor="@color/white"
+            style="?android:attr/borderlessButtonStyle"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomOptionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listline"
+        android:layout_marginBottom="10dp"
+        android:background="@null"
+        android:orientation="horizontal"
+        tools:visibility="gone">
+
+    </LinearLayout>
+</RelativeLayout>

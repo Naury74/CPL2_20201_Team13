@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Sign.SignInActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="11">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:visibility="visible">
+
+                <CheckBox
+                    android:id="@+id/checkBoxforwaiting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="checkBoxforwaiting" />
+
+                <CheckBox
+                    android:id="@+id/checkforSKIPdown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="checkforSKIPdown" />
+
+                <CheckBox
+                    android:id="@+id/checkforMenuTheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MenuThemeBLACK" />
+
+                <CheckBox
+                    android:id="@+id/checkforSKIPpay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:text="checkforSKIPpay" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="250dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/TEXTBizNum"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="사업자번호"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/biz_num"
+                    android:layout_width="300dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="25dp"
+                    android:hint="사업자번호"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:text="5901020009"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="left"
+                    android:text="비밀번호"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editPassword2"
+                    android:layout_width="300dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:hint="비밀번호"
+                    android:inputType="textPassword"
+                    android:maxLength="11"
+                    android:text="1234567"
+                    android:textSize="18dp" />
+
+                <CheckBox
+                    android:id="@+id/signin_checkbox_Autologin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:buttonTint="@color/black"
+                    android:fontFamily="@font/notosans_black"
+                    android:text="자동로그인" />
+
+                <TextView
+                    android:id="@+id/signUpButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="30dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/signUp"
+                    android:textColor="#4BC69B"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/reader_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:text="기기가 연결되지 않았습니다." />
+
+            <TextView
+                android:id="@+id/TestText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/TestText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:text="TextView" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/bizNumConfirmButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/ripple_black"
+            android:gravity="center"
+            android:text="로그인"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+
+</LinearLayout>

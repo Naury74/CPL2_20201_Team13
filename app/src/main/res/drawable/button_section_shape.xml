@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+<!--버튼뒤에 선이 생겨서 제거됨-->
+<!--    <stroke android:width="2dip" android:color="@color/button_primary_color" /> -->
+    <padding android:left="0dip" android:top="0dip"
+            android:right="0dip" android:bottom="0dip" />
+    <solid android:color="@color/transparent"/>
+</shape> 

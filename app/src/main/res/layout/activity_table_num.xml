@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="345dp"
+    android:layout_height="568dp"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    android:background="@drawable/round_background_popup"
+    android:orientation="vertical"
+    tools:context=".Activity.Pay.Table_numActivity">
+    <!-- couponLayout_1이 wrap_content에서 match_parent로 변경됨 이상있을시 다시 원래대로 할것-->
+    <LinearLayout
+        android:id="@+id/tablenum_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/transparent"
+        android:orientation="vertical"
+        android:weightSum="10.5">
+
+        <ImageView
+            android:id="@+id/tablenum_imageView"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_ico_foodtray" />
+
+        <TextView
+            android:id="@+id/tablenum_TextView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="26dp"
+            android:layout_marginBottom="30dp"
+            android:lineSpacingExtra="10dp"
+            android:text="서빙을 위해&#10;테이블 번호를 입력해주세요."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="17dp" />
+
+        <EditText
+            android:id="@+id/tablenum_edit"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="30dp"
+            android:editable="false"
+            android:gravity="center"
+            android:inputType=""
+            android:maxLength="3"
+            android:text=""
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:layout_width="345dp"
+            android:layout_height="240dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tablenum_numberPad_1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_numberpad"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:tag="tablenum_numberPad_1"
+                    android:text="1"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tablenum_numberPad_2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_numberpad"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:tag="tablenum_numberPad_2"
+                    android:text="2"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tablenum_numberPad_3"
+                    android:layout_width="0dp"
+
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_numberpad"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:tag="tablenum_numberPad_3"
+                    android:text="3"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tablenum_numberPad_4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_numberpad"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:tag="tablenum_numberPad_4"
+                    android:text="4"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tablenum_numberPad_5"
+                    android:layout_width="0dp"
+
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_numberpad"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:tag="tablenum_numberPad_5"
+
+                    android:text="5"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tablenum_numberPad_6"
+                    android:layout_width="0dp"
+
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_numberpad"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:tag="tablenum_numberPad_6"
+
+                    android:text="6"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tablenum_numberPad_7"
+                    android:layout_width="0dp"
+
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_numberpad"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:tag="tablenum_numberPad_7"
+
+                    android:text="7"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tablenum_numberPad_8"
+                    android:layout_width="0dp"
+
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_numberpad"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:tag="tablenum_numberPad_8"
+
+                    android:text="8"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tablenum_numberPad_9"
+                    android:layout_width="0dp"
+
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_numberpad"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:tag="tablenum_numberPad_9"
+                    android:text="9"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tablenum_numberPad_no1"
+                    android:layout_width="0dp"
+
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_numberpad"
+                    android:clickable="false"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:tag="tablenum_numberPad_no1"
+                    android:textAlignment="center"
+
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tablenum_numberPad_0"
+                    android:layout_width="0dp"
+
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_numberpad"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:tag="tablenum_numberPad_0"
+
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/tablenum_numberPad_10"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_numberpad"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:src="@drawable/ic_backspace_black_24dp"
+                    android:tag="tablenum_numberPad_10"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:id="@+id/tablenum_Layout_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/couponLayout_1"
+            android:background="@color/transparent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/tablenum_btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:background="@drawable/round_button_left_c1c1c1"
+                android:text="취소"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/tablenum_btnFinish"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:background="@drawable/round_button_right_000000"
+                android:text="확인"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="298dp"
+    android:layout_height="450dp"
+    android:layout_gravity="center"
+    android:background="@drawable/round_background_popup"
+    android:orientation="vertical"
+    tools:context=".Activity.Pay.pay_popupActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/minicircle"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:gravity="center"
+                android:src="@drawable/ic_circle_won" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=" 총금액"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/black"
+
+            />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/sum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="d14500"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/black"
+        android:textSize="40dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:gravity="center"
+        android:text="결제방식을 선택해 주세요"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/black"
+        android:textSize="22dp" />
+
+    <LinearLayout
+        android:id="@+id/paytypeButtonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/pay_unavailable_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ripple_unavailable"
+                    android:gravity="center"
+                    android:tag="pay_unavailable_1"
+                    android:textColor="#b0FFFFFF"
+                    android:textSize="50dp"
+                    tools:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/btnCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_red"
+                    android:bufferType="spannable"
+                    android:gravity="center"
+                    android:onClick="onbtnCardClicked"
+                    android:text="신용카드"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/pay_unavailable_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ripple_unavailable"
+                    android:gravity="center"
+                    android:tag="pay_unavailable_2"
+                    android:textColor="#b0FFFFFF"
+                    android:textSize="50dp"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/btnSamsungPay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_samsungpay"
+                    android:bufferType="spannable"
+                    android:gravity="center"
+                    android:onClick="onbtnSamsungpayClicked"
+                    android:text="삼성페이"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+        <!-- 아래의LinearLayout이 제로페이와 카카오페이 부분 기능 재구현시 사용할것 현재 visibility="gone" 처리되어있음-->
+        <!-- id:paytypeButtonsLayout의 높이를 250dp로 변경후 구현할것!-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/pay_unavailable_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ripple_unavailable"
+                    android:gravity="center"
+                    android:tag="pay_unavailable_4"
+                    android:textColor="#b0FFFFFF"
+                    android:textSize="50dp"
+                    tools:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/btnKaKao"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_kakao"
+                    android:bufferType="spannable"
+                    android:gravity="center"
+                    android:onClick="onbtnKaKaoClicked"
+                    android:text="카카오페이"
+                    android:textColor="#3F2224"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/pay_unavailable_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ripple_unavailable"
+                    android:gravity="center"
+                    android:tag="pay_unavailable_3"
+                    android:textColor="#b0FFFFFF"
+                    android:textSize="50dp"
+                    tools:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/btnZero"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_zeropay"
+                    android:bufferType="spannable"
+                    android:gravity="center"
+                    android:onClick="onbtnZeroClicked"
+                    android:text="제로페이"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btnCancel"
+        android:layout_width="298dp"
+        android:layout_height="57dp"
+        android:background="@drawable/round_button_000000"
+        android:bufferType="spannable"
+        android:gravity="center"
+        android:onClick="onbtnCancelClicked"
+        android:text="취소"
+        android:textColor="#FFFFFF"
+        android:textSize="22dp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

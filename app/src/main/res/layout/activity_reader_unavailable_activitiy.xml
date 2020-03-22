@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:id="@+id/activity_reader_unavailable_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                app:srcCompat="@drawable/warning_triangle_icon_red_svg" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="서비스 불가"
+                android:textColor="@color/black"
+                android:textSize="45dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/reader_status_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="단말기가 연결되지 않았습니다.&#10;&#10;점원에게 문의하세요."
+                android:textColor="@color/black"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/reader_unavailable_button_finish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="click_to_finish"
+            android:text="종료" />
+
+        <Button
+            android:id="@+id/reader_unavailable_button_toconfig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@drawable/ripple_black"
+            android:onClick="click_to_reader_config"
+            android:padding="15dp"
+            android:text="리더기 설정으로 이동"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

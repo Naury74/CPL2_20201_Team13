@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@null">
+
+    <FrameLayout
+        android:id="@+id/framelayout_menuitem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null">
+
+
+        <ImageView
+            android:id="@+id/menu_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:background="@null"/>
+
+
+        <ImageView
+            android:id="@+id/menu_sold_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@null"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_ico_soldout" />
+
+        <ImageView
+            android:id="@+id/best_icon_imageview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:src="@drawable/best"
+            android:visibility="gone"
+            tools:visibility="gone"
+            android:background="@null"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/menu_name_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/framelayout_menuitem"
+        android:background="@null"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="#323232"
+        android:paddingHorizontal="5dp"
+        android:textStyle="bold" />
+    <!--android:autoSizeTextType="uniform"-->
+    <TextView
+        android:id="@+id/menu_price_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="#323232"
+        android:background="@null"
+        android:layout_below="@+id/menu_name_view"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:layout_below="@+id/menu_price_view"/>
+
+
+</RelativeLayout>

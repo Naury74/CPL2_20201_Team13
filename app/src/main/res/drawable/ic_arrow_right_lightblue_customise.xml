@@ -1,0 +1,8 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:drawable="@drawable/ic_arrow_right_lightblue"
+        android:width="30dp"
+        android:height="30dp"
+        />
+</layer-list>
