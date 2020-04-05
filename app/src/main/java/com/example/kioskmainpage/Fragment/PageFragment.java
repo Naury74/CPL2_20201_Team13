@@ -89,9 +89,9 @@ public class PageFragment extends Fragment {
         //FragmentPager 어댑터에서 새로운 Fragment 생성시 추가한 메뉴를 받아옴
         menuList = getArguments().getParcelableArrayList(MENU_PAGE);
         numOfMenus = menuList.size();
-    //    System.out.println("메뉴개수 : "+numOfMenus);
+        //    System.out.println("메뉴개수 : "+numOfMenus);
         best_menus = getArguments().getStringArrayList(BEST_MENUS);
-      //  System.out.println("베스트 메뉴 테스트 : "+best_menus.size());
+        //  System.out.println("베스트 메뉴 테스트 : "+best_menus.size());
         app = (Myapplication)getActivity().getApplication();
         mainTheme = app.getMainTheme();
         adapter=new RAdapter((ArrayList<Menu>)menuList, (ArrayList<String>)best_menus, mainTheme, app);
