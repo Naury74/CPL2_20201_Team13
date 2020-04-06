@@ -8,10 +8,12 @@
     tools:context=".Activity.EasyMenuSelectionActivity">
 <android.support.v7.widget.RecyclerView
     android:layout_width="match_parent"
-    android:layout_height="500dp"
+    android:layout_height="480dp"
     android:layout_gravity="center"
     android:padding="30dp"
-    android:layout_margin="70dp"
+    android:layout_marginLeft="35dp"
+    android:layout_marginRight="35dp"
+    android:layout_marginTop="5dp"
     android:id="@+id/menu_type_recyclerview"
  />
 <LinearLayout
