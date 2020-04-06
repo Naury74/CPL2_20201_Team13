@@ -26,17 +26,14 @@ String []arr={"빵","우유","김치","닭"};
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_easy_menu_selection);
-        recyclerView=findViewById(R.id.menu_type_recyclerview);
-        layoutManager=new GridLayoutManager(this,2);
+        recyclerView = findViewById(R.id.menu_type_recyclerview);
+        layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerAdapterMenuType=new RecyclerAdapter_MenuType(arr);
+        recyclerAdapterMenuType = new RecyclerAdapter_MenuType(arr);
 
         recyclerView.setAdapter(recyclerAdapterMenuType);
         recyclerView.setHasFixedSize(true);
 
-
-
     }
-
+    
 }
-
