@@ -35,5 +35,5 @@ String []arr={"빵","우유","김치","닭"};
         recyclerView.setHasFixedSize(true);
 
     }
-    
+
 }
