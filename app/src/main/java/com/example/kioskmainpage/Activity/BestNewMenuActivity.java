@@ -15,6 +15,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -41,7 +42,7 @@ public class BestNewMenuActivity extends AppCompatActivity {
 
     /* 작성자 : 2019-1 종합설계프로젝트 팀 (팀장 박준현)*/
 
-    TextView allmenu;
+    TextView allmenu,easy_order_move;
 
     //  BestMenuAdapter mBestMenuAdapter ;
     AutoScrollViewPager mViewPager;
@@ -118,7 +119,7 @@ public class BestNewMenuActivity extends AppCompatActivity {
         //  rootlayout.setBackgroundColor(getColor(mainTheme.getThemeItem().getBEST_NEW_ACTIVITY_BACKGROUND_COLOR_ID()));//테마
 
         //전체 메뉴 보기 버튼(클릭시 BestNewMenu액티비티가 꺼지면서 자연스럽게 MainActivity가 등장
-        allmenu = (TextView) findViewById(R.id.allmenu_bestmenu);
+        allmenu = (Button) findViewById(R.id.allmenu_bestmenu);//2020.04.03텍스트에서 버튼으로 수정
         //  allmenu.setTextColor(getColor(mainTheme.getThemeItem().getTEXT_COLOR_ID()));//테마
         //     allmenu.setCompoundDrawablesWithIntrinsicBounds(null,null, getDrawable(mainTheme.getThemeItem().getBEST_NEW_PASS_RIGHT_IC_ID()),null);//테마
         best_textview = (TextView) findViewById(R.id.best_bestmenu);//BEST
@@ -126,6 +127,8 @@ public class BestNewMenuActivity extends AppCompatActivity {
         app.setBestNewMenuActivityContext(this);
         Intent intent = getIntent();
         folder_names = intent.getStringArrayListExtra("folderNames");
+
+        easy_order_move = (Button) findViewById(R.id.easy_order);//easy order intent
 
         //best메뉴 이름들 가져오기
         best_menus = app.getBest_menus();
@@ -230,6 +233,23 @@ public class BestNewMenuActivity extends AppCompatActivity {
                 return;
             }
         });
+
+
+
+        easy_order_move.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Myapplication myapp = (Myapplication) getApplication();
+                myapp.setadapter(adapter); //전역변수로써 넘겨줌
+                Intent intent = new Intent(BestNewMenuActivity.this, EasyMenuSelectionActivity.class);
+                intent.putExtra("isOrdered", false);
+                intent.addFlags(intent.FLAG_ACTIVITY_REORDER_TO_FRONT);//기존의 액티비티를 재사용
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);//SPLASH 화면이 뜨지 않게함
+                setResult(RESULT_OK, intent); //설정했다고 알림
+                startActivity(intent);
+                return;
+            }
+        }); //간편메뉴 이동
 
 
         SharedPreferences sharedPreferences = getSharedPreferences("SyncCheck", MODE_PRIVATE);//동기화 완료시에만 실행

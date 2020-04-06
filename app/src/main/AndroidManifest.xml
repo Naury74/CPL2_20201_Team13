@@ -38,7 +38,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.Waiting.Senior_MainActivity"></activity>
+        <activity
+            android:name=".Activity.Waiting.Senior_MainActivity"></activity>
         <activity
             android:name=".Activity.Admin.Admin_checkfor_password"
             android:theme="@style/NoTitleDialog_with_editText" />
@@ -115,6 +116,9 @@
         <activity
             android:name=".Activity.Waiting.Waiting_MainActivity"
             android:screenOrientation="reversePortrait" />
+        <activity android:name=".Activity.EasyMenuSelectionActivity">
+        </activity>
+
 
         <receiver
             android:name=".ShutdownAdminReceiver"

@@ -75,12 +75,10 @@
         android:layout_height="wrap_content"
         android:background="#40F7F7F6"></android.support.v7.widget.RecyclerView>
 
-    <TextView
+   <!-- <TextView
         android:id="@+id/allmenu_bestmenu"
         android:text="주문화면 이동"
         android:textAlignment="center"
-        android:drawableRight="@drawable/ic_pass_right"
-        android:drawablePadding="20dp"
         android:layout_weight="0.1"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -91,11 +89,50 @@
         android:gravity="center_vertical"
         android:clickable="true"
         android:layout_marginTop="50dp"
-        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="70dp"
+        android:layout_gravity="left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
+        />-->
+/*텍스트에서 버튼으로 수정*/
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp">
+    <Button
+        android:id="@+id/allmenu_bestmenu"
+        android:text="주문화면 이동"
+        android:textAlignment="center"
+        android:layout_weight="0.1"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:background="@drawable/button_order_screen"
+        android:textSize="20dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_gravity="left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
+    <Button
+        android:id="@+id/easy_order"
+        android:text="간편주문"
+        android:textAlignment="center"
+        android:layout_weight="0.1"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:background="@drawable/button_easy_order"
+        android:textSize="20dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
     <LinearLayout
         android:id="@+id/bottomLayout"
         android:layout_width="match_parent"
@@ -105,6 +142,7 @@
         android:orientation="vertical"
         android:paddingTop="5dp"
         android:visibility="gone">
+    </LinearLayout>
 
 
         <ListView
@@ -114,6 +152,4 @@
             android:divider="@null"
             android:scrollbarAlwaysDrawVerticalTrack="true"
             android:scrollbarFadeDuration="0" />
-
-    </LinearLayout>
 </LinearLayout>
