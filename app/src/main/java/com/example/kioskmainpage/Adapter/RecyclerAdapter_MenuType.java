@@ -1,5 +1,7 @@
 package com.example.kioskmainpage.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v7.widget.RecyclerView;
@@ -9,11 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.kioskmainpage.Activity.Waiting.Senior_MainActivity;
 import com.example.kioskmainpage.R;
 
 public class RecyclerAdapter_MenuType extends RecyclerView.Adapter<RecyclerAdapter_MenuType.MyViewHolder> {
     String []arr;
+
+    Context context;
 
     public RecyclerAdapter_MenuType(String[] arr) {
         this.arr = arr;
@@ -44,6 +50,15 @@ public class RecyclerAdapter_MenuType extends RecyclerView.Adapter<RecyclerAdapt
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             textView=itemView.findViewById(R.id.menu_type);
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Context context = v.getContext();
+                    //Toast.makeText(context,"Toast", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, Senior_MainActivity.class);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }

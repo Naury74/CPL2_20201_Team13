@@ -1,12 +1,15 @@
 package com.example.kioskmainpage.Activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 
+import com.example.kioskmainpage.Activity.Waiting.Senior_MainActivity;
 import com.example.kioskmainpage.Adapter.RecyclerAdapter_MenuType;
 import com.example.kioskmainpage.R;
 
@@ -33,7 +36,7 @@ String []arr={"빵","우유","김치","닭"};
 
 
 
-        }
+    }
 
 }
 
