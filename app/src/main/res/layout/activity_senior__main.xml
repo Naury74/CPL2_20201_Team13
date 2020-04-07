@@ -58,12 +58,12 @@
 
         <TextView
             android:id="@+id/announce_textView"
+            android:text="원하시는 '메뉴'를 누르시거나\n'저'를 눌러 아래처럼 말씀해주세요."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:paddingLeft="30dp"
             android:layout_gravity="center"
-            android:text="원하시는 '메뉴'를 누르시거나\n'저'를 눌러 아래처럼 말씀해주세요."
             android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="normal">

@@ -110,8 +110,8 @@
         android:textSize="20dp"
         android:paddingLeft="14dp"
         android:paddingRight="14dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginRight="70dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="60dp"
         android:layout_gravity="left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -127,8 +127,8 @@
         android:textSize="20dp"
         android:paddingLeft="14dp"
         android:paddingRight="14dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginRight="70dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="80dp"
         android:layout_gravity="right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

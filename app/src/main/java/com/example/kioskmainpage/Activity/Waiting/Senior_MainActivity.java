@@ -17,6 +17,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -47,8 +48,22 @@ public class Senior_MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //상하단바 제거
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        int uiOptions = getWindow().getDecorView().getSystemUiVisibility();
+        int newUiOptions = uiOptions;
+        boolean isImmersiveModeEnabled = ((uiOptions | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) == uiOptions);
+        if (isImmersiveModeEnabled) {
+            Log.i("Is on?", "Turning immersive mode mode off. ");
+        } else {
+            Log.i("Is on?", "Turning immersive mode mode on.");
+        }
+        newUiOptions ^= View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+        newUiOptions ^= View.SYSTEM_UI_FLAG_FULLSCREEN;
+        newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
         setContentView(R.layout.activity_senior__main);
 
         if ( Build.VERSION.SDK_INT >= 23 ){
