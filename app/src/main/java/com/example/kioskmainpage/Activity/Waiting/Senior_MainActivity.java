@@ -25,6 +25,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -45,6 +46,7 @@ public class Senior_MainActivity extends AppCompatActivity {
     TextView voice_recordText;
     TextView voice_btn;
     TextView announce_textView;
+    int position_category = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +69,9 @@ public class Senior_MainActivity extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
         setContentView(R.layout.activity_senior__main);
 
-        intent=getIntent();
-        int position=intent.getIntExtra("position",0);
+        intent = getIntent();
+        position_category = intent.getExtras().getInt("position");
+        Log.i("position_category", "\nposition_category: "+ position_category+"\n");
 
         if ( Build.VERSION.SDK_INT >= 23 ){
             // 퍼미션 체크
@@ -96,11 +99,14 @@ public class Senior_MainActivity extends AppCompatActivity {
 
         Senior_MainTab_Adapter senior_mainTab_adapter = new Senior_MainTab_Adapter(getSupportFragmentManager(),this);
 
-        ViewPager viewPager = (ViewPager)findViewById(R.id.viewpager);
+        final ViewPager viewPager = (ViewPager)findViewById(R.id.viewpager);
         viewPager.setAdapter(senior_mainTab_adapter);
 
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+        TabLayout.Tab tab = tabLayout.getTabAt(position_category);
+        tab.select();
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
