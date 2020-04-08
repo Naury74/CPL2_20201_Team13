@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +38,6 @@ public class RecyclerAdapter_MenuType extends RecyclerView.Adapter<RecyclerAdapt
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder viewHolder, int i) {
         viewHolder.textView.setText(arr[i]);
-
     }
 
     @Override
@@ -54,8 +54,9 @@ public class RecyclerAdapter_MenuType extends RecyclerView.Adapter<RecyclerAdapt
                 @Override
                 public void onClick(View v) {
                     Context context = v.getContext();
-                    //Toast.makeText(context,"Toast", Toast.LENGTH_SHORT).show();
+                    int position=getAdapterPosition();
                     Intent intent = new Intent(context, Senior_MainActivity.class);
+                    intent.putExtra("position",position);
                     context.startActivity(intent);
                 }
             });

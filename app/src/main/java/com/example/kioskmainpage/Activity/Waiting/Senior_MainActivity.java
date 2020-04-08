@@ -1,6 +1,7 @@
 package com.example.kioskmainpage.Activity.Waiting;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -65,6 +66,9 @@ public class Senior_MainActivity extends AppCompatActivity {
         newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
         setContentView(R.layout.activity_senior__main);
+
+        intent=getIntent();
+        int position=intent.getIntExtra("position",0);
 
         if ( Build.VERSION.SDK_INT >= 23 ){
             // 퍼미션 체크
