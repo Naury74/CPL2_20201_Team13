@@ -24,7 +24,7 @@
             android:layout_height="50dp"
             android:layout_gravity="bottom|center"
             android:layout_margin="16dp"
-            android:src="@drawable/hand2"
+            android:src="@drawable/guide_arrow"
             fab:fab_colorNormal="@color/transparent"
             fab:fab_colorPressed="@color/transparent"
             fab:fab_colorRipple="@color/transparent"/>

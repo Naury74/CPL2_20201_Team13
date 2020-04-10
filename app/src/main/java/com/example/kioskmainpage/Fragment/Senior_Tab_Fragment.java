@@ -27,6 +27,7 @@ public class Senior_Tab_Fragment extends Fragment {
     Senior_MenuAdapter senior_menuAdapter;
     ScrollView scrollView;
     private com.melnykov.fab.FloatingActionButton fab;
+    int scrollY = 0;
 
     public static Senior_Tab_Fragment newinstance(int page) {
         Bundle args = new Bundle();
@@ -47,7 +48,7 @@ public class Senior_Tab_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_senior__tab_, container, false);
-        GridView gridView = (GridView)view.findViewById(R.id.gridView);
+        final GridView gridView = (GridView)view.findViewById(R.id.gridView);
         scrollView = (ScrollView)view.findViewById(R.id.scrollView);
         fab = (com.melnykov.fab.FloatingActionButton) view.findViewById(R.id.fab);
 
@@ -112,7 +113,8 @@ public class Senior_Tab_Fragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                scrollY = gridView.getScrollY();
+                //gridView.setScrollY(gridView.getBottom());
             }
         });
 
