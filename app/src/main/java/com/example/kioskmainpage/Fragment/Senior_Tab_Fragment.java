@@ -1,6 +1,8 @@
 package com.example.kioskmainpage.Fragment;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +16,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.kioskmainpage.Activity.Senior_MenuOption.Senior_MenuSelected_Check;
 import com.example.kioskmainpage.Adapter.Senior_MenuAdapter;
 import com.example.kioskmainpage.R;
 import com.example.kioskmainpage.Utilities.Senior_MenuItem;
@@ -28,6 +31,7 @@ public class Senior_Tab_Fragment extends Fragment {
     ScrollView scrollView;
     private com.melnykov.fab.FloatingActionButton fab;
     int scrollY = 0;
+    Context context;
 
     public static Senior_Tab_Fragment newinstance(int page) {
         Bundle args = new Bundle();
@@ -41,6 +45,7 @@ public class Senior_Tab_Fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         mpage = getArguments().getInt(ARG_PAGE);
+        context = getActivity();
     }
 
 
@@ -102,8 +107,14 @@ public class Senior_Tab_Fragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getActivity(),"이름 : "+ senior_menuAdapter.getItem(i).getName().toString() + " , Price : "+senior_menuAdapter.getItem(i).getPrice().toString(),Toast.LENGTH_LONG).show();
+                //Toast.makeText(getActivity(),"이름 : "+ senior_menuAdapter.getItem(i).getName().toString() + " , Price : "+senior_menuAdapter.getItem(i).getPrice().toString(),Toast.LENGTH_LONG).show();
 
+                Intent intent = new Intent(context, Senior_MenuSelected_Check.class);
+                intent.putExtra("category",mpage);
+                intent.putExtra("menu_image",senior_menuAdapter.getItem(i).getImage());
+                intent.putExtra("menu_name",senior_menuAdapter.getItem(i).getName().toString());
+                intent.putExtra("menu_price",senior_menuAdapter.getItem(i).getPrice().toString());
+                context.startActivity(intent);
             }
         });
 

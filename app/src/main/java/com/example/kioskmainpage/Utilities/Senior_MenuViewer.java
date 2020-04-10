@@ -36,7 +36,7 @@ public class Senior_MenuViewer extends LinearLayout {
 
     public void setItem(Senior_MenuItem senior_menuitem){
         menu_name_view.setText(senior_menuitem.getName());
-        menu_price_view.setText(senior_menuitem.getPrice());
+        menu_price_view.setText(senior_menuitem.getPrice()+"원");
         menu_image_view.setImageResource(senior_menuitem.getImage());
     }
 }

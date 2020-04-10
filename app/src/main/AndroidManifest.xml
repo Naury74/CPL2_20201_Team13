@@ -17,7 +17,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission
         android:name="android.permission.PACKAGE_USAGE_STATS"
         tools:ignore="ProtectedPermissions" />
@@ -38,8 +38,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".Activity.Waiting.Senior_MainActivity"></activity>
+        <activity android:name=".Activity.Senior_MenuOption.Senior_MenuSelected_Check"></activity>
+        <activity android:name=".Activity.Senior_MenuOption.Senior_MenuOption_TempSelect" />
+        <activity android:name=".Activity.Waiting.Senior_MainActivity" />
         <activity
             android:name=".Activity.Admin.Admin_checkfor_password"
             android:theme="@style/NoTitleDialog_with_editText" />
@@ -116,9 +117,7 @@
         <activity
             android:name=".Activity.Waiting.Waiting_MainActivity"
             android:screenOrientation="reversePortrait" />
-        <activity android:name=".Activity.EasyMenuSelectionActivity">
-        </activity>
-
+        <activity android:name=".Activity.EasyMenuSelectionActivity" />
 
         <receiver
             android:name=".ShutdownAdminReceiver"
