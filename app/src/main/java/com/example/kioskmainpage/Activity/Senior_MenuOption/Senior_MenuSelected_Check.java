@@ -230,7 +230,14 @@ public class Senior_MenuSelected_Check extends AppCompatActivity {
                     break;
                 }
                 else if(category_num == 2){
-                    Toast.makeText(this, "checked category number: "+category_num,Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(this, Senior_MenuOption_TempSelect.class);
+                    intent.putExtra("category",category_num);
+                    intent.putExtra("menu_image",menu_image);
+                    intent.putExtra("menu_name",menu_name);
+                    intent.putExtra("menu_price",menu_price);
+                    startActivity(intent);
+                    finish();
+                    break;
                 }
                 else if(category_num == 3){
                     Toast.makeText(this, "checked category number: "+category_num,Toast.LENGTH_SHORT).show();
