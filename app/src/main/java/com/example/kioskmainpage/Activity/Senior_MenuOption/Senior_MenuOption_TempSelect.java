@@ -28,7 +28,7 @@ public class Senior_MenuOption_TempSelect extends AppCompatActivity {
     int menu_image;
     String menu_name;
     String menu_price;
-    String menu_option;
+    String menu_option = "";
     int category_num;
     TextView menu_name_view;
     TextView menu_price_view;
@@ -217,54 +217,56 @@ public class Senior_MenuOption_TempSelect extends AppCompatActivity {
     public void onClick(View v){
         switch(v.getId()){
             case R.id.btn_hot:
-                menu_option = "Hot, ";
+                menu_option = menu_option.concat("선택1: HOT ");
                 if(category_num == 1){
-                    /*Intent intent = new Intent(this, Senior_MenuOption_Taste.class);
+                    Intent intent = new Intent(this, Senior_MenuOption_TasteSelect.class);
                     intent.putExtra("category",category_num);
                     intent.putExtra("menu_image",menu_image);
                     intent.putExtra("menu_name",menu_name);
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
                     startActivity(intent);
-                    finish();*/
-                    Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
+                    finish();
+                    //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
                     break;
                 }
                 else if(category_num == 2){
-                    /*Intent intent = new Intent(this, Senior_MenuOption_Taste.class);
+                    Intent intent = new Intent(this, Senior_MenuOption_TasteSelect.class);
                     intent.putExtra("category",category_num);
                     intent.putExtra("menu_image",menu_image);
                     intent.putExtra("menu_name",menu_name);
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
                     startActivity(intent);
-                    finish();*/
-                    Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
+                    finish();
+                    //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
+                    break;
                 }
             case R.id.btn_ice:
-                menu_option = "Ice, ";
+                menu_option = menu_option.concat("선택1: ICE ");
                 if(category_num == 1){
-                    /*Intent intent = new Intent(this, Senior_MenuOption_Taste.class);
+                    Intent intent = new Intent(this, Senior_MenuOption_TasteSelect.class);
                     intent.putExtra("category",category_num);
                     intent.putExtra("menu_image",menu_image);
                     intent.putExtra("menu_name",menu_name);
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
                     startActivity(intent);
-                    finish();*/
-                    Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
+                    finish();
+                    //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
                     break;
                 }
                 else if(category_num == 2){
-                    /*Intent intent = new Intent(this, Senior_MenuOption_Taste.class);
+                    Intent intent = new Intent(this, Senior_MenuOption_TasteSelect.class);
                     intent.putExtra("category",category_num);
                     intent.putExtra("menu_image",menu_image);
                     intent.putExtra("menu_name",menu_name);
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
                     startActivity(intent);
-                    finish();*/
-                    Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
+                    finish();
+                    //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
+                    break;
                 }
         }
     }

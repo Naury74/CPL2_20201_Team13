@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/senior_main_background"
+    tools:context=".Activity.Senior_MenuOption.Senior_MenuOption_SizeSelect">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="680dp"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/menu_image_view"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="70dp"
+            android:layout_gravity="center"
+            android:src="@drawable/senior_test_image"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FFFFFFFF"/>
+
+        <TextView
+            android:id="@+id/menu_name_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:lines="1"
+            android:text="Menu Name"/>
+
+        <TextView
+            android:id="@+id/menu_price_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:lines="1"
+            android:text="Menu Price"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:layout_marginVertical="45dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:lines="1"
+            android:text="원하시는 크기를 선택해주세요"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="18dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginHorizontal="30dp">
+
+            <LinearLayout
+                android:id="@+id/btn_normal"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:layout_marginRight="20dp"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:background="@drawable/btn_select_background">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/small_cup"
+                    android:paddingTop="30dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="15dp"
+                    android:layout_margin="20dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="3"
+                    android:text="보통"
+                    android:textSize="30dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_large"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:background="@drawable/btn_select_background">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/large_cup"
+                    android:paddingTop="30dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="15dp"
+                    android:layout_margin="20dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="3"
+                    android:text="크게"
+                    android:textSize="30dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:id="@+id/voice_btn"
+            android:layout_width="100dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="10dp"
+            android:text=" "
+            android:clickable="true">
+        </TextView>
+
+        <TextView
+            android:id="@+id/announce_textView"
+            android:text="'저'를 눌러 아래처럼 말씀해보세요."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:paddingLeft="20dp"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold">
+        </TextView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/voice_recordText"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:text="'보통으로 해줘'\n'큰걸로 해줘'"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:textColor="@color/white">
+    </TextView>
+
+</LinearLayout>
