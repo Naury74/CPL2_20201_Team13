@@ -40,6 +40,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     RecyclerAdapter_MenuType recyclerAdapterMenuType;
     String []arr={"커피","음료","빵","기타"};
+    int []img={R.drawable.icon_coffee,R.drawable.icon_beverage,R.drawable.icon_dessert,R.drawable.icon_others};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +66,8 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.menu_type_recyclerview);
         layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerAdapterMenuType = new RecyclerAdapter_MenuType(arr);
+        recyclerAdapterMenuType = new RecyclerAdapter_MenuType(arr,img);
+
 
         recyclerView.setAdapter(recyclerAdapterMenuType);
         recyclerView.setHasFixedSize(true);
