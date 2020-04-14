@@ -100,7 +100,7 @@
             android:layout_height="170dp"
             android:orientation="vertical"
             android:clickable="true"
-            android:onClick="onClick"
+            android:onClick="onClick_add_order"
             android:background="@drawable/btn_select_background_blue_black">
 
             <ImageView
@@ -136,7 +136,7 @@
             android:orientation="vertical"
             android:layout_marginLeft="20dp"
             android:clickable="true"
-            android:onClick="onClick"
+            android:onClick="onClick_payment"
             android:background="@drawable/btn_select_background_long">
 
             <ImageView

@@ -153,20 +153,21 @@ public class Senior_OrderListActivity extends AppCompatActivity {
         super.onResume();
     }
 
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.add_order_btn:
-                Intent intent = new Intent(this, EasyMenuSelectionActivity.class);
-                intent.putExtra("category",category_num);
-                intent.putExtra("menu_image",menu_image);
-                intent.putExtra("menu_name",menu_name);
-                intent.putExtra("menu_price",menu_price);
-                intent.putExtra("menu_option",menu_option);
-                intent.putExtra("menu_count",menu_count);
-                startActivity(intent);
-            case R.id.payment:
-                Toast.makeText(this, "Payment Result Total : "+ total_price+"원",Toast.LENGTH_SHORT).show();
-        }
+    public void onClick_add_order(View v) {
+        Intent intent = new Intent(this, EasyMenuSelectionActivity.class);
+        intent.putExtra("category",category_num);
+        intent.putExtra("menu_image",menu_image);
+        intent.putExtra("menu_name",menu_name);
+        intent.putExtra("menu_price",menu_price);
+        intent.putExtra("menu_option",menu_option);
+        intent.putExtra("menu_count",menu_count);
+        startActivity(intent);
+        //Toast.makeText(this, "Payment Result Total : "+ total_price+"원",Toast.LENGTH_SHORT).show();
+    }
+
+    public void onClick_payment(View v) {
+
+        Toast.makeText(this, "Payment Result Total : "+ total_price+"원",Toast.LENGTH_SHORT).show();
     }
 
 }
