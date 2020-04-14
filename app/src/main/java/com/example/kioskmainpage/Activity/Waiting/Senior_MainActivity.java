@@ -133,7 +133,7 @@ public class Senior_MainActivity extends AppCompatActivity {
                 if(status != TextToSpeech.ERROR) {
 
                     tts.setLanguage(Locale.KOREAN);
-                    tts.speak("원하시는 메뉴를 터치하여 누르시거나 왼쪽 아래의 저를 눌러 아래처럼 말씀해 주세요",TextToSpeech.QUEUE_FLUSH,null);
+                    tts.speak("원하시는 메뉴를 선택해 주세요",TextToSpeech.QUEUE_FLUSH,null);
                     tts.setSpeechRate((float) 0.4);
 
                 }

@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.kioskmainpage.Activity.EasyMenuSelectionActivity;
 import com.example.kioskmainpage.R;
 
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity {
     String menu_price;
     String menu_option = "";
     int category_num;
+    int menu_count = 1;
     TextView menu_name_view;
     TextView menu_price_view;
     ImageView menu_image_view;
@@ -222,107 +224,123 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity {
             case R.id.btn_normal:
                 if(category_num == 1){
                     menu_option = menu_option.concat("선택3: NORMAL");
-                    /*Intent intent = new Intent(this, Senior_MenuOption_Taste.class);
+                    Intent intent = new Intent(this, Senior_OrderListActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     intent.putExtra("category",category_num);
                     intent.putExtra("menu_image",menu_image);
                     intent.putExtra("menu_name",menu_name);
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
+                    intent.putExtra("menu_count",menu_count);
                     startActivity(intent);
-                    finish();*/
-                    Toast.makeText(this, "Option Selected : "+menu_option+"\n Category 1 is final OptionSelected. ",Toast.LENGTH_SHORT).show();
+                    finish();
+                    //Toast.makeText(this, "Option Selected : "+menu_option+"\n Category 1 is final OptionSelected. ",Toast.LENGTH_SHORT).show();
                     break;
                 }
                 else if(category_num == 2){
                     menu_option = menu_option.concat("선택3: NORMAL");
-                    /*Intent intent = new Intent(this, Senior_MenuOption_Taste.class);
+                    Intent intent = new Intent(this, Senior_OrderListActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     intent.putExtra("category",category_num);
                     intent.putExtra("menu_image",menu_image);
                     intent.putExtra("menu_name",menu_name);
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
+                    intent.putExtra("menu_count",menu_count);
                     startActivity(intent);
-                    finish();*/
-                    Toast.makeText(this, "Option Selected : "+menu_option+"\n Category 2 is final OptionSelected. ",Toast.LENGTH_SHORT).show();
+                    finish();
+                    //Toast.makeText(this, "Option Selected : "+menu_option+"\n Category 2 is final OptionSelected. ",Toast.LENGTH_SHORT).show();
                     break;
                 }
                 else if(category_num == 3){
                     menu_option = menu_option.concat("선택1: NORMAL");
-                    /*Intent intent = new Intent(this, Senior_MenuOption_Taste.class);
+                    Intent intent = new Intent(this, Senior_OrderListActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     intent.putExtra("category",category_num);
                     intent.putExtra("menu_image",menu_image);
                     intent.putExtra("menu_name",menu_name);
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
+                    intent.putExtra("menu_count",menu_count);
                     startActivity(intent);
-                    finish();*/
-                    Toast.makeText(this, "Option Selected : "+menu_option+"\n Category 3 is final OptionSelected. ",Toast.LENGTH_SHORT).show();
+                    finish();
+                    //Toast.makeText(this, "Option Selected : "+menu_option+"\n Category 3 is final OptionSelected. ",Toast.LENGTH_SHORT).show();
                     break;
                 }
                 else if(category_num == 4){
                     menu_option = menu_option.concat("선택1: NORMAL");
-                    /*Intent intent = new Intent(this, Senior_MenuOption_Taste.class);
+                    Intent intent = new Intent(this, Senior_OrderListActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     intent.putExtra("category",category_num);
                     intent.putExtra("menu_image",menu_image);
                     intent.putExtra("menu_name",menu_name);
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
+                    intent.putExtra("menu_count",menu_count);
                     startActivity(intent);
-                    finish();*/
-                    Toast.makeText(this, "Option Selected : "+menu_option+"\n Category 4 is final OptionSelected. ",Toast.LENGTH_SHORT).show();
+                    finish();
+                    //Toast.makeText(this, "Option Selected : "+menu_option+"\n Category 4 is final OptionSelected. ",Toast.LENGTH_SHORT).show();
                     break;
                 }
             case R.id.btn_large:
                 if(category_num == 1){
                     menu_option = menu_option.concat("선택3: LARGE");
-                    /*Intent intent = new Intent(this, Senior_MenuOption_Taste.class);
+                    Intent intent = new Intent(this, Senior_OrderListActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     intent.putExtra("category",category_num);
                     intent.putExtra("menu_image",menu_image);
                     intent.putExtra("menu_name",menu_name);
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
+                    intent.putExtra("menu_count",menu_count);
                     startActivity(intent);
-                    finish();*/
-                    Toast.makeText(this, "Option Selected : "+menu_option+"\n Category 1 is final OptionSelected. ",Toast.LENGTH_SHORT).show();
+                    finish();
+                    //Toast.makeText(this, "Option Selected : "+menu_option+"\n Category 1 is final OptionSelected. ",Toast.LENGTH_SHORT).show();
                     break;
                 }
                 else if(category_num == 2){
                     menu_option = menu_option.concat("선택3: LARGE");
-                    /*Intent intent = new Intent(this, Senior_MenuOption_Taste.class);
+                    Intent intent = new Intent(this, Senior_OrderListActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     intent.putExtra("category",category_num);
                     intent.putExtra("menu_image",menu_image);
                     intent.putExtra("menu_name",menu_name);
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
+                    intent.putExtra("menu_count",menu_count);
                     startActivity(intent);
-                    finish();*/
-                    Toast.makeText(this, "Option Selected : "+menu_option+"\n Category 2 is final OptionSelected. ",Toast.LENGTH_SHORT).show();
+                    finish();
+                    //Toast.makeText(this, "Option Selected : "+menu_option+"\n Category 2 is final OptionSelected. ",Toast.LENGTH_SHORT).show();
                     break;
                 }
                 else if(category_num == 3){
                     menu_option = menu_option.concat("선택1: LARGE");
-                    /*Intent intent = new Intent(this, Senior_MenuOption_Taste.class);
+                    Intent intent = new Intent(this, Senior_OrderListActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     intent.putExtra("category",category_num);
                     intent.putExtra("menu_image",menu_image);
                     intent.putExtra("menu_name",menu_name);
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
+                    intent.putExtra("menu_count",menu_count);
                     startActivity(intent);
-                    finish();*/
-                    Toast.makeText(this, "Option Selected : "+menu_option+"\n Category 3 is final OptionSelected. ",Toast.LENGTH_SHORT).show();
+                    finish();
+                    //Toast.makeText(this, "Option Selected : "+menu_option+"\n Category 3 is final OptionSelected. ",Toast.LENGTH_SHORT).show();
                     break;
                 }
                 else if(category_num == 4){
                     menu_option = menu_option.concat("선택1: LARGE");
-                    /*Intent intent = new Intent(this, Senior_MenuOption_Taste.class);
+                    Intent intent = new Intent(this, Senior_OrderListActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     intent.putExtra("category",category_num);
                     intent.putExtra("menu_image",menu_image);
                     intent.putExtra("menu_name",menu_name);
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
+                    intent.putExtra("menu_count",menu_count);
                     startActivity(intent);
-                    finish();*/
-                    Toast.makeText(this, "Option Selected : "+menu_option+"\n Category 4 is final OptionSelected. ",Toast.LENGTH_SHORT).show();
+                    finish();
+                    //Toast.makeText(this, "Option Selected : "+menu_option+"\n Category 4 is final OptionSelected. ",Toast.LENGTH_SHORT).show();
                     break;
                 }
         }

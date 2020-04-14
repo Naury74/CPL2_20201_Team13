@@ -64,10 +64,11 @@
 
     <TextView
         android:id="@+id/what_do_you_need"
-        android:text="'저'를 눌러 아래처럼\n말씀해보세요"
+        android:text="'저'를 눌러 아래처럼 말씀해보세요"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="40dp"
+        android:paddingTop="50dp"
+        android:paddingLeft="20dp"
         android:layout_marginLeft="30dp"
         android:layout_gravity="center"
         android:textColor="@color/black"

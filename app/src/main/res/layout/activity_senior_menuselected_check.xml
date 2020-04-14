@@ -111,7 +111,7 @@
                 android:layout_marginLeft="20dp"
                 android:clickable="true"
                 android:onClick="onClick"
-                android:background="@drawable/btn_select_background">
+                android:background="@drawable/btn_select_background_green">
 
                 <ImageView
                     android:layout_width="wrap_content"

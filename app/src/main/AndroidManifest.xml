@@ -38,7 +38,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.Senior_MenuOption.Senior_MenuOption_TasteSelect"></activity>
+        <activity android:name=".Activity.Senior_MenuOption.Senior_OrderListActivity"></activity>
+        <activity android:name=".Activity.Senior_MenuOption.Senior_MenuOption_TasteSelect" />
         <activity android:name=".Activity.Senior_MenuOption.Senior_MenuOption_SizeSelect" />
         <activity android:name=".Activity.Senior_MenuOption.Senior_MenuSelected_Check" />
         <activity android:name=".Activity.Senior_MenuOption.Senior_MenuOption_TempSelect" />
