@@ -129,7 +129,6 @@ public class Senior_OrderListActivity extends AppCompatActivity {
             m_price = intent.getExtras().getString("menu_price");
             menu_option = intent.getExtras().getString("menu_option");
             menu_count = intent.getExtras().getInt("menu_count");
-
             menu_price = Integer.parseInt(m_price);
             senior_selectedItem_adapter.addItem(menu_name, menu_price, menu_option, menu_count);
             tts.speak("주문이 추가되었습니다",TextToSpeech.QUEUE_FLUSH,null);

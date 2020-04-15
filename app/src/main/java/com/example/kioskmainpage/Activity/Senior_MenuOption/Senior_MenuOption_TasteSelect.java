@@ -219,7 +219,7 @@ public class Senior_MenuOption_TasteSelect extends AppCompatActivity {
     public void onClick(View v){
         switch(v.getId()){
             case R.id.btn_sweet:
-                menu_option = menu_option.concat("선택2: 달달하게   ");
+                menu_option = menu_option.concat("선택2: 달달하게         ");
                 if(category_num == 1){
                     Intent intent = new Intent(this, Senior_MenuOption_SizeSelect.class);
                     intent.putExtra("category",category_num);
@@ -228,7 +228,6 @@ public class Senior_MenuOption_TasteSelect extends AppCompatActivity {
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
                     startActivity(intent);
-                    finish();
                     //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
                     break;
                 }
@@ -240,12 +239,11 @@ public class Senior_MenuOption_TasteSelect extends AppCompatActivity {
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
                     startActivity(intent);
-                    finish();
                     //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
                     break;
                 }
             case R.id.btn_normal:
-                menu_option = menu_option.concat("선택2: 보통   ");
+                menu_option = menu_option.concat("선택2: 보통         ");
                 if(category_num == 1){
                     Intent intent = new Intent(this, Senior_MenuOption_SizeSelect.class);
                     intent.putExtra("category",category_num);
@@ -254,7 +252,6 @@ public class Senior_MenuOption_TasteSelect extends AppCompatActivity {
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
                     startActivity(intent);
-                    finish();
                     //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
                     break;
                 }
@@ -266,12 +263,11 @@ public class Senior_MenuOption_TasteSelect extends AppCompatActivity {
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
                     startActivity(intent);
-                    finish();
                     //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
                     break;
                 }
             case R.id.btn_thick:
-                menu_option = menu_option.concat("선택2: 진하게   ");
+                menu_option = menu_option.concat("선택2: 진하게         ");
                 if(category_num == 1){
                     Intent intent = new Intent(this, Senior_MenuOption_SizeSelect.class);
                     intent.putExtra("category",category_num);
@@ -280,7 +276,6 @@ public class Senior_MenuOption_TasteSelect extends AppCompatActivity {
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
                     startActivity(intent);
-                    finish();
                     //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
                     break;
                 }
@@ -292,12 +287,11 @@ public class Senior_MenuOption_TasteSelect extends AppCompatActivity {
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
                     startActivity(intent);
-                    finish();
                     //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
                     break;
                 }
             case R.id.btn_more_thick:
-                menu_option = menu_option.concat("선택2: 더진하게   ");
+                menu_option = menu_option.concat("선택2: 더진하게         ");
                 if(category_num == 1){
                     Intent intent = new Intent(this, Senior_MenuOption_SizeSelect.class);
                     intent.putExtra("category",category_num);
@@ -306,7 +300,6 @@ public class Senior_MenuOption_TasteSelect extends AppCompatActivity {
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
                     startActivity(intent);
-                    finish();
                     //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
                     break;
                 }
@@ -318,10 +311,11 @@ public class Senior_MenuOption_TasteSelect extends AppCompatActivity {
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
                     startActivity(intent);
-                    finish();
                     //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
                     break;
                 }
+            case R.id.back_btn:
+                finish();
         }
     }
 }

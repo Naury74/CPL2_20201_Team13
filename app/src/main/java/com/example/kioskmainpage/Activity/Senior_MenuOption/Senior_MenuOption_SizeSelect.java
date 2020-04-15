@@ -223,7 +223,7 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity {
         switch(v.getId()){
             case R.id.btn_normal:
                 if(category_num == 1){
-                    menu_option = menu_option.concat("선택3: NORMAL");
+                    menu_option = menu_option.concat("선택3: 보통");
                     Intent intent = new Intent(this, Senior_OrderListActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     intent.putExtra("category",category_num);
@@ -238,7 +238,7 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity {
                     break;
                 }
                 else if(category_num == 2){
-                    menu_option = menu_option.concat("선택3: NORMAL");
+                    menu_option = menu_option.concat("선택3: 보통");
                     Intent intent = new Intent(this, Senior_OrderListActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     intent.putExtra("category",category_num);
@@ -253,7 +253,7 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity {
                     break;
                 }
                 else if(category_num == 3){
-                    menu_option = menu_option.concat("선택1: NORMAL");
+                    menu_option = menu_option.concat("선택1: 보통");
                     Intent intent = new Intent(this, Senior_OrderListActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     intent.putExtra("category",category_num);
@@ -268,7 +268,7 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity {
                     break;
                 }
                 else if(category_num == 4){
-                    menu_option = menu_option.concat("선택1: NORMAL");
+                    menu_option = menu_option.concat("선택1: 보통");
                     Intent intent = new Intent(this, Senior_OrderListActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     intent.putExtra("category",category_num);
@@ -284,7 +284,7 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity {
                 }
             case R.id.btn_large:
                 if(category_num == 1){
-                    menu_option = menu_option.concat("선택3: LARGE");
+                    menu_option = menu_option.concat("선택3: 크게");
                     Intent intent = new Intent(this, Senior_OrderListActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     intent.putExtra("category",category_num);
@@ -299,7 +299,7 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity {
                     break;
                 }
                 else if(category_num == 2){
-                    menu_option = menu_option.concat("선택3: LARGE");
+                    menu_option = menu_option.concat("선택3: 크게");
                     Intent intent = new Intent(this, Senior_OrderListActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     intent.putExtra("category",category_num);
@@ -314,7 +314,7 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity {
                     break;
                 }
                 else if(category_num == 3){
-                    menu_option = menu_option.concat("선택1: LARGE");
+                    menu_option = menu_option.concat("선택1: 크게");
                     Intent intent = new Intent(this, Senior_OrderListActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     intent.putExtra("category",category_num);
@@ -329,7 +329,7 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity {
                     break;
                 }
                 else if(category_num == 4){
-                    menu_option = menu_option.concat("선택1: LARGE");
+                    menu_option = menu_option.concat("선택1: 크게");
                     Intent intent = new Intent(this, Senior_OrderListActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     intent.putExtra("category",category_num);
@@ -343,6 +343,8 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity {
                     //Toast.makeText(this, "Option Selected : "+menu_option+"\n Category 4 is final OptionSelected. ",Toast.LENGTH_SHORT).show();
                     break;
                 }
+            case R.id.back_btn:
+                finish();
         }
     }
 }

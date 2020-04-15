@@ -36,7 +36,7 @@ public class Senior_SelectedItem_Adapter extends BaseAdapter {
     ImageButton minusButton;
     ImageButton plusButton;
     Button deleteButton;
-    int index;
+    int index_pos;
 
     @Override
     public int getCount() {
@@ -45,7 +45,7 @@ public class Senior_SelectedItem_Adapter extends BaseAdapter {
 
     @Override
     public Senior_SelectedItem getItem(int position) {
-        this.index = position;
+        this.index_pos = position;
         return mItems.get(position);
     }
 
@@ -89,7 +89,7 @@ public class Senior_SelectedItem_Adapter extends BaseAdapter {
 
         minusButton.setOnClickListener(new minusListener(myItem, this));
         plusButton.setOnClickListener(new plusListener(myItem, this));
-        deleteButton.setOnClickListener(new deleteListener(myItem, this));
+        deleteButton.setOnClickListener(new deleteListener(myItem, index_pos, this));
 
         return convertView;
     }
@@ -147,10 +147,12 @@ public class Senior_SelectedItem_Adapter extends BaseAdapter {
 
         Senior_SelectedItem senior_selectedItem;
         Senior_SelectedItem_Adapter senior_selectedItem_adapter;
+        int index;
 
-        public deleteListener(Senior_SelectedItem senior_selectedItem, Senior_SelectedItem_Adapter senior_selectedItem_adapter) {
+        public deleteListener(Senior_SelectedItem senior_selectedItem, int index, Senior_SelectedItem_Adapter senior_selectedItem_adapter) {
             this.senior_selectedItem = senior_selectedItem;
             this.senior_selectedItem_adapter = senior_selectedItem_adapter;
+            this.index = index;
         }
 
         @Override

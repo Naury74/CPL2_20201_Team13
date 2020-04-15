@@ -31,7 +31,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:gravity="center"
-            android:textSize="20dp"
+            android:textSize="23dp"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:lines="1"
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="20dp"
+            android:textSize="23dp"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:gravity="center"
@@ -159,14 +159,14 @@
 
         <TextView
             android:id="@+id/announce_textView"
-            android:text="'저'를 눌러 아래처럼 말씀해보세요."
+            android:text="'저'를 눌러 아래처럼\n말씀해보세요."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:paddingLeft="20dp"
             android:layout_gravity="center"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textStyle="bold">
         </TextView>
 

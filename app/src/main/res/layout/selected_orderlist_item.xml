@@ -21,7 +21,7 @@
             android:background="@null"
             android:gravity="left"
             android:textColor="@color/white"
-            android:textSize="18dp"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
         <ImageButton
@@ -37,7 +37,7 @@
             android:id="@+id/countView"
             android:textStyle="bold"
             android:layout_width="40dp"
-            android:textSize="18dp"
+            android:textSize="20dp"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:gravity="center"
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:textColor="@color/white"
-            android:textSize="18dp"
+            android:textSize="20dp"
             android:gravity="center"
             android:background="@null"/>
 
@@ -93,7 +93,7 @@
             android:background="@null"
             android:gravity="center"
             android:text="옵션"
-            android:textSize="15dp"
+            android:textSize="18dp"
             android:textColor="@color/black"
             android:textStyle="bold" />
     </LinearLayout>

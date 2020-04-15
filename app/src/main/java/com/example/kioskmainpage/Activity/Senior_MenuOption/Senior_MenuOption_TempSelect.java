@@ -217,7 +217,7 @@ public class Senior_MenuOption_TempSelect extends AppCompatActivity {
     public void onClick(View v){
         switch(v.getId()){
             case R.id.btn_hot:
-                menu_option = menu_option.concat("선택1: HOT   ");
+                menu_option = menu_option.concat("선택1: 뜨겁게         ");
                 if(category_num == 1){
                     Intent intent = new Intent(this, Senior_MenuOption_TasteSelect.class);
                     intent.putExtra("category",category_num);
@@ -226,7 +226,6 @@ public class Senior_MenuOption_TempSelect extends AppCompatActivity {
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
                     startActivity(intent);
-                    finish();
                     //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
                     break;
                 }
@@ -238,12 +237,11 @@ public class Senior_MenuOption_TempSelect extends AppCompatActivity {
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
                     startActivity(intent);
-                    finish();
                     //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
                     break;
                 }
             case R.id.btn_ice:
-                menu_option = menu_option.concat("선택1: ICE   ");
+                menu_option = menu_option.concat("선택1: 차갑게          ");
                 if(category_num == 1){
                     Intent intent = new Intent(this, Senior_MenuOption_TasteSelect.class);
                     intent.putExtra("category",category_num);
@@ -252,7 +250,6 @@ public class Senior_MenuOption_TempSelect extends AppCompatActivity {
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
                     startActivity(intent);
-                    finish();
                     //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
                     break;
                 }
@@ -264,10 +261,11 @@ public class Senior_MenuOption_TempSelect extends AppCompatActivity {
                     intent.putExtra("menu_price",menu_price);
                     intent.putExtra("menu_option",menu_option);
                     startActivity(intent);
-                    finish();
                     //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
                     break;
                 }
+            case R.id.back_btn:
+                finish();
         }
     }
 }
