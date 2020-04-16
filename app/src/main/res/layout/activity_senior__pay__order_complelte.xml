@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.Pay.Senior_Pay_OrderComplelte">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="주문이 완료 되었습니다"
+        android:textSize="35dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="160dp"
+        android:layout_marginBottom="80dp">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:background="@drawable/order_num_background"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="주문 번호"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="50dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/order_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="133"
+            android:textSize="100dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="10dp">
+        </TextView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_announce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="주문번호를 꼭! 확인해 주세요"
+        android:bufferType="spannable"
+        android:textSize="40dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="90dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="주문하신 상품의 조리가 완료되면\n알려드릴게요"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="40dp">
+    </TextView>
+
+</LinearLayout>

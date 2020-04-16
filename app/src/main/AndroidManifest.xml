@@ -38,9 +38,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.Pay.Senior_Pay_OrderComplelte"></activity>
         <activity
             android:name=".Activity.Pay.Senior_Pay_Loading"
-            android:theme="@style/NoTitleDialog"></activity>
+            android:theme="@style/NoTitleDialog" />
         <activity
             android:name=".Activity.Pay.Senior_Pay_CardActivity"
             android:theme="@style/NoTitleDialog" />

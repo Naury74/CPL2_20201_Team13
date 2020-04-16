@@ -13,7 +13,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.kioskmainpage.Activity.BestNewMenuActivity;
 import com.example.kioskmainpage.Activity.EasyMenuSelectionActivity;
+import com.example.kioskmainpage.Activity.Pay.Senior_Pay_OrderComplelte;
 import com.example.kioskmainpage.Activity.Pay.Senior_Pay_TakeoutActivity;
 import com.example.kioskmainpage.Activity.Waiting.Senior_MainActivity;
 import com.example.kioskmainpage.Adapter.Senior_SelectedItem_Adapter;
@@ -124,15 +126,25 @@ public class Senior_OrderListActivity extends AppCompatActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         if (null != intent) {
-            category_num = intent.getExtras().getInt("category");
-            menu_image = intent.getExtras().getInt("menu_image");
-            menu_name = intent.getExtras().getString("menu_name");
-            m_price = intent.getExtras().getString("menu_price");
-            menu_option = intent.getExtras().getString("menu_option");
-            menu_count = intent.getExtras().getInt("menu_count");
-            menu_price = Integer.parseInt(m_price);
-            senior_selectedItem_adapter.addItem(menu_name, menu_price, menu_option, menu_count);
-            tts.speak("주문이 추가되었습니다",TextToSpeech.QUEUE_FLUSH,null);
+
+            if(intent.getExtras().getString("init_type").equals("add")) {
+                category_num = intent.getExtras().getInt("category");
+                menu_image = intent.getExtras().getInt("menu_image");
+                menu_name = intent.getExtras().getString("menu_name");
+                m_price = intent.getExtras().getString("menu_price");
+                menu_option = intent.getExtras().getString("menu_option");
+                menu_count = intent.getExtras().getInt("menu_count");
+                menu_price = Integer.parseInt(m_price);
+                senior_selectedItem_adapter.addItem(menu_name, menu_price, menu_option, menu_count);
+                tts.speak("주문이 추가되었습니다", TextToSpeech.QUEUE_FLUSH, null);
+            }
+
+            else if(intent.getExtras().getString("init_type").equals("complete")){
+                Intent intent2 = new Intent(Senior_OrderListActivity.this, BestNewMenuActivity.class);
+                intent2.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent2);
+                finish();
+            }
         }
     }
 
