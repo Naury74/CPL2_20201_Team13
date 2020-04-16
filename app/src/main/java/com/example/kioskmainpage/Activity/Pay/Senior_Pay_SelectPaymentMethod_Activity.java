@@ -220,4 +220,7 @@ public class Senior_Pay_SelectPaymentMethod_Activity extends AppCompatActivity {
         startActivity(intent2);
         finish();
     }
+    public void onBackPressed() {
+        return;
+    }
 }

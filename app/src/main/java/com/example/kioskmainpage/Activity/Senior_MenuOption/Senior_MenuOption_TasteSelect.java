@@ -329,4 +329,7 @@ public class Senior_MenuOption_TasteSelect extends AppCompatActivity {
                 finish();
         }
     }
+    public void onBackPressed() {
+        return;
+    }
 }

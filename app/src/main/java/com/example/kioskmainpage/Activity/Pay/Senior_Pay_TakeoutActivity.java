@@ -227,4 +227,7 @@ public class Senior_Pay_TakeoutActivity extends AppCompatActivity {
         startActivity(intent2);
         finish();
     }
+    public void onBackPressed() {
+        return;
+    }
 }

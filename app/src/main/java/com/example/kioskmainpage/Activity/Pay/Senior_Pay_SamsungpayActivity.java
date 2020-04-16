@@ -95,4 +95,7 @@ public class Senior_Pay_SamsungpayActivity extends AppCompatActivity {
         startActivity(intent2);
         finish();
     }
+    public void onBackPressed() {
+        return;
+    }
 }

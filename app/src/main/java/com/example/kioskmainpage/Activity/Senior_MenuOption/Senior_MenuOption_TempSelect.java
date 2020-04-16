@@ -280,4 +280,7 @@ public class Senior_MenuOption_TempSelect extends AppCompatActivity {
                 finish();
         }
     }
+    public void onBackPressed() {
+        return;
+    }
 }

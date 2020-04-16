@@ -209,6 +209,9 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
             tts = null;
         }
     }
+    public void onBackPressed() {
+        return;
+    }
 
 }
 

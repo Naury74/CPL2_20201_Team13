@@ -358,4 +358,7 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity {
                 finish();
         }
     }
+    public void onBackPressed() {
+        return;
+    }
 }

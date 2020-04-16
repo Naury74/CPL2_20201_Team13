@@ -98,4 +98,7 @@ public class Senior_Pay_Loading extends AppCompatActivity {
             }
         };
     }
+    public void onBackPressed() {
+        return;
+    }
 }

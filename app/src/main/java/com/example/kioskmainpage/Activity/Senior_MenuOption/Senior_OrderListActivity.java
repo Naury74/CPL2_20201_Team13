@@ -172,5 +172,8 @@ public class Senior_OrderListActivity extends AppCompatActivity {
         intent.putExtra("total_price",total_price);
         startActivity(intent);
     }
+    public void onBackPressed() {
+        return;
+    }
 
 }
