@@ -10,6 +10,10 @@ import android.speech.tts.TextToSpeech;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -39,6 +43,7 @@ public class Senior_MenuSelected_Check extends AppCompatActivity {
     TextView voice_recordText;
     TextView voice_btn;
     TextView announce_textView;
+    TextView title_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +77,12 @@ public class Senior_MenuSelected_Check extends AppCompatActivity {
         menu_name_view.setText(menu_name);
         menu_price_view.setText(menu_price+"원");
         menu_image_view.setImageResource(menu_image);
+
+        title_view = (TextView)findViewById(R.id.title_view);
+
+        Spannable span = (Spannable) title_view.getText();
+        span.setSpan(new ForegroundColorSpan(getColor(R.color.light_green)), 6, 8, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        span.setSpan(new RelativeSizeSpan(1.1f), 6, 8, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
 
         if ( Build.VERSION.SDK_INT >= 23 ){
             // 퍼미션 체크

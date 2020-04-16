@@ -50,6 +50,7 @@
             android:text="Menu Price"/>
 
         <TextView
+            android:id="@+id/title_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -58,6 +59,7 @@
             android:layout_marginVertical="45dp"
             android:textStyle="bold"
             android:gravity="center"
+            android:bufferType="spannable"
             android:lines="1"
             android:text="이 메뉴를 주문하시겠어요?"/>
 

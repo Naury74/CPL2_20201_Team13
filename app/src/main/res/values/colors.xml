@@ -58,4 +58,8 @@
     <!--멀티토글용-->
     <color name="button_primary_color">#3F51B5</color>
     <color name="button_secondary_color">#FFFFFF</color>
+    <!--고령자 버튼용-->
+    <color name="white_blue">#007FE1</color>
+    <color name="light_green">#0FD915</color>
+    <color name="senior_btn_color">#FE3D3D</color>
 </resources>

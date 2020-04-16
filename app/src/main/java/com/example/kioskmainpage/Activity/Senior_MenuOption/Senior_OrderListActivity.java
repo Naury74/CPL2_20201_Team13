@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kioskmainpage.Activity.EasyMenuSelectionActivity;
+import com.example.kioskmainpage.Activity.Pay.Senior_Pay_TakeoutActivity;
 import com.example.kioskmainpage.Activity.Waiting.Senior_MainActivity;
 import com.example.kioskmainpage.Adapter.Senior_SelectedItem_Adapter;
 import com.example.kioskmainpage.R;
@@ -154,19 +155,22 @@ public class Senior_OrderListActivity extends AppCompatActivity {
 
     public void onClick_add_order(View v) {
         Intent intent = new Intent(this, EasyMenuSelectionActivity.class);
-        intent.putExtra("category",category_num);
+        /*intent.putExtra("category",category_num);
         intent.putExtra("menu_image",menu_image);
         intent.putExtra("menu_name",menu_name);
         intent.putExtra("menu_price",menu_price);
         intent.putExtra("menu_option",menu_option);
-        intent.putExtra("menu_count",menu_count);
+        intent.putExtra("menu_count",menu_count);*/
         startActivity(intent);
         //Toast.makeText(this, "Payment Result Total : "+ total_price+"원",Toast.LENGTH_SHORT).show();
     }
 
     public void onClick_payment(View v) {
 
-        Toast.makeText(this, "Payment Result Total : "+ total_price+"원",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Payment Result Total : "+ total_price+"원",Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, Senior_Pay_TakeoutActivity.class);
+        intent.putExtra("total_price",total_price);
+        startActivity(intent);
     }
 
 }

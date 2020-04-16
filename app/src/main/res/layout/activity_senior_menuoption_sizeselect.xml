@@ -60,6 +60,7 @@
             android:text="Menu Price"/>
 
         <TextView
+            android:id="@+id/title_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -69,6 +70,7 @@
             android:textStyle="bold"
             android:gravity="center"
             android:lines="1"
+            android:bufferType="spannable"
             android:text="원하시는 크기를 선택해주세요"/>
 
         <LinearLayout
