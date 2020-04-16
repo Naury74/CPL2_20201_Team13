@@ -45,14 +45,15 @@
                 android:orientation="vertical"
                 android:layout_marginRight="20dp"
                 android:clickable="true"
-                android:onClick="onClick"
+                android:onClick="onClick_Card"
                 android:background="@drawable/btn_select_background">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:layout_weight="1"
-                    android:src="@drawable/credit_card"
+                    android:src="@drawable/ic_card"
+                    android:layout_gravity="center"
                     android:paddingTop="25dp"
                     android:paddingLeft="25dp"
                     android:paddingRight="25dp"
@@ -60,7 +61,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:layout_marginBottom="19dp" />
+                    android:layout_marginBottom="19dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -81,7 +82,7 @@
                 android:orientation="vertical"
                 android:layout_marginLeft="20dp"
                 android:clickable="true"
-                android:onClick="onClick"
+                android:onClick="onClick_SamsungPay"
                 android:background="@drawable/btn_select_background">
 
                 <ImageView

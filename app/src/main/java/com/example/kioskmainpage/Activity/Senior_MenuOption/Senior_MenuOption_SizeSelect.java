@@ -88,7 +88,7 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity {
 
         Spannable span = (Spannable) title_view.getText();
         span.setSpan(new ForegroundColorSpan(getColor(R.color.senior_btn_color)), 5, 7, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-        span.setSpan(new RelativeSizeSpan(1.1f), 5, 7, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        span.setSpan(new RelativeSizeSpan(1.2f), 5, 7, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
 
         if ( Build.VERSION.SDK_INT >= 23 ){
             // 퍼미션 체크

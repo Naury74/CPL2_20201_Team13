@@ -57,7 +57,7 @@
                 android:orientation="vertical"
                 android:layout_marginRight="20dp"
                 android:clickable="true"
-                android:onClick="onClick"
+                android:onClick="onClick_Hall"
                 android:background="@drawable/btn_select_background_blue">
 
                 <ImageView
@@ -93,7 +93,7 @@
                 android:orientation="vertical"
                 android:layout_marginLeft="20dp"
                 android:clickable="true"
-                android:onClick="onClick"
+                android:onClick="onClick_TakeOut"
                 android:background="@drawable/btn_select_background_green">
 
                 <ImageView

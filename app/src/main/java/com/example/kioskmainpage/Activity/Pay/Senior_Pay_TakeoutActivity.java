@@ -210,22 +210,21 @@ public class Senior_Pay_TakeoutActivity extends AppCompatActivity {
         }
     }
 
-    public void onClick(View v){
-        switch(v.getId()){
-            case R.id.btn_here:
-                select_result = "매장";
-                Intent intent = new Intent(this, Senior_Pay_SelectPaymentMethod_Activity.class);
-                intent.putExtra("takeout",select_result);
-                intent.putExtra("total_price",total_price);
-                startActivity(intent);
-                finish();
-            case R.id.btn_takeout:
-                select_result = "포장";
-                Intent intent2 = new Intent(this, Senior_Pay_SelectPaymentMethod_Activity.class);
-                intent2.putExtra("takeout",select_result);
-                intent2.putExtra("total_price",total_price);
-                startActivity(intent2);
-                finish();
-        }
+    public void onClick_Hall(View v){
+        select_result = "매장";
+        Intent intent = new Intent(this, Senior_Pay_SelectPaymentMethod_Activity.class);
+        intent.putExtra("takeout",select_result);
+        intent.putExtra("total_price",total_price);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onClick_TakeOut(View v){
+        select_result = "포장";
+        Intent intent2 = new Intent(this, Senior_Pay_SelectPaymentMethod_Activity.class);
+        intent2.putExtra("takeout",select_result);
+        intent2.putExtra("total_price",total_price);
+        startActivity(intent2);
+        finish();
     }
 }

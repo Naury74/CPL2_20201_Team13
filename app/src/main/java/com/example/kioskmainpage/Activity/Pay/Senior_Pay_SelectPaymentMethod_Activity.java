@@ -205,20 +205,19 @@ public class Senior_Pay_SelectPaymentMethod_Activity extends AppCompatActivity {
         }
     }
 
-    public void onClick(View v){
-        switch(v.getId()){
-            case R.id.btn_card:
-                /*Intent intent = new Intent(this, Senior_Pay_SelectPaymentMethod_Activity.class);
-                intent.putExtra("takeout",select_result);
-                intent.putExtra("total_price",total_price);
-                startActivity(intent);
-                finish();*/
-            case R.id.btn_samsungpay:
-                /*Intent intent2 = new Intent(this, Senior_Pay_SelectPaymentMethod_Activity.class);
-                intent2.putExtra("takeout",select_result);
-                intent2.putExtra("total_price",total_price);
-                startActivity(intent2);
-                finish();*/
-        }
+    public void onClick_Card(View v){
+        Intent intent = new Intent(this, Senior_Pay_CardActivity.class);
+        intent.putExtra("takeout",takeout);
+        intent.putExtra("total_price",total_price);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onClick_SamsungPay(View v){
+        Intent intent2 = new Intent(this, Senior_Pay_SamsungpayActivity.class);
+        intent2.putExtra("takeout",takeout);
+        intent2.putExtra("total_price",total_price);
+        startActivity(intent2);
+        finish();
     }
 }
