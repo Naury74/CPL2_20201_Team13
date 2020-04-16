@@ -17,18 +17,15 @@ import android.text.style.RelativeSizeSpan;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.kioskmainpage.Activity.Senior_MenuOption.Senior_MenuOption_SizeSelect;
-import com.example.kioskmainpage.Activity.Senior_MenuOption.Senior_OrderListActivity;
 import com.example.kioskmainpage.R;
 
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class Senior_Pay_TakeoutActivity extends AppCompatActivity {
+public class Senior_Pay_SelectPaymentMethod_Activity extends AppCompatActivity {
 
     Intent intent;
     private TextToSpeech tts;
@@ -38,13 +35,13 @@ public class Senior_Pay_TakeoutActivity extends AppCompatActivity {
     TextView voice_btn;
     TextView announce_textView;
     private TextView title;
-    String select_result;
+    String takeout;
     int total_price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_senior__pay__takeout);
+        setContentView(R.layout.activity_senior__pay__select_payment_method_);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -63,13 +60,12 @@ public class Senior_Pay_TakeoutActivity extends AppCompatActivity {
 
         intent = getIntent();
         total_price = intent.getExtras().getInt("total_price");
+        takeout = intent.getExtras().getString("takeout");
 
         title = (TextView)findViewById(R.id.title_view);
         Spannable span = (Spannable) title.getText();
-        span.setSpan(new ForegroundColorSpan(getColor(R.color.white_blue)), 0, 2, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-        span.setSpan(new ForegroundColorSpan(getColor(R.color.light_green)), 10, 12, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-        span.setSpan(new RelativeSizeSpan(1.5f), 0, 2, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-        span.setSpan(new RelativeSizeSpan(1.5f), 10, 12, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        span.setSpan(new ForegroundColorSpan(getColor(R.color.senior_btn_color)), 0, 4, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        span.setSpan(new RelativeSizeSpan(1.5f), 0, 4, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
 
         if ( Build.VERSION.SDK_INT >= 23 ){
             // 퍼미션 체크
@@ -81,7 +77,7 @@ public class Senior_Pay_TakeoutActivity extends AppCompatActivity {
         voice_btn = (TextView)findViewById(R.id.voice_btn);
         announce_textView = (TextView)findViewById(R.id.announce_textView);
 
-        voice_recordText.setText("'먹고 갈게'\n'포장 해줘'");
+        voice_recordText.setText("'카드로 할게'\n'삼성페이로 할게'");
 
         intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,getPackageName());
@@ -89,7 +85,7 @@ public class Senior_Pay_TakeoutActivity extends AppCompatActivity {
         voice_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mRecognizer = SpeechRecognizer.createSpeechRecognizer(Senior_Pay_TakeoutActivity.this);
+                mRecognizer = SpeechRecognizer.createSpeechRecognizer(Senior_Pay_SelectPaymentMethod_Activity.this);
                 mRecognizer.setRecognitionListener(listener);
                 mRecognizer.startListening(intent);
             }
@@ -101,13 +97,12 @@ public class Senior_Pay_TakeoutActivity extends AppCompatActivity {
                 if(status != TextToSpeech.ERROR) {
 
                     tts.setLanguage(Locale.KOREAN);
-                    tts.speak("매장에서 드실지, 포장해서 가실지 선택해 주세요",TextToSpeech.QUEUE_FLUSH,null);
+                    tts.speak("결제수단을 선택해주세요",TextToSpeech.QUEUE_FLUSH,null);
                     tts.setSpeechRate((float) 0.4);
 
                 }
             }
         });
-
     }
 
     private RecognitionListener listener = new RecognitionListener() {
@@ -175,7 +170,7 @@ public class Senior_Pay_TakeoutActivity extends AppCompatActivity {
                     voice_recordText.setText("'취소 되었어요!'");
                     break;
             }
-            voice_recordText.setText("'먹고 갈게'\n'포장 해줘'");
+            voice_recordText.setText("'카드로 할게'\n'삼성페이로 할게'");
 
             Toast.makeText(getApplicationContext(), "취소 되었어요! ",Toast.LENGTH_SHORT).show();
             //Toast.makeText(getApplicationContext(), "에러가 발생하였습니다. : " + message,Toast.LENGTH_SHORT).show();
@@ -212,20 +207,18 @@ public class Senior_Pay_TakeoutActivity extends AppCompatActivity {
 
     public void onClick(View v){
         switch(v.getId()){
-            case R.id.btn_here:
-                select_result = "매장";
-                Intent intent = new Intent(this, Senior_Pay_SelectPaymentMethod_Activity.class);
+            case R.id.btn_card:
+                /*Intent intent = new Intent(this, Senior_Pay_SelectPaymentMethod_Activity.class);
                 intent.putExtra("takeout",select_result);
                 intent.putExtra("total_price",total_price);
                 startActivity(intent);
-                finish();
-            case R.id.btn_takeout:
-                select_result = "포장";
-                Intent intent2 = new Intent(this, Senior_Pay_SelectPaymentMethod_Activity.class);
+                finish();*/
+            case R.id.btn_samsungpay:
+                /*Intent intent2 = new Intent(this, Senior_Pay_SelectPaymentMethod_Activity.class);
                 intent2.putExtra("takeout",select_result);
                 intent2.putExtra("total_price",total_price);
                 startActivity(intent2);
-                finish();
+                finish();*/
         }
     }
 }
