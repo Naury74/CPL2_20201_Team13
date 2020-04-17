@@ -40,7 +40,6 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     RecyclerAdapter_MenuType recyclerAdapterMenuType;
     String []arr={"커피","음료","빵","기타"};
-    int []img={R.drawable.icon_coffee,R.drawable.icon_beverage,R.drawable.icon_dessert,R.drawable.icon_others};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +65,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.menu_type_recyclerview);
         layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerAdapterMenuType = new RecyclerAdapter_MenuType(arr,img);
+        recyclerAdapterMenuType = new RecyclerAdapter_MenuType(arr);
 
 
         recyclerView.setAdapter(recyclerAdapterMenuType);
@@ -102,7 +101,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
                 if(status != TextToSpeech.ERROR) {
 
                     tts.setLanguage(Locale.KOREAN);
-                    tts.speak("원하시는 종류를 선택해 주세요",TextToSpeech.QUEUE_FLUSH,null);
+                    tts.speak("저를 눌러 아래처럼 말씀해주세요",TextToSpeech.QUEUE_FLUSH,null);
 
                 }
             }
@@ -113,7 +112,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
     private RecognitionListener listener = new RecognitionListener() {
         @Override
         public void onReadyForSpeech(Bundle params) {
-            Toast.makeText(getApplicationContext(),"음성인식을 시작합니다.",Toast.LENGTH_SHORT).show();
+            voice_recordText1.setText("듣고 있어요...");
         }
 
         @Override

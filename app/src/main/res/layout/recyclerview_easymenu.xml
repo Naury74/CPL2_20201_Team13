@@ -5,31 +5,19 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginLeft="35dp">
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+
     <TextView
         android:id="@+id/menu_type"
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="40dp"
-        android:paddingRight="32dp"
-        android:paddingBottom="30dp"
         android:background="@drawable/button_easy_menu_selection"
         android:clickable="true"
         android:gravity="center"
-        android:textColor="@color/red"
-        android:textSize="45dp"
+        android:textColor="@color/white"
+        android:textSize="65dp"
         android:textStyle="bold"
         />
-
-    <ImageView
-        android:id="@+id/menu_type_icon"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="110dp"/>
-        </FrameLayout>
 
 </LinearLayout>

@@ -21,13 +21,11 @@ import com.example.kioskmainpage.R;
 
 public class RecyclerAdapter_MenuType extends RecyclerView.Adapter<RecyclerAdapter_MenuType.MyViewHolder> {
     String []arr;
-    int    []img;
 
     Context context;
 
-    public RecyclerAdapter_MenuType(String[] arr,int[] img) {
+    public RecyclerAdapter_MenuType(String[] arr) {
         this.arr = arr;
-        this.img=img;
     }
 
     @NonNull
@@ -42,7 +40,6 @@ public class RecyclerAdapter_MenuType extends RecyclerView.Adapter<RecyclerAdapt
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder viewHolder, int i) {
         viewHolder.textView.setText(arr[i]);
-        viewHolder.ImageView.setImageResource(img[i]);
     }
 
     @Override
@@ -56,7 +53,6 @@ public class RecyclerAdapter_MenuType extends RecyclerView.Adapter<RecyclerAdapt
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             textView=itemView.findViewById(R.id.menu_type);
-            ImageView=itemView.findViewById(R.id.menu_type_icon);
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

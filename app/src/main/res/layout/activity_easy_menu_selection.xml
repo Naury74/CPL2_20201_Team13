@@ -68,7 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="50dp"
-        android:paddingLeft="20dp"
+        android:paddingLeft="40dp"
         android:layout_marginLeft="30dp"
         android:layout_gravity="center"
         android:textColor="@color/black"
