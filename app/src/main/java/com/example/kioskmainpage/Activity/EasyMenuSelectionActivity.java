@@ -101,7 +101,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
                 if(status != TextToSpeech.ERROR) {
 
                     tts.setLanguage(Locale.KOREAN);
-                    tts.speak("저를 눌러 아래처럼 말씀해주세요",TextToSpeech.QUEUE_FLUSH,null);
+                    tts.speak("원하시는 종류를 선택해주세요",TextToSpeech.QUEUE_FLUSH,null);
 
                 }
             }
@@ -173,8 +173,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
                     voice_recordText1.setText("'취소 되었어요!'");
                     break;
             }
-
-            Toast.makeText(getApplicationContext(), "에러가 발생하였습니다. : " + message,Toast.LENGTH_SHORT).show();
+            voice_recordText1.setText("'커피'");
         }
 
         @Override
