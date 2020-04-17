@@ -272,4 +272,7 @@ public class Senior_MenuSelected_Check extends AppCompatActivity {
                 }
         }
     }
+    public void onBackPressed() {
+        return;
+    }
 }

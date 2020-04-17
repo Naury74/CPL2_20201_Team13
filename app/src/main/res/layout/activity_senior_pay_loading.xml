@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:layout_gravity="center"
+    android:background="@drawable/round_background_popup"
+    android:orientation="vertical"
+    tools:context=".Activity.Pay.Senior_Pay_Loading">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:bufferType="spannable"
+        android:gravity="center"
+        android:text="결제진행 중"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
+        android:bufferType="spannable"
+        android:gravity="center"
+        android:text="잠시만 기다려주세요"
+        android:textStyle="bold"
+        android:textColor="@color/senior_btn_color"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/Card_Loding_loding_dot"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

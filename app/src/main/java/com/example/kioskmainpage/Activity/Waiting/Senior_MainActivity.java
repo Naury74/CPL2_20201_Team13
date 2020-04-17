@@ -245,5 +245,8 @@ public class Senior_MainActivity extends AppCompatActivity {
             tts = null;
         }
     }
+    public void onBackPressed() {
+        return;
+    }
 
 }
