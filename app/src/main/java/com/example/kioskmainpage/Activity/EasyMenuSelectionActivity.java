@@ -2,8 +2,10 @@ package com.example.kioskmainpage.Activity;
 
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.os.Environment;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
@@ -24,8 +26,16 @@ import com.example.kioskmainpage.Activity.EasyMenuSelectionActivity;
 import com.example.kioskmainpage.Adapter.RecyclerAdapter_MenuType;
 import com.example.kioskmainpage.R;
 
+import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Locale;
+//코모란 분석기.
+import kr.co.shineware.nlp.komoran.constant.DEFAULT_MODEL;
+import kr.co.shineware.nlp.komoran.core.Komoran;
+import kr.co.shineware.nlp.komoran.model.KomoranResult;
+import kr.co.shineware.nlp.komoran.model.Token;
 
 public class EasyMenuSelectionActivity extends AppCompatActivity {
 
@@ -39,7 +49,9 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     RecyclerAdapter_MenuType recyclerAdapterMenuType;
+    Komoran komoran=new Komoran(DEFAULT_MODEL.LIGHT);
     String []arr={"커피","음료","빵","기타"};
+    int limit_Distance=3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +125,22 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
         @Override
         public void onReadyForSpeech(Bundle params) {
             voice_recordText1.setText("듣고 있어요...");
+            // 음성인식 부분
+            String filename="KOMORAN_USER_DIC.txt";
+            String dataString="";
+            for(int i=0;i<arr.length;i++)
+            {
+                dataString+=arr[i]+"\tNNP\n";
+            }
+            try {
+                FileOutputStream outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+                outputStream.write(dataString.getBytes());
+                outputStream.close();
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
         }
 
         @Override
@@ -178,13 +206,67 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
 
         @Override
         public void onResults(Bundle results) {
-            // 말을 하면 ArrayList에 단어를 넣고 textView에 단어를 이어줍니다.
-            ArrayList<String> matches =
-                    results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+            //말을하면 분석된 예제들을 rs에 저장합니다.
+            String key = "";
+            key = SpeechRecognizer.RESULTS_RECOGNITION;
+            ArrayList<String> mResult = results.getStringArrayList(key);
 
-            for(int i = 0; i < matches.size() ; i++){
-                voice_recordText1.setText("'"+matches.get(i)+"'");
+            String[] rs = new String[mResult.size()];
+            mResult.toArray(rs);
+
+            //파일 읽기
+            String line_temp="";
+            String line="";
+            String path= Environment.getDataDirectory().getAbsolutePath()+"/data/com.example.kioskmainpage/files/KOMORAN_USER_DIC.txt";
+            try {
+                BufferedReader buf = new BufferedReader(new FileReader(path));
+                while((line=buf.readLine())!=null){
+                    line_temp+=line;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+
+            String[] lines=line_temp.replace("\tNNP","").split("\n");
+
+            //rs에 담긴 문자열 중에 메뉴가있으면 선택
+            String target;
+            boolean isequls=false;
+            for(int i=0;i<rs.length;i++) {
+                for(int j=0;j<lines.length;j++)
+                    if(rs[i].equals(lines[i]))
+                    {
+                        isequls=true;
+                        target=rs[i];
+                        voice_recordText1.setText(target);
+                        break;
+                    }
+                if(isequls)break;
+            }
+
+            //rs에 담긴 문자열 중에 메뉴가 없을시 실행
+            if(!isequls)
+            {
+                for(int i=0;i<rs.length;i++)
+                {
+                    for(int j=0;j<lines.length;j++)
+                    {
+                        char[] temp1,temp2;
+                        temp1=HangleSplit(rs[i]);
+                        temp2=HangleSplit(lines[j]);
+                        if(levenshteinDistance(temp1,temp2)<limit_Distance)
+                        {
+                            voice_recordText1.setText(rs[i]+"와 차이가 2개 이하입니다.");
+                            isequls=true;
+                            break;
+                        }
+                    }
+                    if(isequls)break;
+                }
+            }
+
+            if(!isequls)
+            voice_recordText1.setText(rs[0]+"와 일치하는것이 없습니다.");
         }
 
         @Override
@@ -211,5 +293,88 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
         return;
     }
 
+    //편집거리 알고리즘 부속 함수
+    public int getMinimum(int val1, int val2, int val3) {
+        int minNumber = val1;
+        if(minNumber > val2) minNumber = val2;
+        if(minNumber > val3) minNumber = val3;
+        return minNumber;
+    }
+    //편집거리 알고리즘
+    public int levenshteinDistance(char[] s, char[] t) {
+        int m = s.length;
+        int n = t.length;
+
+        int[][] d = new int[m + 1][n + 1];
+
+        for (int i = 1; i < m; i++) {
+            d[i][0] = i;
+        }
+
+        for (int j = 1; j < n; j++) {
+            d[0][j] = j;
+        }
+
+        for (int j = 1; j < n; j++) {
+            for (int i = 1; i < m; i++) {
+                if (s[i] == t[j]) {
+                    d[i][j] = d[i - 1][j - 1];
+                } else {
+                    d[i][j] = getMinimum(d[i - 1][j], d[i][j - 1], d[i - 1][j - 1]) + 1;
+                }
+            }
+        }
+        return d[m - 1][n - 1];
+    }
+
+    public char[] HangleSplit(String A){
+        // 유니코드 한글 시작 : 44032, 끝 : 55199
+        final int BASE_CODE = 44032;
+        final int BASE_CODE_LAST= 55199;
+        final int CHOSUNG = 588;
+        final int JUNGSUNG = 28;
+
+        // 초성 리스트. 00 ~ 18
+        char[] CHOSUNG_LIST = {
+                'ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ',
+                'ㅅ', 'ㅆ', 'ㅇ' , 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'
+        };
+
+        // 중성 리스트. 00 ~ 20
+        char[] JUNGSUNG_LIST = {
+                'ㅏ', 'ㅐ', 'ㅑ', 'ㅒ', 'ㅓ', 'ㅔ',
+                'ㅕ', 'ㅖ', 'ㅗ', 'ㅘ', 'ㅙ', 'ㅚ',
+                'ㅛ', 'ㅜ', 'ㅝ', 'ㅞ', 'ㅟ', 'ㅠ',
+                'ㅡ', 'ㅢ', 'ㅣ'
+        };
+
+        // 종성 리스트. 00 ~ 27 + 1(1개 없음)
+        char[] JONGSUNG_LIST = {
+                ' ', 'ㄱ', 'ㄲ', 'ㄳ', 'ㄴ', 'ㄵ', 'ㄶ', 'ㄷ',
+                'ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ',
+                'ㅁ', 'ㅂ', 'ㅄ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅊ',
+                'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'
+        };
+
+        char[] charTemp = A.replaceAll(" ","").toCharArray();
+        String Temp="";
+        for (int i=0;i<charTemp.length;i++) {
+            if(!(BASE_CODE<charTemp[i]-1 && charTemp[i]<BASE_CODE_LAST+1)) {
+                Temp+=charTemp[i];
+                continue;
+            }
+            int cBase = charTemp[i] - BASE_CODE;
+
+            // 초성의 인덱스
+            int c1 = cBase / CHOSUNG;
+            // 중성의 인덱스
+            int c2 = (cBase - (CHOSUNG * c1)) / JUNGSUNG;
+            // 종성의 인덱스
+            int c3 = (cBase - (CHOSUNG * c1) - (JUNGSUNG * c2));
+            Temp=Temp+Character.toString(CHOSUNG_LIST[c1])+Character.toString(JUNGSUNG_LIST[c2])+Character.toString(JONGSUNG_LIST[c3]);
+        }
+        Temp.replaceAll(" ","");
+        return Temp.toCharArray();
+    }
 }
 
