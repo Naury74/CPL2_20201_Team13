@@ -118,6 +118,22 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
                 }
             }
         });
+        // 코모란 유저사전 생성
+        String filename="KOMORAN_USER_DIC.txt";
+        String dataString="";
+        for(int i=0;i<arr.length;i++)
+        {
+            dataString+=arr[i]+"\tNNP\n";
+        }
+        try {
+            FileOutputStream outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+            outputStream.write(dataString.getBytes());
+            outputStream.close();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
 
     }
 
@@ -125,22 +141,6 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
         @Override
         public void onReadyForSpeech(Bundle params) {
             voice_recordText1.setText("듣고 있어요...");
-            // 음성인식 부분
-            String filename="KOMORAN_USER_DIC.txt";
-            String dataString="";
-            for(int i=0;i<arr.length;i++)
-            {
-                dataString+=arr[i]+"\tNNP\n";
-            }
-            try {
-                FileOutputStream outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
-                outputStream.write(dataString.getBytes());
-                outputStream.close();
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-            }
         }
 
         @Override
@@ -206,6 +206,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
 
         @Override
         public void onResults(Bundle results) {
+
             //말을하면 분석된 예제들을 rs에 저장합니다.
             String key = "";
             key = SpeechRecognizer.RESULTS_RECOGNITION;
@@ -213,28 +214,27 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
 
             String[] rs = new String[mResult.size()];
             mResult.toArray(rs);
-
-            //파일 읽기
             String line_temp="";
             String line="";
+
+            //저장된 코모란 유저 사전 파일 읽기
             String path= Environment.getDataDirectory().getAbsolutePath()+"/data/com.example.kioskmainpage/files/KOMORAN_USER_DIC.txt";
             try {
                 BufferedReader buf = new BufferedReader(new FileReader(path));
                 while((line=buf.readLine())!=null){
-                    line_temp+=line;
+                    line_temp=line_temp+line;
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-            String[] lines=line_temp.replace("\tNNP","").split("\n");
+            String[] lines=line_temp.replace("\tNNP","\n").split("\n");
 
             //rs에 담긴 문자열 중에 메뉴가있으면 선택
             String target;
             boolean isequls=false;
             for(int i=0;i<rs.length;i++) {
                 for(int j=0;j<lines.length;j++)
-                    if(rs[i].equals(lines[i]))
+                    if(rs[i].equals(lines[j]))
                     {
                         isequls=true;
                         target=rs[i];
@@ -256,7 +256,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
                         temp2=HangleSplit(lines[j]);
                         if(levenshteinDistance(temp1,temp2)<limit_Distance)
                         {
-                            voice_recordText1.setText(rs[i]+"와 차이가 2개 이하입니다.");
+                            voice_recordText1.setText(lines[j]);
                             isequls=true;
                             break;
                         }
@@ -266,7 +266,9 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
             }
 
             if(!isequls)
-            voice_recordText1.setText(rs[0]+"와 일치하는것이 없습니다.");
+            {
+                voice_recordText1.setText("단어검색에 실패하였습니다.");
+            }
         }
 
         @Override
