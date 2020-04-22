@@ -434,6 +434,7 @@ public class MainActivity extends AppCompatActivity {
         if( intent != null )
         {
             processIntent( intent );
+
         }
         super.onNewIntent(intent);
     }
@@ -955,4 +956,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
     }
+
+
 }

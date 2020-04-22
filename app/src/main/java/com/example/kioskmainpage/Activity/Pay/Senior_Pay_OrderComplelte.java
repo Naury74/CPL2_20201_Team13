@@ -105,9 +105,19 @@ public class Senior_Pay_OrderComplelte extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
             }
             public void onFinish() {
+                if(tts != null){
+                    tts.stop();
+                    tts.shutdown();
+                    tts = null;
+                }
+                countDownTimer.cancel();
+                if(mediaPlayer != null) {
+                    mediaPlayer.release();
+                    mediaPlayer = null;
+                }
                 Intent intent_BestNewMenu = new Intent(Senior_Pay_OrderComplelte.this, BestNewMenuActivity.class);
-                intent_BestNewMenu.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);//SPLASH 화면이 뜨지 않게함
-                intent_BestNewMenu.addFlags( FLAG_ACTIVITY_REORDER_TO_FRONT);//기존의 액티비티를 재사용
+                intent_BestNewMenu.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
+                intent_BestNewMenu.addFlags( FLAG_ACTIVITY_REORDER_TO_FRONT);
                 intent_BestNewMenu.putExtra("folderNames", folder_names);
                 startActivityForResult(intent_BestNewMenu, 5);
                 finish();

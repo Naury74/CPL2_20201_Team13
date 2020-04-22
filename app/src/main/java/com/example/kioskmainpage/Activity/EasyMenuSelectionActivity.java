@@ -50,7 +50,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     RecyclerAdapter_MenuType recyclerAdapterMenuType;
-    Komoran komoran=new Komoran(DEFAULT_MODEL.LIGHT);
+    //Komoran komoran=new Komoran(DEFAULT_MODEL.LIGHT);
     String []arr={"커피","음료","빵","기타"};
     public static Activity activity;
     int limit_Distance=3;
@@ -123,7 +123,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
             }
         });
         // 코모란 유저사전 생성
-        String filename="KOMORAN_USER_DIC.txt";
+       /* String filename="KOMORAN_USER_DIC.txt";
         String dataString="";
         for(int i=0;i<arr.length;i++)
         {
@@ -137,7 +137,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
         catch (Exception e)
         {
             e.printStackTrace();
-        }
+        }*/
 
     }
 
