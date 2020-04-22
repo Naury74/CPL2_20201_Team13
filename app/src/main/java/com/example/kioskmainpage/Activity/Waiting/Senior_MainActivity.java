@@ -1,6 +1,7 @@
 package com.example.kioskmainpage.Activity.Waiting;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -30,7 +31,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.example.kioskmainpage.Activity.BestNewMenuActivity;
+import com.example.kioskmainpage.Activity.EasyMenuSelectionActivity;
 import com.example.kioskmainpage.Activity.MainActivity;
+import com.example.kioskmainpage.Activity.Senior_MenuOption.Senior_OrderListActivity;
 import com.example.kioskmainpage.Adapter.Senior_MainTab_Adapter;
 import com.example.kioskmainpage.R;
 
@@ -47,6 +51,10 @@ public class Senior_MainActivity extends AppCompatActivity {
     TextView voice_btn;
     TextView announce_textView;
     int position_category = 0;
+    ViewPager viewPager;
+    TabLayout tabLayout;
+    TabLayout.Tab tab;
+    public static Activity activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +76,8 @@ public class Senior_MainActivity extends AppCompatActivity {
         newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
         setContentView(R.layout.activity_senior__main);
+
+        activity = Senior_MainActivity.this;
 
         intent = getIntent();
         position_category = intent.getExtras().getInt("position");
@@ -99,13 +109,13 @@ public class Senior_MainActivity extends AppCompatActivity {
 
         Senior_MainTab_Adapter senior_mainTab_adapter = new Senior_MainTab_Adapter(getSupportFragmentManager(),this);
 
-        final ViewPager viewPager = (ViewPager)findViewById(R.id.viewpager);
+        viewPager = (ViewPager)findViewById(R.id.viewpager);
         viewPager.setAdapter(senior_mainTab_adapter);
 
-        final TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
+        tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-        TabLayout.Tab tab = tabLayout.getTabAt(position_category);
+        tab = tabLayout.getTabAt(position_category);
         tab.select();
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));

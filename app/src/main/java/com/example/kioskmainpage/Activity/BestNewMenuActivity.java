@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -22,6 +23,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.kioskmainpage.Activity.Admin.SyncCompleteActivity;
+import com.example.kioskmainpage.Activity.Senior_MenuOption.Senior_OrderListActivity;
 import com.example.kioskmainpage.Adapter.AutoScrollAdapter;
 import com.example.kioskmainpage.Adapter.RAdapter2;
 import com.example.kioskmainpage.Adapter.SelectedListAdapter;
@@ -140,7 +142,6 @@ public class BestNewMenuActivity extends AppCompatActivity {
         menuManager2 = new MenuManager(this.getFilesDir().getAbsolutePath() + "", folder_names, app.getBizNum());
         getBestMenusList();//best메뉴리스트 만들기
         getNewMenuList();//new메뉴리스트만들기
-        //상단 가게명 입력
         TextView best_mb_name = (TextView)findViewById(R.id.best_mb_name);
         best_mb_name.setText(app.getUser_data().get(0));
 
@@ -230,6 +231,7 @@ public class BestNewMenuActivity extends AppCompatActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);//SPLASH 화면이 뜨지 않게함
                 setResult(RESULT_OK, intent); //설정했다고 알림
                 startActivity(intent);
+                finish();
                 return;
             }
         });
@@ -247,6 +249,7 @@ public class BestNewMenuActivity extends AppCompatActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);//SPLASH 화면이 뜨지 않게함
                 setResult(RESULT_OK, intent); //설정했다고 알림
                 startActivity(intent);
+                finish();
                 return;
             }
         }); //간편메뉴 이동

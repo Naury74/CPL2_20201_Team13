@@ -1,5 +1,6 @@
 package com.example.kioskmainpage.Activity.Senior_MenuOption;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.kioskmainpage.Activity.BestNewMenuActivity;
 import com.example.kioskmainpage.Activity.EasyMenuSelectionActivity;
+import com.example.kioskmainpage.Activity.MainActivity;
 import com.example.kioskmainpage.Activity.Pay.Senior_Pay_OrderComplelte;
 import com.example.kioskmainpage.Activity.Pay.Senior_Pay_TakeoutActivity;
 import com.example.kioskmainpage.Activity.Waiting.Senior_MainActivity;
@@ -22,7 +24,10 @@ import com.example.kioskmainpage.Adapter.Senior_SelectedItem_Adapter;
 import com.example.kioskmainpage.R;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Locale;
+
+import static android.content.Intent.FLAG_ACTIVITY_REORDER_TO_FRONT;
 
 public class Senior_OrderListActivity extends AppCompatActivity {
 
@@ -43,6 +48,8 @@ public class Senior_OrderListActivity extends AppCompatActivity {
     private TextToSpeech tts;
 
     Handler handler = new Handler();
+
+    public static Activity activity;
 
     Senior_SelectedItem_Adapter senior_selectedItem_adapter;
 
@@ -66,6 +73,11 @@ public class Senior_OrderListActivity extends AppCompatActivity {
         newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
 
+        activity = Senior_OrderListActivity.this;
+
+        EasyMenuSelectionActivity easyMenuSelectionActivity = (EasyMenuSelectionActivity)EasyMenuSelectionActivity.activity;
+        easyMenuSelectionActivity.finish();
+
         intent = getIntent();
         category_num = intent.getExtras().getInt("category");
         menu_image = intent.getExtras().getInt("menu_image");
@@ -80,6 +92,14 @@ public class Senior_OrderListActivity extends AppCompatActivity {
         dataSetting();
         total_price_textview = (TextView)findViewById(R.id.total_price);
         title_text = (TextView)findViewById(R.id.title_text);
+
+        if(category_num == 1 || category_num == 2){
+            Senior_MenuOption_TasteSelect senior_menuOption_tasteSelect = (Senior_MenuOption_TasteSelect)Senior_MenuOption_TasteSelect.activity;
+            senior_menuOption_tasteSelect.finish();
+
+            Senior_MenuOption_TempSelect senior_menuOption_tempSelect = (Senior_MenuOption_TempSelect)Senior_MenuOption_TempSelect.activity;
+            senior_menuOption_tempSelect.finish();
+        }
 
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -127,7 +147,25 @@ public class Senior_OrderListActivity extends AppCompatActivity {
         super.onNewIntent(intent);
         if (null != intent) {
 
-            if(intent.getExtras().getString("init_type").equals("add")) {
+            category_num = intent.getExtras().getInt("category");
+            menu_image = intent.getExtras().getInt("menu_image");
+            menu_name = intent.getExtras().getString("menu_name");
+            m_price = intent.getExtras().getString("menu_price");
+            menu_option = intent.getExtras().getString("menu_option");
+            menu_count = intent.getExtras().getInt("menu_count");
+            menu_price = Integer.parseInt(m_price);
+            senior_selectedItem_adapter.addItem(menu_name, menu_price, menu_option, menu_count);
+            tts.speak("주문이 추가되었습니다", TextToSpeech.QUEUE_FLUSH, null);
+
+            if(category_num == 1 || category_num == 2){
+                Senior_MenuOption_TasteSelect senior_menuOption_tasteSelect = (Senior_MenuOption_TasteSelect)Senior_MenuOption_TasteSelect.activity;
+                senior_menuOption_tasteSelect.finish();
+
+                Senior_MenuOption_TempSelect senior_menuOption_tempSelect = (Senior_MenuOption_TempSelect)Senior_MenuOption_TempSelect.activity;
+                senior_menuOption_tempSelect.finish();
+            }
+
+            /*if(intent.getExtras().getString("init_type").equals("add")) {
                 category_num = intent.getExtras().getInt("category");
                 menu_image = intent.getExtras().getInt("menu_image");
                 menu_name = intent.getExtras().getString("menu_name");
@@ -140,11 +178,13 @@ public class Senior_OrderListActivity extends AppCompatActivity {
             }
 
             else if(intent.getExtras().getString("init_type").equals("complete")){
-                Intent intent2 = new Intent(Senior_OrderListActivity.this, BestNewMenuActivity.class);
-                intent2.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                startActivity(intent2);
+                Intent intent_BestNewMenu = new Intent(Senior_OrderListActivity.this, BestNewMenuActivity.class);
+                intent_BestNewMenu.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);//SPLASH 화면이 뜨지 않게함
+                intent_BestNewMenu.addFlags( FLAG_ACTIVITY_REORDER_TO_FRONT);//기존의 액티비티를 재사용
+                intent_BestNewMenu.putExtra("folderNames", folder_names);
+                startActivityForResult(intent_BestNewMenu, 5);
                 finish();
-            }
+            }*/
         }
     }
 
@@ -184,6 +224,18 @@ public class Senior_OrderListActivity extends AppCompatActivity {
         intent.putExtra("total_price",total_price);
         startActivity(intent);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if(tts != null){
+            tts.stop();
+            tts.shutdown();
+            tts = null;
+        }
+    }
+
     public void onBackPressed() {
         return;
     }

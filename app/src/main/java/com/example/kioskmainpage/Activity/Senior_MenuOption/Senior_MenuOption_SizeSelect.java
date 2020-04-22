@@ -1,6 +1,7 @@
 package com.example.kioskmainpage.Activity.Senior_MenuOption;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.speech.RecognitionListener;
@@ -46,6 +47,7 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity {
     TextView voice_btn;
     TextView announce_textView;
     TextView title_view;
+    public static Activity activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,8 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity {
         newUiOptions ^= View.SYSTEM_UI_FLAG_FULLSCREEN;
         newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
+
+        activity = Senior_MenuOption_SizeSelect.this;
 
         intent = getIntent();
         category_num = intent.getExtras().getInt("category");

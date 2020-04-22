@@ -26,16 +26,6 @@ public class Senior_Pay_Loading extends AppCompatActivity {
     private TextToSpeech tts;
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        countDownTimerforgif.cancel();
-        if(mediaPlayer != null) {
-            mediaPlayer.release();
-            mediaPlayer = null;
-        }
-    }
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -100,6 +90,23 @@ public class Senior_Pay_Loading extends AppCompatActivity {
             }
         };
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if(tts != null){
+            tts.stop();
+            tts.shutdown();
+            tts = null;
+        }
+        countDownTimerforgif.cancel();
+        if(mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
+
     public void onBackPressed() {
         return;
     }

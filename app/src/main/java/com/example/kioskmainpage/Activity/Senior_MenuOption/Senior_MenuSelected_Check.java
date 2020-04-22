@@ -64,6 +64,9 @@ public class Senior_MenuSelected_Check extends AppCompatActivity {
         newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
 
+        Senior_MainActivity senior_mainActivity = (Senior_MainActivity)Senior_MainActivity.activity;
+        senior_mainActivity.finish();
+
         intent = getIntent();
         category_num = intent.getExtras().getInt("category");
         menu_image = intent.getExtras().getInt("menu_image");

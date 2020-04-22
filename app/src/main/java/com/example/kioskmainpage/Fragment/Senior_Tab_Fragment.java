@@ -115,6 +115,7 @@ public class Senior_Tab_Fragment extends Fragment {
                 intent.putExtra("menu_name",senior_menuAdapter.getItem(i).getName().toString());
                 intent.putExtra("menu_price",senior_menuAdapter.getItem(i).getPrice().toString());
                 context.startActivity(intent);
+                
             }
         });
 

@@ -30,14 +30,6 @@ public class Senior_Pay_SamsungpayActivity extends AppCompatActivity {
     private TextToSpeech tts;
 
     AnimationDrawable samsungpay_animation;
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if(mediaPlayer != null) {
-            mediaPlayer.release();
-            mediaPlayer = null;
-        }
-    }
 
     @Override
     protected void onStart() {
@@ -95,6 +87,22 @@ public class Senior_Pay_SamsungpayActivity extends AppCompatActivity {
         startActivity(intent2);
         finish();
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if(tts != null){
+            tts.stop();
+            tts.shutdown();
+            tts = null;
+        }
+        if(mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
+
     public void onBackPressed() {
         return;
     }
