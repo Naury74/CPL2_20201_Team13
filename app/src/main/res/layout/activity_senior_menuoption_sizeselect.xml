@@ -7,12 +7,6 @@
     android:orientation="vertical"
     android:background="@drawable/senior_main_background"
     tools:context=".Activity.Senior_MenuOption.Senior_MenuOption_SizeSelect">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="680dp"
-        android:orientation="vertical"
-        android:layout_gravity="center">
         
         <TextView
             android:id="@+id/back_btn"
@@ -25,40 +19,53 @@
             android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"/>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp">
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/menu_image_view"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
             android:src="@drawable/senior_test_image"
             app:civ_border_width="2dp"
             app:civ_border_color="#FFFFFFFF"/>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="54dp"
+            android:layout_marginLeft="25dp">
         <TextView
             android:id="@+id/menu_name_view"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
             android:gravity="center"
-            android:textSize="23dp"
+            android:textSize="38dp"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:lines="1"
             android:text="Menu Name"/>
 
         <TextView
             android:id="@+id/menu_price_view"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="23dp"
+            android:textSize="38dp"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:gravity="center"
             android:lines="1"
             android:text="Menu Price"/>
-
+        </LinearLayout>
+    </LinearLayout>
         <TextView
             android:id="@+id/title_view"
             android:layout_width="match_parent"
@@ -150,14 +157,13 @@
 
         </LinearLayout>
 
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="35dp"
-        android:layout_marginLeft="10dp">
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="69dp">
 
         <TextView
             android:id="@+id/voice_btn"
@@ -192,10 +198,12 @@
         android:text="'응, 맞아'\n'아니야, 취소해줘'"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
         android:textColor="@color/black">
     </TextView>
+
+
 
 </LinearLayout>
