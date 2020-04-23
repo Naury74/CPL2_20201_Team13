@@ -8,55 +8,46 @@
     android:background="@drawable/senior_main_background"
     tools:context=".Activity.Senior_MenuOption.Senior_MenuSelected_Check">
 
-    <TextView
-        android:id="@+id/back_btn"
-        android:layout_width="160dp"
-        android:layout_height="40dp"
-        android:layout_gravity="left"
-        android:clickable="true"
-        android:onClick="onClick"
-        android:background="@drawable/senior_back_btn"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp">
+        android:gravity="center"
+        android:layout_marginTop="90dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
+
             android:layout_marginTop="30dp">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/menu_image_view"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:layout_gravity="center"
-            android:src="@drawable/senior_test_image"
-            app:civ_border_width="2dp"
-            app:civ_border_color="#FFFFFFFF"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/menu_image_view"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:src="@drawable/senior_test_image"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FFFFFFFF"/>
 
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="160dp"
             android:orientation="vertical"
             android:layout_marginTop="54dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginRight="60dp">
+            android:layout_marginLeft="45dp"
+            android:layout_gravity="center"
+            android:paddingTop="20dp">
             <TextView
                 android:id="@+id/menu_name_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:textSize="40dp"
+                android:textSize="26dp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:text="Menu Name"/>
@@ -66,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textSize="40dp"
+                android:textSize="26dp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:gravity="center"
