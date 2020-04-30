@@ -81,7 +81,7 @@ public class Senior_Pay_TakeoutActivity extends AppCompatActivity {
         voice_btn = (TextView)findViewById(R.id.voice_btn);
         announce_textView = (TextView)findViewById(R.id.announce_textView);
 
-        voice_recordText.setText("'먹고 갈게'\n'포장 해줘'");
+        voice_recordText.setText("'먹고 갈게'");
 
         intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,getPackageName());

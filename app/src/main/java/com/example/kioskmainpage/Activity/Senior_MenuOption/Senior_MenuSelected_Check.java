@@ -97,7 +97,7 @@ public class Senior_MenuSelected_Check extends AppCompatActivity {
         voice_btn = (TextView)findViewById(R.id.voice_btn);
         announce_textView = (TextView)findViewById(R.id.announce_textView);
 
-        voice_recordText.setText("'응, 맞아'\n'아니야, 취소해줘'");
+        voice_recordText.setText("'응, 맞아'");
 
         intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,getPackageName());

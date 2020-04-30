@@ -97,7 +97,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
         voice_btn1 = (TextView)findViewById(R.id.voice_btn1);
         what_do_you_need = (TextView)findViewById(R.id.what_do_you_need);
 
-        voice_recordText1.setText("'커피'");
+        voice_recordText1.setText("빵");
 
         intent=new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,getPackageName());

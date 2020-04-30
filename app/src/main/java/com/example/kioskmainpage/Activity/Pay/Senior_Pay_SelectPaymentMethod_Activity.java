@@ -77,7 +77,7 @@ public class Senior_Pay_SelectPaymentMethod_Activity extends AppCompatActivity {
         voice_btn = (TextView)findViewById(R.id.voice_btn);
         announce_textView = (TextView)findViewById(R.id.announce_textView);
 
-        voice_recordText.setText("'카드로 할게'\n'삼성페이로 할게'");
+        voice_recordText.setText("'카드로 할게'");
 
         intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,getPackageName());
