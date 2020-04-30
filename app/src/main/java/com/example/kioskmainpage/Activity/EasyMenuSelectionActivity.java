@@ -93,11 +93,8 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
                     Manifest.permission.RECORD_AUDIO},PERMISSION);
         }
 
-        voice_recordText1 = (TextView)findViewById(R.id.voice_recordText1);
-        voice_btn1 = (TextView)findViewById(R.id.voice_btn1);
-        what_do_you_need = (TextView)findViewById(R.id.what_do_you_need);
-
-        voice_recordText1.setText("빵");
+        voice_recordText1 = (TextView)findViewById(R.id.voice_recordText);
+        voice_btn1 = (TextView)findViewById(R.id.voice_btn);
 
         intent=new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,getPackageName());
@@ -145,6 +142,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
         @Override
         public void onReadyForSpeech(Bundle params) {
             voice_recordText1.setText("듣고 있어요...");
+            voice_recordText1.setBackground(getDrawable(R.drawable.round_text_bg));
         }
 
         @Override
@@ -205,7 +203,8 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
                     voice_recordText1.setText("'취소 되었어요!'");
                     break;
             }
-            voice_recordText1.setText("'커피'");
+            voice_recordText1.setText(null);
+            voice_recordText1.setBackground(null);
         }
 
         @Override
@@ -243,6 +242,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
                         isequls=true;
                         target=rs[i];
                         voice_recordText1.setText(target);
+                        voice_recordText1.setBackground(getDrawable(R.drawable.round_text_bg));
                         break;
                     }
                 if(isequls)break;
@@ -261,6 +261,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
                         if(levenshteinDistance(temp1,temp2)<limit_Distance)
                         {
                             voice_recordText1.setText(lines[j]);
+                            voice_recordText1.setBackground(getDrawable(R.drawable.round_text_bg));
                             isequls=true;
                             break;
                         }
@@ -272,6 +273,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
             if(!isequls)
             {
                 voice_recordText1.setText("단어검색에 실패하였습니다.");
+                voice_recordText1.setBackground(getDrawable(R.drawable.round_text_bg));
             }
         }
 
@@ -282,7 +284,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
         public void onEvent(int eventType, Bundle params) {}
     };
     public void TTS_Play(View v){
-        tts.speak(what_do_you_need.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+        tts.speak("원하시는 종류를 선택해주세요",TextToSpeech.QUEUE_FLUSH,null);
     }
 
     @Override

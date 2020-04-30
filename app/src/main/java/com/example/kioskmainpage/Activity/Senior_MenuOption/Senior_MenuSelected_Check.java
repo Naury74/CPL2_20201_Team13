@@ -95,9 +95,6 @@ public class Senior_MenuSelected_Check extends AppCompatActivity {
 
         voice_recordText = (TextView)findViewById(R.id.voice_recordText);
         voice_btn = (TextView)findViewById(R.id.voice_btn);
-        announce_textView = (TextView)findViewById(R.id.announce_textView);
-
-        voice_recordText.setText("'응, 맞아'");
 
         intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,getPackageName());
@@ -132,6 +129,7 @@ public class Senior_MenuSelected_Check extends AppCompatActivity {
         public void onReadyForSpeech(Bundle params) {
             //Toast.makeText(getApplicationContext(),"음성인식을 시작합니다.",Toast.LENGTH_SHORT).show();
             voice_recordText.setText("듣고 있어요...");
+            voice_recordText.setBackground(getDrawable(R.drawable.round_text_bg));
         }
 
         @Override
@@ -192,7 +190,8 @@ public class Senior_MenuSelected_Check extends AppCompatActivity {
                     voice_recordText.setText("'취소 되었어요!'");
                     break;
             }
-            voice_recordText.setText("'응, 맞아'\n'아니야, 취소해줘'");
+            voice_recordText.setText(null);
+            voice_recordText.setBackground(null);
 
             Toast.makeText(getApplicationContext(), "취소 되었어요! ",Toast.LENGTH_SHORT).show();
             //Toast.makeText(getApplicationContext(), "에러가 발생하였습니다. : " + message,Toast.LENGTH_SHORT).show();
@@ -205,6 +204,7 @@ public class Senior_MenuSelected_Check extends AppCompatActivity {
                     results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
 
             for(int i = 0; i < matches.size() ; i++){
+                voice_recordText.setBackground(getDrawable(R.drawable.round_text_bg));
                 voice_recordText.setText("'" + matches.get(i) + "'");
             }
         }
