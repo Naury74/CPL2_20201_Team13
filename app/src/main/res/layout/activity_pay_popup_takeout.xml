@@ -16,7 +16,7 @@
         android:layout_height="250dp"
         android:background="@drawable/round_background_popup"
         android:orientation="vertical"
-        tools:visibility="gone">
+        tools:visibility="visible">
 
         <TextView
             android:id="@+id/textView"

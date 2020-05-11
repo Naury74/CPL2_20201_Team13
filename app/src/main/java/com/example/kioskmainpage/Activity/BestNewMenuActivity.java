@@ -1,8 +1,10 @@
 package com.example.kioskmainpage.Activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.hardware.Camera;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -13,17 +15,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.SurfaceHolder;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.kioskmainpage.Activity.Admin.SyncCompleteActivity;
 import com.example.kioskmainpage.Activity.Senior_MenuOption.Senior_OrderListActivity;
+import com.example.kioskmainpage.Activity.Waiting.Order_Method_Selection_Popup;
 import com.example.kioskmainpage.Adapter.AutoScrollAdapter;
 import com.example.kioskmainpage.Adapter.RAdapter2;
 import com.example.kioskmainpage.Adapter.SelectedListAdapter;
@@ -33,6 +40,7 @@ import com.example.kioskmainpage.MenuManage.SelectedMenu;
 import com.example.kioskmainpage.MainTheme;
 import com.example.kioskmainpage.Myapplication;
 import com.example.kioskmainpage.R;
+import com.example.kioskmainpage.Utilities.CameraPreview;
 
 import java.util.ArrayList;
 
@@ -40,7 +48,7 @@ import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
 
 import static android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP;
 
-public class BestNewMenuActivity extends AppCompatActivity {
+public class BestNewMenuActivity extends AppCompatActivity implements Camera.FaceDetectionListener{
 
     /* 작성자 : 2019-1 종합설계프로젝트 팀 (팀장 박준현)*/
 
@@ -48,6 +56,7 @@ public class BestNewMenuActivity extends AppCompatActivity {
 
     //  BestMenuAdapter mBestMenuAdapter ;
     AutoScrollViewPager mViewPager;
+    public static Activity activity;
 
     ListView selectedListview;
     public SelectedListAdapter adapter;
@@ -102,6 +111,18 @@ public class BestNewMenuActivity extends AppCompatActivity {
         recyclerView.setBackgroundColor(getColor(mainTheme.getThemeItem().getNEW_MENU_BACKGROUND_COLOR_ID()));
     }
 
+    //--------------------------------------------얼굴인식 전역변수
+    private static CameraPreview surfaceView;
+    private SurfaceHolder holder;
+    private static Button camera_preview_button;
+    private static Camera mCamera;
+    private int RESULT_PERMISSIONS = 100;
+    public static BestNewMenuActivity getInstance;
+    public static boolean STATE = false;
+    public AttributeSet att;
+    ImageView cameraFocus;
+    //----------------------------------------------
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,6 +137,12 @@ public class BestNewMenuActivity extends AppCompatActivity {
         newUiOptions ^= View.SYSTEM_UI_FLAG_FULLSCREEN;
         newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
+
+        //------------------------------------------------------------얼굴인식
+        setInit();
+        activity = BestNewMenuActivity.this;
+        //mCamera.setFaceDetectionListener(this);
+        //-----------------------------------------------------------
 
         rootlayout = (LinearLayout) findViewById(R.id.best_new_rootlayout);
         //  rootlayout.setBackgroundColor(getColor(mainTheme.getThemeItem().getBEST_NEW_ACTIVITY_BACKGROUND_COLOR_ID()));//테마
@@ -273,6 +300,84 @@ public class BestNewMenuActivity extends AppCompatActivity {
 //        setTheme();
 
     }
+
+    public static Camera getCamera(){
+        return mCamera;
+    }
+    private void setInit(){
+        getInstance = this;
+
+        mCamera = Camera.open(1);
+        setContentView(R.layout.activity_best_new_menu);
+        surfaceView = (CameraPreview) findViewById(R.id.preview);
+
+        // SurfaceView 정의 - holder와 Callback을 정의한다.
+        holder = surfaceView.getHolder();
+        holder.addCallback(surfaceView);
+        holder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        STATE = true;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        STATE = false;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mCamera.setFaceDetectionListener(this);
+
+        if (STATE != true) {
+            STATE = true;
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        STATE = false;
+    }
+
+    public int facedetection_count=0;
+    @Override
+    public void onFaceDetection(Camera.Face[] faces, Camera camera) {
+
+        if (faces.length > 0){
+            Log.d("FaceDetection", "face detected: "+ faces.length +
+                    " Face 1 Location X: " + faces[0].rect.centerX() +
+                    "Y: " + faces[0].rect.centerY() );
+            /*Toast.makeText(this, "face detected: "+ faces.length +
+                    " - Face Location X: " + faces[0].rect.centerX() +
+                    " - Y: " + faces[0].rect.centerY() , Toast.LENGTH_SHORT).show();*/
+            if(facedetection_count==0) {
+                facedetection_count++;
+                Myapplication myapp = (Myapplication) getApplication();
+                myapp.setadapter(adapter); //전역변수로써 넘겨줌
+                Intent intent = new Intent(BestNewMenuActivity.this, Order_Method_Selection_Popup.class);
+                intent.putExtra("isOrdered", false);
+                intent.addFlags(intent.FLAG_ACTIVITY_REORDER_TO_FRONT);//기존의 액티비티를 재사용
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);//SPLASH 화면이 뜨지 않게함
+                setResult(RESULT_OK, intent); //설정했다고 알림
+                startActivity(intent);
+            }
+
+            /*Intent intent = new Intent(this, Popup.class);
+            mCamera.release();
+            mCamera = null;
+            STATE = false;
+            startActivity(intent);*/
+        }
+        else {
+        }
+    }
+
 
     public void CountDownTimer_foreground_use1() {//액티비티 포그라운드 유지용 타이머
         CountDownTimer CDT = new CountDownTimer(10 * 60 * 60 * 1000, 1000) {
@@ -441,6 +546,10 @@ public class BestNewMenuActivity extends AppCompatActivity {
         NewMenuadapter.setFinished(true);
         AutoScrollForBN.Killthread = false;
         super.onDestroy();
+
+        mCamera.release();
+        mCamera = null;
+        STATE = false;
     }
 
     @Override
