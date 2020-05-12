@@ -509,7 +509,29 @@ public class BestNewMenuActivity extends AppCompatActivity implements Camera.Fac
         Log.i(TAG, "onActivityResult: requestCode : " + requestCode + " resultCode : " + resultCode);
 
         if(resultCode==3){
-            facedetection_count=0; 
+            facedetection_count=0;
+        }
+        if(resultCode==4){
+            Myapplication myapp = (Myapplication) getApplication();
+            myapp.setadapter(adapter); //전역변수로써 넘겨줌
+            Intent intent = new Intent(BestNewMenuActivity.this, MainActivity.class);
+            intent.putExtra("isOrdered", false);
+            intent.addFlags(intent.FLAG_ACTIVITY_REORDER_TO_FRONT);//기존의 액티비티를 재사용
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);//SPLASH 화면이 뜨지 않게함
+            setResult(RESULT_OK, intent); //설정했다고 알림
+            startActivity(intent);
+            finish();
+        }
+        if(resultCode==5){
+            Myapplication myapp = (Myapplication) getApplication();
+            myapp.setadapter(adapter); //전역변수로써 넘겨줌
+            Intent intent = new Intent(BestNewMenuActivity.this, EasyMenuSelectionActivity.class);
+            intent.putExtra("isOrdered", false);
+            intent.addFlags(intent.FLAG_ACTIVITY_REORDER_TO_FRONT);//기존의 액티비티를 재사용
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);//SPLASH 화면이 뜨지 않게함
+            setResult(RESULT_OK, intent); //설정했다고 알림
+            startActivity(intent);
+            finish();
         }
         if (resultCode == RESULT_OK) {
             switch (requestCode) {

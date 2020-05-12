@@ -62,31 +62,13 @@ public class Order_Method_Selection_Popup extends AppCompatActivity {
     }
 
     public void onClick_normal(View v){
-        Myapplication myapp = (Myapplication) getApplication();
-        myapp.setadapter(adapter); //전역변수로써 넘겨줌
-        Intent intent = new Intent(Order_Method_Selection_Popup.this, MainActivity.class);
-        intent.putExtra("isOrdered", false);
-        intent.addFlags(intent.FLAG_ACTIVITY_REORDER_TO_FRONT);//기존의 액티비티를 재사용
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);//SPLASH 화면이 뜨지 않게함
-        setResult(RESULT_OK, intent); //설정했다고 알림
-        startActivity(intent);
-        BestNewMenuActivity bestNewMenuActivity = (BestNewMenuActivity) BestNewMenuActivity.activity;
-        bestNewMenuActivity.finish();
+        setResult(4);
         finish();
         return;
     }
 
     public void onClick_easy(View v){
-        Myapplication myapp = (Myapplication) getApplication();
-        myapp.setadapter(adapter); //전역변수로써 넘겨줌
-        Intent intent = new Intent(Order_Method_Selection_Popup.this, EasyMenuSelectionActivity.class);
-        intent.putExtra("isOrdered", false);
-        intent.addFlags(intent.FLAG_ACTIVITY_REORDER_TO_FRONT);//기존의 액티비티를 재사용
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);//SPLASH 화면이 뜨지 않게함
-        setResult(RESULT_OK, intent); //설정했다고 알림
-        startActivity(intent);
-        BestNewMenuActivity bestNewMenuActivity = (BestNewMenuActivity) BestNewMenuActivity.activity;
-        bestNewMenuActivity.finish();
+        setResult(5);
         finish();
         return;
     }
