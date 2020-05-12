@@ -365,7 +365,7 @@ public class BestNewMenuActivity extends AppCompatActivity implements Camera.Fac
                 intent.addFlags(intent.FLAG_ACTIVITY_REORDER_TO_FRONT);//기존의 액티비티를 재사용
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);//SPLASH 화면이 뜨지 않게함
                 setResult(RESULT_OK, intent); //설정했다고 알림
-                startActivity(intent);
+                startActivityForResult(intent,3);
             }
 
             /*Intent intent = new Intent(this, Popup.class);
@@ -507,6 +507,10 @@ public class BestNewMenuActivity extends AppCompatActivity implements Camera.Fac
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         //팝업 액티비티의 결과를 받는 부분
         Log.i(TAG, "onActivityResult: requestCode : " + requestCode + " resultCode : " + resultCode);
+
+        if(resultCode==3){
+            facedetection_count=0; 
+        }
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
 

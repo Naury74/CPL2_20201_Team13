@@ -91,6 +91,12 @@ public class Order_Method_Selection_Popup extends AppCompatActivity {
         return;
     }
 
+    public void onClick_cancel(View v){
+        setResult(3);
+        finish();
+        return;
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
