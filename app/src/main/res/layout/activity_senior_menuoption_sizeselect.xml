@@ -33,61 +33,61 @@
 
             android:layout_marginTop="30dp">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/menu_image_view"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:layout_gravity="center"
-            android:src="@drawable/senior_test_image"
-            app:civ_border_width="2dp"
-            app:civ_border_color="#FFFFFFFF"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/menu_image_view"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:src="@drawable/senior_test_image"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FFFFFFFF"/>
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="160dp"
+            android:layout_height="200dp"
             android:orientation="vertical"
             android:layout_marginTop="54dp"
-            android:layout_marginLeft="45dp"
+            android:layout_marginLeft="70dp"
             android:layout_gravity="center"
             android:paddingTop="20dp">
-        <TextView
-            android:id="@+id/menu_name_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textSize="26dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:text="Menu Name"/>
+            <TextView
+                android:id="@+id/menu_name_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="35dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="Menu Name"/>
 
-        <TextView
-            android:id="@+id/menu_price_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="26dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:lines="1"
-            android:text="Menu Price"/>
+            <TextView
+                android:id="@+id/menu_price_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="35dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:lines="1"
+                android:text="Menu Price"/>
         </LinearLayout>
     </LinearLayout>
-        <TextView
-            android:id="@+id/title_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="30dp"
-            android:textColor="@color/black"
-            android:layout_marginVertical="45dp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:lines="1"
-            android:bufferType="spannable"
-            android:text="원하시는 크기를 선택해주세요"/>
+    <TextView
+        android:id="@+id/title_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="40dp"
+        android:textColor="@color/black"
+        android:layout_marginVertical="60dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:bufferType="spannable"
+        android:lines="1"
+        android:text="원하시는 크기를 선택해주세요"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -103,7 +103,7 @@
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:orientation="vertical"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="40dp"
                 android:clickable="true"
                 android:onClick="onClick"
                 android:background="@drawable/btn_select_background">
@@ -136,7 +136,7 @@
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:orientation="vertical"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="40dp"
                 android:clickable="true"
                 android:onClick="onClick"
                 android:background="@drawable/btn_select_background">
@@ -170,30 +170,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="80dp">
+        android:layout_marginTop="150dp">
 
         <TextView
             android:id="@+id/voice_btn"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:text=" "
-            android:clickable="true">
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:text=" ">
         </TextView>
 
         <TextView
             android:id="@+id/voice_recordText"
-            android:layout_marginTop="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="20dp"
-            android:gravity="center"
-            android:textStyle="bold"
             android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:paddingHorizontal="20dp"
+            android:textColor="#FF4E00"
             android:textSize="22dp"
-            android:textColor="#FF4E00">
+            android:textStyle="bold">
         </TextView>
 
-        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

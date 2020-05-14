@@ -20,8 +20,8 @@
 
         <com.melnykov.fab.FloatingActionButton
             android:id="@+id/fab"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_gravity="bottom|center"
             android:layout_margin="16dp"
             android:src="@drawable/guide_arrow"

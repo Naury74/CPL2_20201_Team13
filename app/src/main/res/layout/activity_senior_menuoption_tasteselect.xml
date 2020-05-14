@@ -36,8 +36,8 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/menu_image_view"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:src="@drawable/senior_test_image"
                 app:civ_border_width="2dp"
@@ -46,10 +46,10 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="160dp"
+            android:layout_height="200dp"
             android:orientation="vertical"
             android:layout_marginTop="54dp"
-            android:layout_marginLeft="45dp"
+            android:layout_marginLeft="70dp"
             android:layout_gravity="center"
             android:paddingTop="20dp">
             <TextView
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:textSize="26dp"
+                android:textSize="35dp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:text="Menu Name"/>
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textSize="26dp"
+                android:textSize="35dp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -77,20 +77,19 @@
         </LinearLayout>
     </LinearLayout>
 
-        <TextView
-            android:id="@+id/title_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="30dp"
-            android:textColor="@color/black"
-            android:layout_marginTop="35dp"
-            android:layout_marginBottom="15dp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:lines="1"
-            android:bufferType="spannable"
-            android:text="원하시는 진하기를 선택해주세요"/>
+    <TextView
+        android:id="@+id/title_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="40dp"
+        android:textColor="@color/black"
+        android:layout_marginVertical="60dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:bufferType="spannable"
+        android:lines="1"
+        android:text="원하시는 진하기를 선택해주세요"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -103,8 +102,8 @@
 
             <LinearLayout
                 android:id="@+id/btn_sweet"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
                 android:orientation="vertical"
                 android:layout_marginRight="20dp"
                 android:clickable="true"
@@ -125,9 +124,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:layout_weight="3"
+                    android:layout_weight="6"
                     android:text="달달하게"
-                    android:textSize="20dp"
+                    android:textSize="30dp"
                     android:textColor="@color/white"
                     android:textStyle="bold"/>
 
@@ -135,8 +134,8 @@
 
             <LinearLayout
                 android:id="@+id/btn_normal"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
                 android:orientation="vertical"
                 android:layout_marginLeft="20dp"
                 android:clickable="true"
@@ -157,31 +156,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:layout_weight="3"
+                    android:layout_weight="6"
                     android:text="보통"
-                    android:textSize="20dp"
+                    android:textSize="30dp"
                     android:textColor="@color/white"
                     android:textStyle="bold"/>
 
             </LinearLayout>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginHorizontal="30dp">
-
             <LinearLayout
                 android:id="@+id/btn_thick"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
                 android:orientation="vertical"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="40dp"
                 android:clickable="true"
                 android:onClick="onClick"
                 android:background="@drawable/btn_select_background_darkred_fill">
@@ -200,9 +188,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:layout_weight="3"
+                    android:layout_weight="6"
                     android:text="진하게"
-                    android:textSize="20dp"
+                    android:textSize="30dp"
                     android:textColor="@color/white"
                     android:textStyle="bold"/>
 
@@ -210,10 +198,10 @@
 
             <LinearLayout
                 android:id="@+id/btn_more_thick"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
                 android:orientation="vertical"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="40dp"
                 android:clickable="true"
                 android:onClick="onClick"
                 android:background="@drawable/btn_select_background_black_fill">
@@ -232,9 +220,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:layout_weight="3"
+                    android:layout_weight="6"
                     android:text="더진하게"
-                    android:textSize="20dp"
+                    android:textSize="30dp"
                     android:textColor="@color/white"
                     android:textStyle="bold"/>
 
@@ -242,36 +230,33 @@
 
         </LinearLayout>
 
-
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="60dp">
+        android:layout_marginTop="210dp">
 
         <TextView
             android:id="@+id/voice_btn"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:text=" "
-            android:clickable="true">
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:text=" ">
         </TextView>
 
         <TextView
             android:id="@+id/voice_recordText"
-            android:layout_marginTop="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="20dp"
-            android:gravity="center"
-            android:textStyle="bold"
             android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:paddingHorizontal="20dp"
+            android:textColor="#FF4E00"
             android:textSize="22dp"
-            android:textColor="#FF4E00">
+            android:textStyle="bold">
         </TextView>
 
     </LinearLayout>

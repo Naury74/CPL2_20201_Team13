@@ -29,6 +29,7 @@ public class Order_Method_Selection_Popup extends AppCompatActivity {
     public SelectedListAdapter adapter;
     Intent intent;
     private TextToSpeech tts;
+    String engine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,15 +51,28 @@ public class Order_Method_Selection_Popup extends AppCompatActivity {
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
-                if(status != TextToSpeech.ERROR) {
-
                     tts.setLanguage(Locale.KOREAN);
+                    tts.setSpeechRate(1.0f);
                     tts.speak("원하시는 주문 방식을 선택해 주세요. 키오스크 사용이 처음이시면 간단주문을 눌러 사용해보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                    tts.setSpeechRate((float) 0.4);
-
-                }
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
     }
 
     public void onClick_normal(View v){

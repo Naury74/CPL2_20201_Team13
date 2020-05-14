@@ -96,10 +96,11 @@
         />-->
 /*텍스트에서 버튼으로 수정*/
 <LinearLayout
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:layout_marginTop="30dp">
+    android:gravity="right"
+    android:layout_marginTop="40dp">
     <Button
         android:id="@+id/allmenu_bestmenu"
         android:text="주문화면 이동"
@@ -118,10 +119,33 @@
         android:layout_height="wrap_content"
         android:visibility="gone"/>
 
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:src="@drawable/video_icon"
+        android:padding="5dp">
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginHorizontal="15dp"
+        android:text="주문안내를 위해 얼굴인식 기능이 동작 중입니다."
+        android:textSize="20dp"
+        android:textColor="#232323"
+        android:textStyle="bold">
+    </TextView>
+
+
     <com.example.kioskmainpage.Utilities.CameraPreview
         android:id="@+id/preview"
-        android:layout_width="90dp"
-        android:layout_height="120dp"
+        android:layout_width="120dp"
+        android:layout_height="160dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="30dp"
         android:layout_gravity="center_horizontal"
         android:visibility="visible"/>
 
