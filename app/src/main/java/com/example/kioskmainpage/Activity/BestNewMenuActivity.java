@@ -141,7 +141,7 @@ public class BestNewMenuActivity extends AppCompatActivity implements Camera.Fac
         //------------------------------------------------------------얼굴인식
         setInit();
         activity = BestNewMenuActivity.this;
-        //mCamera.setFaceDetectionListener(this);
+        mCamera.setFaceDetectionListener(this);
         //-----------------------------------------------------------
 
         rootlayout = (LinearLayout) findViewById(R.id.best_new_rootlayout);
@@ -320,6 +320,8 @@ public class BestNewMenuActivity extends AppCompatActivity implements Camera.Fac
     @Override
     protected void onStart() {
         super.onStart();
+        mCamera.setFaceDetectionListener(this);
+
         STATE = true;
     }
 
