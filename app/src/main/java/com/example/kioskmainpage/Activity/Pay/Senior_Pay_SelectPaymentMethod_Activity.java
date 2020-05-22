@@ -94,7 +94,7 @@ public class Senior_Pay_SelectPaymentMethod_Activity extends AppCompatActivity {
                 if(status != TextToSpeech.ERROR) {
 
                     tts.setLanguage(Locale.KOREAN);
-                    tts.speak("결제수단을 선택해주세요",TextToSpeech.QUEUE_FLUSH,null);
+                    tts.speak("결제방법을 선택해주세요",TextToSpeech.QUEUE_FLUSH,null);
                     tts.setSpeechRate((float) 0.4);
 
                 }
@@ -215,6 +215,14 @@ public class Senior_Pay_SelectPaymentMethod_Activity extends AppCompatActivity {
 
     public void onClick_SamsungPay(View v){
         Intent intent2 = new Intent(this, Senior_Pay_SamsungpayActivity.class);
+        intent2.putExtra("takeout",takeout);
+        intent2.putExtra("total_price",total_price);
+        startActivity(intent2);
+        finish();
+    }
+
+    public void onClick_Money(View v){
+        Intent intent2 = new Intent(this, Senior_Pay_PaperMoneyActivity.class);
         intent2.putExtra("takeout",takeout);
         intent2.putExtra("total_price",total_price);
         startActivity(intent2);

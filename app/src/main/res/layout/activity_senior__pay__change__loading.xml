@@ -7,20 +7,22 @@
     android:layout_gravity="center"
     android:background="@drawable/round_background_popup"
     android:orientation="vertical"
-    tools:context=".Activity.Pay.Senior_Pay_Loading">
+    tools:context=".Activity.Pay.Senior_Pay_Change_Loading">
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:bufferType="spannable"
         android:gravity="center"
-        android:text="결제진행 중"
+        android:text="주문 접수 중"
         android:textColor="@color/black"
         android:textSize="50dp"
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/title2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"

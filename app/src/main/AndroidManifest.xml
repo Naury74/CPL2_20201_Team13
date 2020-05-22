@@ -44,8 +44,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.Waiting.Order_Method_Selection_Popup"
+        <activity
+            android:name=".Activity.Pay.Senior_Pay_Change_Loading"
             android:theme="@style/NoTitleDialog"/>
+        <activity
+            android:name=".Activity.Pay.Senior_Pay_PaperMoneyActivity"
+            android:theme="@style/NoTitleDialog" />
+        <activity
+            android:name=".Activity.Waiting.Order_Method_Selection_Popup"
+            android:theme="@style/NoTitleDialog" />
         <activity android:name=".Activity.Pay.Senior_Pay_OrderComplelte" />
         <activity
             android:name=".Activity.Pay.Senior_Pay_Loading"

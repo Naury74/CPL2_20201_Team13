@@ -39,11 +39,49 @@
             android:layout_marginHorizontal="30dp">
 
             <LinearLayout
+                android:id="@+id/btn_money"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:layout_marginRight="30dp"
+                android:clickable="true"
+                android:onClick="onClick_Money"
+                android:background="@drawable/btn_select_background">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/paper_money"
+                    android:layout_gravity="center"
+                    android:paddingTop="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="0dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="19dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="3"
+                    android:text="현금"
+                    android:textSize="30dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/btn_card"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:orientation="vertical"
-                android:layout_marginRight="40dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
                 android:clickable="true"
                 android:onClick="onClick_Card"
                 android:background="@drawable/btn_select_background">
@@ -80,7 +118,7 @@
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:orientation="vertical"
-                android:layout_marginLeft="40dp"
+                android:layout_marginLeft="30dp"
                 android:clickable="true"
                 android:onClick="onClick_SamsungPay"
                 android:background="@drawable/btn_select_background">

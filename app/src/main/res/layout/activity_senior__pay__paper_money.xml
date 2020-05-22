@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="700dp"
+    android:layout_height="850dp"
+    android:layout_gravity="center"
+    android:background="@drawable/round_background_popup"
+    android:orientation="vertical"
+    tools:context=".Activity.Pay.Senior_Pay_PaperMoneyActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="화면에 표시된 결제금액을&#10;현금 투입구에 넣은 후,&#10;'결제 진행'버튼을 눌러주세요"
+            android:textColor="@color/black"
+            android:bufferType="spannable"
+            android:lineSpacingExtra="7dp"
+            android:textSize="33dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="350dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="33dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="결재 금액">
+            </TextView>
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="50dp"
+                android:textStyle="bold"
+                android:textColor="@color/red"
+                android:text="0">
+            </TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/cancel_btn"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:onClick="onClick_cancel"
+                android:background="@drawable/btn_select_background">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="140dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/close"
+                    android:layout_gravity="center"
+                    android:paddingTop="30dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="0dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="3"
+                    android:text="취소"
+                    android:textSize="25dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pass_btn"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="90dp"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:onClick="onClick_confirm"
+                android:background="@drawable/btn_select_background_green">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="140dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/right_arrow"
+                    android:layout_gravity="center"
+                    android:paddingTop="30dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="0dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="3"
+                    android:text="결제진행"
+                    android:textSize="25dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
