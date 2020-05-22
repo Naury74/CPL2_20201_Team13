@@ -88,6 +88,7 @@ public class Senior_Pay_Change_Loading extends AppCompatActivity {
             public void onFinish() {
                 countDownTimer_set();
                 countDownTimer.start();
+                mediaPlayer.start();
                 title.setText("반환 중");
                 title2.setText("거스름 돈을 받아주세요");
                 tts.speak("거스름 돈을 받아주세요.",TextToSpeech.QUEUE_FLUSH,null);
