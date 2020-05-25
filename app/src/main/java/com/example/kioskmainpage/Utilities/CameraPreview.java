@@ -1,6 +1,7 @@
 package com.example.kioskmainpage.Utilities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.hardware.Camera;
 import android.util.AttributeSet;
@@ -9,6 +10,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 import com.example.kioskmainpage.Activity.BestNewMenuActivity;
+import com.example.kioskmainpage.Activity.EasyMenuSelectionActivity;
 import com.example.kioskmainpage.Activity.MainActivity;
 
 import java.io.IOException;
@@ -37,6 +39,8 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
     //  SurfaceView 생성시 호출
     @Override
     public void surfaceCreated(SurfaceHolder surfaceHolder) {
+
+        Intent intent = new Intent();
 
         try {
             // 카메라 객체를 사용할 수 있게 연결한다.
