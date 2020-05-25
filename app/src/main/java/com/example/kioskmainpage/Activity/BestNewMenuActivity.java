@@ -126,11 +126,6 @@ public class BestNewMenuActivity extends AppCompatActivity implements Camera.Fac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-        Intent intent = new Intent(getApplicationContext(), EasyMenuSelectionActivity.class);
-        startActivity(intent);
-        /*
         setContentView(R.layout.activity_best_new_menu);
 
         Myapplication app = (Myapplication) getApplication();
@@ -303,7 +298,7 @@ public class BestNewMenuActivity extends AppCompatActivity implements Camera.Fac
         CountDownTimer_foreground_use1();//타이머 반복으로 이벤트 연속발생
 
 //        setTheme();
-        */
+
     }
 
     public static Camera getCamera(){
@@ -325,7 +320,7 @@ public class BestNewMenuActivity extends AppCompatActivity implements Camera.Fac
     @Override
     protected void onStart() {
         super.onStart();
-//        mCamera.setFaceDetectionListener(this);
+        mCamera.setFaceDetectionListener(this);
 
         STATE = true;
     }
@@ -339,7 +334,7 @@ public class BestNewMenuActivity extends AppCompatActivity implements Camera.Fac
     @Override
     protected void onResume() {
         super.onResume();
-//        mCamera.setFaceDetectionListener(this);
+        mCamera.setFaceDetectionListener(this);
 
         if (STATE != true) {
             STATE = true;
