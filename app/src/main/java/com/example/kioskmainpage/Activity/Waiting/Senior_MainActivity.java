@@ -82,10 +82,8 @@ public class Senior_MainActivity extends AppCompatActivity {
         activity = Senior_MainActivity.this;
 
         intent = getIntent();
-
-
-            position_category = intent.getExtras().getInt("position");
-            Log.i("position_category", "\nposition_category: " + position_category + "\n");
+        position_category = intent.getExtras().getInt("position");
+        Log.i("position_category", "\nposition_category: " + position_category + "\n");
 
             if (Build.VERSION.SDK_INT >= 23) {
                 // 퍼미션 체크
@@ -140,32 +138,31 @@ public class Senior_MainActivity extends AppCompatActivity {
         intent=getIntent();
         int is_call = intent.getExtras().getInt("is_call");
         if(is_call==1) {
-
-            int menus_number = intent.getExtras().getInt("menus_number");
-            int menu_count=intent.getExtras().getInt("Option_count");
-            String menus_name="아메리카노|카라멜 마끼아또|카페모카|카페라떼|카페모카|화이트초코|아포카토|리스레스토 비얀코|그린 티 크림|모카 푸라푸치노|바닐라크림|에스프레소 프라푸치노|자바칩 푸라푸치노|카라멜 푸라푸치노|화이트 딸기 크림|초콜릿 크림|초콜릿 모카|7레이어 가나슈|레드벨벳 크림치즈|생크림 카스텔라|블루베리 쿠키 치즈케이크|포콜릿 데블스 케이크|촉촉 생크림 케이크|크레이프 치즈|클라우드 치즈|호두 당근 케이크|나이트로 쇼콜라|나이트로 콜드브루|돌체 콜드브루|바닐라크림 콜드브루|콜드브루 폼|콜드브루 몰트";
-            int[] menus_prise={2500,3500,4000,2800,4300,5300,4400,5500,6300,5600,4900,5800,6100,5600,5600,5700,5700, 4800,5500,4500,6800,5900,5200,6500,5500,6500,6100,5800,5800,8500,5800,8000};
-            int[] menus_img_number={R.drawable.img1_1,R.drawable.img2_1,R.drawable.img3_1,R.drawable.img4_1,R.drawable.img5_1,R.drawable.img6_1,R.drawable.img7_1,R.drawable.img8_1,R.drawable.img1_2,R.drawable.img2_2,R.drawable.img3_2,R.drawable.img4_2,R.drawable.img5_2,R.drawable.img6_2,R.drawable.img7_2,R.drawable.img8_2,R.drawable.img1_3,R.drawable.img9_2,R.drawable.img2_3,R.drawable.img3_3,R.drawable.img4_3,R.drawable.img5_3,R.drawable.img6_3,R.drawable.img7_3,R.drawable.img8_3,R.drawable.img9_3,R.drawable.img1_4,R.drawable.img2_4,R.drawable.img3_4,R.drawable.img4_4,R.drawable.img5_4,R.drawable.img6_4};
-            String[] menus_names=menus_name.split("\\|");
-            int[] menus_len={8,9,9,6};
-            for(int i=0;i<position_category;i++)
-                menus_number+=menus_len[i];
+            int menus_number = intent.getExtras().getInt("menus_number", -1);
+            int menu_count = intent.getExtras().getInt("Option_count");
+            String menus_name = "아메리카노|카라멜 마끼아또|카페모카|카페라떼|카페모카|화이트초코|아포카토|리스레스토 비얀코|그린 티 크림|모카 푸라푸치노|바닐라크림|에스프레소 프라푸치노|자바칩 푸라푸치노|카라멜 푸라푸치노|화이트 딸기 크림|초콜릿 크림|초콜릿 모카|7레이어 가나슈|레드벨벳 크림치즈|생크림 카스텔라|블루베리 쿠키 치즈케이크|포콜릿 데블스 케이크|촉촉 생크림 케이크|크레이프 치즈|클라우드 치즈|호두 당근 케이크|나이트로 쇼콜라|나이트로 콜드브루|돌체 콜드브루|바닐라크림 콜드브루|콜드브루 폼|콜드브루 몰트";
+            int[] menus_prise = {2500, 3500, 4000, 2800, 4300, 5300, 4400, 5500, 6300, 5600, 4900, 5800, 6100, 5600, 5600, 5700, 5700, 4800, 5500, 4500, 6800, 5900, 5200, 6500, 5500, 6500, 6100, 5800, 5800, 8500, 5800, 8000};
+            int[] menus_img_number = {R.drawable.img1_1, R.drawable.img2_1, R.drawable.img3_1, R.drawable.img4_1, R.drawable.img5_1, R.drawable.img6_1, R.drawable.img7_1, R.drawable.img8_1, R.drawable.img1_2, R.drawable.img2_2, R.drawable.img3_2, R.drawable.img4_2, R.drawable.img5_2, R.drawable.img6_2, R.drawable.img7_2, R.drawable.img8_2, R.drawable.img1_3, R.drawable.img9_2, R.drawable.img2_3, R.drawable.img3_3, R.drawable.img4_3, R.drawable.img5_3, R.drawable.img6_3, R.drawable.img7_3, R.drawable.img8_3, R.drawable.img9_3, R.drawable.img1_4, R.drawable.img2_4, R.drawable.img3_4, R.drawable.img4_4, R.drawable.img5_4, R.drawable.img6_4};
+            String[] menus_names = menus_name.split("\\|");
+            int[] menus_len = {8, 9, 9, 6};
+            for (int i = 0; i < position_category; i++)
+                menus_number += menus_len[i];
             String Option;
-            String temp=intent.getExtras().getString("Option_adverb","");
-            Option=temp;
-            temp=intent.getExtras().getString("Option_size","");
-            Option+=temp;
-            if(position_category<2) {
-                intent = new Intent(getApplicationContext(), Senior_OrderListActivity.class);
-                intent.putExtra("category", position_category+1);
-                intent.putExtra("menu_image", menus_img_number[menus_number]);
-                intent.putExtra("menu_name",menus_names[menus_number]);
-                intent.putExtra("menu_price", Integer.toString(menus_prise[menus_number]));
-                intent.putExtra("is_call", 1);
-                intent.putExtra("menu_count",menu_count);
-                intent.putExtra("menu_option",Option);
-                startActivity(intent);
-            }
+            String temp = intent.getExtras().getString("Option_adverb", "");
+            Option = temp;
+            temp = intent.getExtras().getString("Option_size", "");
+            Option += temp;
+            String temp_string = Integer.toString(menus_prise[menus_number]);
+            intent = new Intent(getApplicationContext(), Senior_OrderListActivity.class);
+            intent.putExtra("category", position_category + 1);
+            intent.putExtra("menu_image", menus_img_number[menus_number]);
+            intent.putExtra("menu_name", menus_names[menus_number]);
+            intent.putExtra("menu_price", temp_string);
+            intent.putExtra("is_call", is_call);
+            intent.putExtra("menu_count", menu_count);
+            intent.putExtra("menu_option", Option);
+            startActivity(intent);
+
         }
 
 
