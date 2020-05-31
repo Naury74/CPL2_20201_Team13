@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/senior_payment_bg"
+    android:background="@color/white"
     tools:context=".Activity.Pay.Senior_Pay_SelectPaymentMethod_Activity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="680dp"
+        android:layout_height="780dp"
         android:orientation="vertical"
         android:layout_gravity="center">
 
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="40dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="300dp"
             android:layout_marginBottom="110dp"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -154,34 +154,5 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="220dp">
 
-        <TextView
-            android:id="@+id/voice_btn"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:clickable="true"
-            android:text=" ">
-        </TextView>
-
-        <TextView
-            android:id="@+id/voice_recordText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:paddingHorizontal="20dp"
-            android:textColor="#FF4E00"
-            android:textSize="22dp"
-            android:textStyle="bold">
-        </TextView>
-
-    </LinearLayout>
 </LinearLayout>

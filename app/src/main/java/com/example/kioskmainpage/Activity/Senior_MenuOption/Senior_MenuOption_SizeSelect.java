@@ -48,6 +48,8 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity {
     TextView announce_textView;
     TextView title_view;
     public static Activity activity;
+    ImageView btn_normal_image;
+    ImageView btn_large_image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +82,8 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity {
             menu_option = intent.getExtras().getString("menu_option");
         }
 
+        btn_normal_image = (ImageView)findViewById(R.id.btn_normal_image);
+        btn_large_image = (ImageView)findViewById(R.id.btn_large_image);
         menu_name_view = (TextView)findViewById(R.id.menu_name_view);
         menu_price_view = (TextView)findViewById(R.id.menu_price_view);
         menu_image_view = (ImageView) findViewById(R.id.menu_image_view);

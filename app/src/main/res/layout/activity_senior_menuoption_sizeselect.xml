@@ -104,6 +104,7 @@
                 android:background="@drawable/btn_select_background">
 
                 <ImageView
+                    android:id="@+id/btn_normal_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -137,6 +138,7 @@
                 android:background="@drawable/btn_select_background">
 
                 <ImageView
+                    android:id="@+id/btn_large_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

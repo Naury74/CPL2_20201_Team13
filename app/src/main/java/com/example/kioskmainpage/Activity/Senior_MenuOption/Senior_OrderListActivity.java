@@ -75,9 +75,6 @@ public class Senior_OrderListActivity extends AppCompatActivity {
 
         activity = Senior_OrderListActivity.this;
 
-        EasyMenuSelectionActivity easyMenuSelectionActivity = (EasyMenuSelectionActivity)EasyMenuSelectionActivity.activity;
-        easyMenuSelectionActivity.finish();
-
         intent = getIntent();
         category_num = intent.getExtras().getInt("category");
         menu_image = intent.getExtras().getInt("menu_image");
@@ -207,6 +204,7 @@ public class Senior_OrderListActivity extends AppCompatActivity {
 
     public void onClick_add_order(View v) {
         Intent intent = new Intent(this, EasyMenuSelectionActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         /*intent.putExtra("category",category_num);
         intent.putExtra("menu_image",menu_image);
         intent.putExtra("menu_name",menu_name);
@@ -218,6 +216,9 @@ public class Senior_OrderListActivity extends AppCompatActivity {
     }
 
     public void onClick_payment(View v) {
+
+        EasyMenuSelectionActivity easyMenuSelectionActivity = (EasyMenuSelectionActivity)EasyMenuSelectionActivity.activity;
+        easyMenuSelectionActivity.finish();
 
         //Toast.makeText(this, "Payment Result Total : "+ total_price+"원",Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, Senior_Pay_TakeoutActivity.class);

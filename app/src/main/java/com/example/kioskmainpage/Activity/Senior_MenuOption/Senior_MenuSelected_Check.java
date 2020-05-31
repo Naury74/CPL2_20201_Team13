@@ -44,6 +44,8 @@ public class Senior_MenuSelected_Check extends AppCompatActivity {
     TextView voice_btn;
     TextView announce_textView;
     TextView title_view;
+    String menu_option = " ";
+    int menu_count = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -254,11 +256,15 @@ public class Senior_MenuSelected_Check extends AppCompatActivity {
                     break;
                 }
                 else if(category_num == 3){
-                    Intent intent = new Intent(this, Senior_MenuOption_SizeSelect.class);
+                    Intent intent = new Intent(this, Senior_OrderListActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                    intent.putExtra("init_type", "add");
                     intent.putExtra("category",category_num);
                     intent.putExtra("menu_image",menu_image);
                     intent.putExtra("menu_name",menu_name);
                     intent.putExtra("menu_price",menu_price);
+                    intent.putExtra("menu_option",menu_option);
+                    intent.putExtra("menu_count",menu_count);
                     startActivity(intent);
                     finish();
                     break;
