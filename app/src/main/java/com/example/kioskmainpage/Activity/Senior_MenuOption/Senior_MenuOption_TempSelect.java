@@ -233,6 +233,7 @@ public class Senior_MenuOption_TempSelect extends AppCompatActivity {
     public void onClick(View v){
         switch(v.getId()){
             case R.id.btn_hot:
+                menu_option = "";
                 menu_option = menu_option.concat("선택1: 뜨겁게         ");
                 if(category_num == 1){
                     Intent intent = new Intent(this, Senior_MenuOption_TasteSelect.class);
@@ -257,6 +258,7 @@ public class Senior_MenuOption_TempSelect extends AppCompatActivity {
                     break;
                 }
             case R.id.btn_ice:
+                menu_option = "";
                 menu_option = menu_option.concat("선택1: 차갑게          ");
                 if(category_num == 1){
                     Intent intent = new Intent(this, Senior_MenuOption_TasteSelect.class);
