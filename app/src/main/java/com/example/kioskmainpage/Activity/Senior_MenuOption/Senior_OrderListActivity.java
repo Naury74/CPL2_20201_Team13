@@ -148,6 +148,7 @@ public class Senior_OrderListActivity extends AppCompatActivity {
         super.onNewIntent(intent);
         if (null != intent) {
 
+            title_text.setText("주문을 장바구니에 담았어요!");
             category_num = intent.getExtras().getInt("category");
             menu_image = intent.getExtras().getInt("menu_image");
             menu_name = intent.getExtras().getString("menu_name");
