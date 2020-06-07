@@ -75,13 +75,17 @@ public class Senior_OrderListActivity extends AppCompatActivity {
 
         activity = Senior_OrderListActivity.this;
 
+        Log.d("LOG","----------------------aaaaaaaaaaaaaaaa");
         intent = getIntent();
         category_num = intent.getExtras().getInt("category");
         menu_image = intent.getExtras().getInt("menu_image");
         menu_name = intent.getExtras().getString("menu_name");
         m_price = intent.getExtras().getString("menu_price");
         menu_option = intent.getExtras().getString("menu_option");
-        menu_count = intent.getExtras().getInt("menu_count",1);
+        menu_count = intent.getExtras().getInt("menu_count");
+        if(menu_count==0){
+            menu_count=1;
+        }
         menu_price = Integer.parseInt(m_price);
 
         is_call=intent.getExtras().getInt("is_call",0);
@@ -150,6 +154,9 @@ public class Senior_OrderListActivity extends AppCompatActivity {
             m_price = intent.getExtras().getString("menu_price");
             menu_option = intent.getExtras().getString("menu_option");
             menu_count = intent.getExtras().getInt("menu_count");
+            if(menu_count==0){
+                menu_count=1;
+            }
             menu_price = Integer.parseInt(m_price);
             senior_selectedItem_adapter.addItem(menu_name, menu_price, menu_option, menu_count);
             tts.speak("주문이 추가되었습니다", TextToSpeech.QUEUE_FLUSH, null);
@@ -162,26 +169,7 @@ public class Senior_OrderListActivity extends AppCompatActivity {
                 senior_menuOption_tempSelect.finish();
             }
 
-            /*if(intent.getExtras().getString("init_type").equals("add")) {
-                category_num = intent.getExtras().getInt("category");
-                menu_image = intent.getExtras().getInt("menu_image");
-                menu_name = intent.getExtras().getString("menu_name");
-                m_price = intent.getExtras().getString("menu_price");
-                menu_option = intent.getExtras().getString("menu_option");
-                menu_count = intent.getExtras().getInt("menu_count");
-                menu_price = Integer.parseInt(m_price);
-                senior_selectedItem_adapter.addItem(menu_name, menu_price, menu_option, menu_count);
-                tts.speak("주문이 추가되었습니다", TextToSpeech.QUEUE_FLUSH, null);
-            }
 
-            else if(intent.getExtras().getString("init_type").equals("complete")){
-                Intent intent_BestNewMenu = new Intent(Senior_OrderListActivity.this, BestNewMenuActivity.class);
-                intent_BestNewMenu.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);//SPLASH 화면이 뜨지 않게함
-                intent_BestNewMenu.addFlags( FLAG_ACTIVITY_REORDER_TO_FRONT);//기존의 액티비티를 재사용
-                intent_BestNewMenu.putExtra("folderNames", folder_names);
-                startActivityForResult(intent_BestNewMenu, 5);
-                finish();
-            }*/
         }
     }
 
@@ -205,14 +193,7 @@ public class Senior_OrderListActivity extends AppCompatActivity {
     public void onClick_add_order(View v) {
         Intent intent = new Intent(this, EasyMenuSelectionActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        /*intent.putExtra("category",category_num);
-        intent.putExtra("menu_image",menu_image);
-        intent.putExtra("menu_name",menu_name);
-        intent.putExtra("menu_price",menu_price);
-        intent.putExtra("menu_option",menu_option);
-        intent.putExtra("menu_count",menu_count);*/
         startActivity(intent);
-        //Toast.makeText(this, "Payment Result Total : "+ total_price+"원",Toast.LENGTH_SHORT).show();
     }
 
     public void onClick_payment(View v) {

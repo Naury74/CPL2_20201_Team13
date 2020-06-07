@@ -129,6 +129,8 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         if (null != intent) {
+            voice_recordText1.setText(null);
+            voice_recordText1.setBackground(null);
             tts.speak("원하시는 종류를 선택해주세요", TextToSpeech.QUEUE_FLUSH, null);
         }
     }
