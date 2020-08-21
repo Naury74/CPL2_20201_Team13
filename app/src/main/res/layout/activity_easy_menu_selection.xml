@@ -1,61 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/senior_category_bg"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".Activity.EasyMenuSelectionActivity">
 
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.0377668308702791"
+        app:layout_constraintHeight_percent="0.0484375"
+        app:layout_constraintWidth_percent="0.79"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="원하시는 종류를 선택해주세요"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="1dp"
+        android:bufferType="spannable"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:id="@+id/menu_select_title"
+        >
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="110dp">
+    </TextView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/menu_type_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.322758620689655"
+        app:layout_constraintHeight_percent="0.43359375"
+        app:layout_constraintWidth_percent="0.71"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <!--<TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintWidth_percent="0.75"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.7"
+        android:background="@drawable/ic_voice_recordtext_box"
+        android:text="마이크를 눌러 아래처럼 말씀해 보세요"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="1dp"
+        android:bufferType="spannable"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:id="@+id/voice_recordText"
+        />-->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.53030303030303"
+        app:layout_constraintVertical_bias="0.764448994080886"
+        app:layout_constraintHeight_percent="0.0536484375"
+        app:layout_constraintWidth_percent="0.7525"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/ic_voice_recordtext_box"
+        >
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="원하시는 "
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintWidth_percent="0.85"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.1"
+            android:text="마이크를 눌러 아래처럼 말씀해 보세요"
+            android:textAlignment="center"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:bufferType="spannable"
+            android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="40dp"
-            android:textStyle="bold" />
+            android:id="@+id/voice_recordText"
+            />
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,178:178"
+        app:layout_constraintHorizontal_bias="0.498151125401929"
+        app:layout_constraintVertical_bias="0.921960072595281"
+        app:layout_constraintHeight_percent="0.1390625"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/ic_voice_btn"
+        android:id="@+id/voice_btn"
+        >
+    </TextView>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.123310810810811"
+        app:layout_constraintVertical_bias="0.836452400325468"
+        app:layout_constraintHeight_percent="0.045"
+        app:layout_constraintWidth_percent="0.26"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/ic_left_speech_buble"
+        >
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="종류"
-            android:textColor="@color/red"
-            android:textSize="40dp"
-            android:textStyle="bold" />
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintWidth_percent="0.7"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintVertical_bias="0.3"
+            android:text="'커피주문'"
+            android:textAlignment="center"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.936283185840708"
+        app:layout_constraintVertical_bias="0.893409275834011"
+        app:layout_constraintHeight_percent="0.03984375"
+        app:layout_constraintWidth_percent="0.29375"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/ic_right_speech_buble"
+        >
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="를 선택해주세요"
-            android:textColor="@color/black"
-            android:textSize="40dp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintWidth_percent="0.7"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintVertical_bias="0.5"
+            android:text="'카페라떼 한잔 줘'"
+            android:textAlignment="center"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+    </android.support.constraint.ConstraintLayout>
 
-    <LinearLayout
-        android:layout_width="700dp"
-        android:layout_height="700dp"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:gravity="center">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/menu_type_recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginHorizontal="40dp" />
-
-    </LinearLayout>
+    <!--
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -84,5 +240,5 @@
             android:textSize="22dp"
             android:textStyle="bold"></TextView>
 
-    </LinearLayout>
-   </LinearLayout>
+    </LinearLayout>-->
+</android.support.constraint.ConstraintLayout>

@@ -16,6 +16,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Spannable;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -49,8 +53,8 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
     private TextToSpeech tts;
     SpeechRecognizer mRecognizer;
     TextView voice_btn1;
-    TextView voice_recordText1;
-    TextView what_do_you_need;
+    TextView voice_recordText1,voice_recordText;
+    TextView what_do_you_need,menu_select_title;
     final int PERMISSION = 1;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -82,6 +86,16 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
 
         activity = EasyMenuSelectionActivity.this;
 
+        menu_select_title = (TextView) findViewById(R.id.menu_select_title);
+        Spannable span = (Spannable) menu_select_title.getText();
+        span.setSpan(new ForegroundColorSpan(getColor(R.color.colorAccent)), 5, 6, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        span.setSpan(new RelativeSizeSpan(1.1f), 1, 2, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+
+        voice_recordText1 = (TextView) findViewById(R.id.voice_recordText);
+        Spannable span2 = (Spannable) voice_recordText1.getText();
+        span2.setSpan(new ForegroundColorSpan(getColor(R.color.colorAccent)), 1, 3, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        span2.setSpan(new RelativeSizeSpan(1.1f), 5, 6, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+
         recyclerView = findViewById(R.id.menu_type_recyclerview);
         layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
@@ -97,7 +111,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
                     Manifest.permission.RECORD_AUDIO}, PERMISSION);
         }
 
-        voice_recordText1 = (TextView) findViewById(R.id.voice_recordText);
+
         voice_btn1 = (TextView) findViewById(R.id.voice_btn);
 
         intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
@@ -130,7 +144,6 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
         super.onNewIntent(intent);
         if (null != intent) {
             voice_recordText1.setText(null);
-            voice_recordText1.setBackground(null);
             tts.speak("원하시는 종류를 선택해주세요", TextToSpeech.QUEUE_FLUSH, null);
         }
     }
@@ -139,7 +152,6 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
         @Override
         public void onReadyForSpeech(Bundle params) {
             voice_recordText1.setText("듣고 있어요...");
-            voice_recordText1.setBackground(getDrawable(R.drawable.round_text_bg));
 
         }
 

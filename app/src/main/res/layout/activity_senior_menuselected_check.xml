@@ -1,15 +1,273 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/senior_selectedcheck_bg"
     tools:context=".Activity.Senior_MenuOption.Senior_MenuSelected_Check">
 
 
-    <LinearLayout
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/menu_image_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_right_speech_buble"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FFFFFFFF"
+        app:layout_constraintHorizontal_bias="0.161425576519916"
+        app:layout_constraintVertical_bias="0.047952047952048"
+        app:layout_constraintHeight_percent="0.21796875"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/menu_name_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="1dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintHorizontal_bias="0.852173913043478"
+        app:layout_constraintVertical_bias="0.08"
+        app:layout_constraintHeight_percent="0.08671875"
+        app:layout_constraintWidth_percent="0.28125"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="Menu Name"/>
+
+    <TextView
+        android:id="@+id/menu_price_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.789398280802292"
+        app:layout_constraintVertical_bias="0.17"
+        app:layout_constraintHeight_percent="0.04609375"
+        app:layout_constraintWidth_percent="0.1275"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="1dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:lines="1"
+        android:text="Menu Price"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintVertical_bias="0.310833333333333"
+        app:layout_constraintHeight_percent="0.0625"
+        app:layout_constraintWidth_percent="0.825"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="1dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="이 메뉴를 주문하시겠어요?"
+        android:bufferType="spannable"
+        />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.493392070484582"
+        app:layout_constraintVertical_bias="0.535433070866142"
+        app:layout_constraintHeight_percent="0.20625"
+        app:layout_constraintWidth_percent="0.71625"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHeight_percent="1"
+            app:layout_constraintDimensionRatio="h,1:1"
+            android:background="@drawable/ic_senior_cancel_button"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.53030303030303"
+        app:layout_constraintVertical_bias="0.764448994080886"
+        app:layout_constraintHeight_percent="0.0536484375"
+        app:layout_constraintWidth_percent="0.7525"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/ic_voice_recordtext_box"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintWidth_percent="0.85"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.1"
+            android:text="마이크를 눌러 아래처럼 말씀해 보세요"
+            android:textAlignment="center"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:bufferType="spannable"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:id="@+id/voice_recordText"
+            />
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,178:178"
+        app:layout_constraintHorizontal_bias="0.498151125401929"
+        app:layout_constraintVertical_bias="0.921960072595281"
+        app:layout_constraintHeight_percent="0.1390625"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/ic_voice_btn"
+        android:id="@+id/voice_btn"
+        >
+    </TextView>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.123310810810811"
+        app:layout_constraintVertical_bias="0.836452400325468"
+        app:layout_constraintHeight_percent="0.045"
+        app:layout_constraintWidth_percent="0.26"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/ic_left_speech_buble"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintWidth_percent="0.7"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintVertical_bias="0.3"
+            android:text="'아메리카노 한잔 줘'"
+            android:textAlignment="center"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.936283185840708"
+        app:layout_constraintVertical_bias="0.893409275834011"
+        app:layout_constraintHeight_percent="0.03984375"
+        app:layout_constraintWidth_percent="0.29375"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/ic_right_speech_buble"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintWidth_percent="0.7"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintVertical_bias="0.5"
+            android:text="'카페라떼 한잔 줘'"
+            android:textAlignment="center"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+    </android.support.constraint.ConstraintLayout>
+
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -185,5 +443,5 @@
             android:textStyle="bold">
         </TextView>
 
-    </LinearLayout>
-</LinearLayout>
+    </LinearLayout>-->
+</android.support.constraint.ConstraintLayout>
