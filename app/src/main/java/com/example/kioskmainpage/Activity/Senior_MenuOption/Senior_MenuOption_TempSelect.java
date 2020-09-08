@@ -8,6 +8,7 @@ import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.speech.tts.TextToSpeech;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,7 +28,7 @@ import com.example.kioskmainpage.R;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class Senior_MenuOption_TempSelect extends AppCompatActivity {
+public class Senior_MenuOption_TempSelect extends AppCompatActivity implements View.OnClickListener {
 
     Intent intent;
     int menu_image;
@@ -46,6 +47,8 @@ public class Senior_MenuOption_TempSelect extends AppCompatActivity {
     TextView announce_textView;
     TextView title_view;
     public static Activity activity;
+    private ConstraintLayout btn_hot;
+    private ConstraintLayout btn_ice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,17 +102,22 @@ public class Senior_MenuOption_TempSelect extends AppCompatActivity {
         voice_recordText = (TextView)findViewById(R.id.voice_recordText);
         voice_btn = (TextView)findViewById(R.id.voice_btn);
 
+        btn_ice=(ConstraintLayout)findViewById(R.id.btn_cancel);
+        btn_ice.setOnClickListener(this);
+        btn_hot=(ConstraintLayout)findViewById(R.id.btn_checked);
+        btn_hot.setOnClickListener(this);
+
         intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,getPackageName());
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE,"ko-KR");
-        voice_btn.setOnClickListener(new View.OnClickListener() {
+        /*voice_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mRecognizer = SpeechRecognizer.createSpeechRecognizer(Senior_MenuOption_TempSelect.this);
                 mRecognizer.setRecognitionListener(listener);
                 mRecognizer.startListening(intent);
             }
-        });
+        });*/
 
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -127,7 +135,7 @@ public class Senior_MenuOption_TempSelect extends AppCompatActivity {
 
     }
 
-    private RecognitionListener listener = new RecognitionListener() {
+   /* private RecognitionListener listener = new RecognitionListener() {
         @Override
         public void onReadyForSpeech(Bundle params) {
             //Toast.makeText(getApplicationContext(),"음성인식을 시작합니다.",Toast.LENGTH_SHORT).show();
@@ -217,7 +225,7 @@ public class Senior_MenuOption_TempSelect extends AppCompatActivity {
 
         @Override
         public void onEvent(int eventType, Bundle params) {}
-    };
+    };*/
 
     @Override
     protected void onDestroy() {
@@ -282,8 +290,8 @@ public class Senior_MenuOption_TempSelect extends AppCompatActivity {
                     //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
                     break;
                 }
-            case R.id.back_btn:
-                finish();
+           /* case R.id.back_btn:
+                finish();*/
         }
     }
     public void onBackPressed() {

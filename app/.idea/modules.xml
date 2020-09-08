@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../CPL2_20201_Team13.iml" filepath="$PROJECT_DIR$/../CPL2_20201_Team13.iml" group="CPL2_20201_Team13" />
-      <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" group="CPL2_20201_Team13/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-756974820/CPL_20201_Team13.iml" filepath="$PROJECT_DIR$/.idea/modules/-756974820/CPL_20201_Team13.iml" group="CPL_20201_Team13" />
+      <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" group="CPL_20201_Team13/app" />
     </modules>
   </component>
 </project>

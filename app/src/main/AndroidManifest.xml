@@ -52,7 +52,7 @@
             android:theme="@style/NoTitleDialog" />
         <activity
             android:name=".Activity.Waiting.Order_Method_Selection_Popup"
-            android:theme="@style/NoTitleDialog" />
+            android:theme="@style/ConstrantPopup" />
         <activity android:name=".Activity.Pay.Senior_Pay_OrderComplelte" />
         <activity
             android:name=".Activity.Pay.Senior_Pay_Loading"

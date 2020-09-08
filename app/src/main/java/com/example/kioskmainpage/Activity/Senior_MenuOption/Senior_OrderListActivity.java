@@ -92,7 +92,6 @@ public class Senior_OrderListActivity extends AppCompatActivity {
         mListView = (ListView)findViewById(R.id.listView);
         dataSetting();
         total_price_textview = (TextView)findViewById(R.id.total_price);
-        title_text = (TextView)findViewById(R.id.title_text);
 
         if((category_num == 1 || category_num == 2)&&(is_call==0)){
             Senior_MenuOption_TasteSelect senior_menuOption_tasteSelect = (Senior_MenuOption_TasteSelect)Senior_MenuOption_TasteSelect.activity;

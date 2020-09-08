@@ -22,7 +22,7 @@
         app:tabTextAppearance="@style/TabTextStyle"
         app:tabTextColor="@color/white"
         app:layout_constraintVertical_bias="0"
-        app:layout_constraintHeight_percent="0.06015625"
+        app:layout_constraintHeight_percent="0.06"
         app:layout_constraintWidth_default="percent"
         app:layout_constraintHeight_default="percent"
         app:layout_constraintTop_toTopOf="parent"
@@ -36,10 +36,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/transparent"
-        app:layout_constraintHorizontal_bias="0.470588235294118"
-        app:layout_constraintVertical_bias="0.284644194756554"
-        app:layout_constraintHeight_percent="0.5828125"
-        app:layout_constraintWidth_percent="0.915"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintHeight_percent="0.94"
+        app:layout_constraintWidth_percent="1"
         app:layout_constraintWidth_default="percent"
         app:layout_constraintHeight_default="percent"
         app:layout_constraintTop_toTopOf="parent"
@@ -48,7 +48,73 @@
         app:layout_constraintRight_toRightOf="parent"
         />
 
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,219:219"
+        app:layout_constraintHorizontal_bias="0.917236142748671"
+        app:layout_constraintVertical_bias="0.934390377255331"
+        app:layout_constraintHeight_percent="0.10693359375"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/ic_button_mike"
+        android:id="@+id/voice_btn"
+        android:backgroundTint="#FF4E00"
+        android:elevation="10dp"
+        app:fabSize="normal"
+        />
+
     <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ic_background_record_text"
+        android:id="@+id/background_record_text"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintHeight_percent="0.412109375"
+        app:layout_constraintWidth_percent="1"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintWidth_percent="0.35"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintVertical_bias="0.8"
+            android:text="듣고 있어요..."
+            android:textAlignment="center"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:bufferType="spannable"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:id="@+id/voice_recordText"
+            android:maxLines="1"
+            android:background="@null"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+    <!--<android.support.constraint.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHorizontal_bias="0.53030303030303"
@@ -182,7 +248,7 @@
             android:textStyle="bold"
             android:textColor="@color/white"
             />
-    </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>-->
 
 
     <!--<LinearLayout

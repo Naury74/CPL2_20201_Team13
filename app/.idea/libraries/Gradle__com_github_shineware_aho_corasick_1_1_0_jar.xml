@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.shineware:aho-corasick:1.1.0@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.shineware/aho-corasick/1.1.0/7f37927cb8360f4da66d69e284bf9bda2a503606/aho-corasick-1.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.shineware/aho-corasick/1.1.0/fb271f60672fec091652885dd18df54d8495716a/aho-corasick-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -8,6 +8,7 @@ import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.speech.tts.TextToSpeech;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,7 +28,7 @@ import com.example.kioskmainpage.R;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class Senior_MenuOption_TasteSelect extends AppCompatActivity {
+public class Senior_MenuOption_TasteSelect extends AppCompatActivity implements View.OnClickListener{
 
     Intent intent;
     int menu_image;
@@ -46,6 +47,10 @@ public class Senior_MenuOption_TasteSelect extends AppCompatActivity {
     TextView announce_textView;
     TextView title_view;
     public static Activity activity;
+    private ConstraintLayout btn_sweet;
+    private ConstraintLayout btn_normal;
+    private ConstraintLayout btn_thick;
+    private ConstraintLayout btn_more_thick;
 
 
     @Override
@@ -87,6 +92,15 @@ public class Senior_MenuOption_TasteSelect extends AppCompatActivity {
 
         title_view = (TextView)findViewById(R.id.title_view);
 
+        btn_sweet=(ConstraintLayout)findViewById(R.id.btn_cancel);
+        btn_sweet.setOnClickListener(this);
+        btn_normal=(ConstraintLayout)findViewById(R.id.btn_checked);
+        btn_normal.setOnClickListener(this);
+        btn_thick=(ConstraintLayout)findViewById(R.id.btn_cancel);
+        btn_thick.setOnClickListener(this);
+        btn_more_thick=(ConstraintLayout)findViewById(R.id.btn_checked);
+        btn_more_thick.setOnClickListener(this);
+
         Spannable span = (Spannable) title_view.getText();
         span.setSpan(new ForegroundColorSpan(getColor(R.color.senior_btn_color)), 5, 8, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
         span.setSpan(new RelativeSizeSpan(1.1f), 5, 8, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
@@ -103,14 +117,14 @@ public class Senior_MenuOption_TasteSelect extends AppCompatActivity {
         intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,getPackageName());
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE,"ko-KR");
-        voice_btn.setOnClickListener(new View.OnClickListener() {
+        /*voice_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mRecognizer = SpeechRecognizer.createSpeechRecognizer(Senior_MenuOption_TasteSelect.this);
                 mRecognizer.setRecognitionListener(listener);
                 mRecognizer.startListening(intent);
             }
-        });
+        });*/
 
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -329,8 +343,8 @@ public class Senior_MenuOption_TasteSelect extends AppCompatActivity {
                     //Toast.makeText(this, "Option Selected : "+menu_option,Toast.LENGTH_SHORT).show();
                     break;
                 }
-            case R.id.back_btn:
-                finish();
+            /*case R.id.back_btn:
+                finish();*/
         }
     }
     public void onBackPressed() {

@@ -1,13 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Activity.Senior_MenuOption.Senior_OrderListActivity">
-    
-    <LinearLayout
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.017625712804562"
+        app:layout_constraintHeight_percent="0.05810546875"
+        app:layout_constraintWidth_percent="0.72265625"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="1dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="주문을 장바구니에 담았어요!"
+        android:bufferType="spannable"
+        android:id="@+id/title_view"
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.48046875"
+        app:layout_constraintVertical_bias="0.100866021395823"
+        app:layout_constraintHeight_percent="0.04150390625"
+        app:layout_constraintWidth_percent="0.166666666666667"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="1dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="주문목록"
+        />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/transparent"
+        android:dividerHeight="10dp"
+        android:divider="@color/transparent"
+        app:layout_constraintHorizontal_bias="0.524904214559387"
+        app:layout_constraintVertical_bias="0.305363321799308"
+        app:layout_constraintHeight_percent="0.435546875"
+        app:layout_constraintWidth_percent="0.830078125"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+    </ListView>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="총액"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintHorizontal_bias="0.868032786885246"
+        app:layout_constraintVertical_bias="0.698464912280702"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintWidth_percent="0.17"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="1dp"
+        android:gravity="right"
+        />
+
+    <TextView
+        android:id="@+id/total_price"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="9000원"
+        android:textStyle="bold"
+        android:textColor="#FE3D3D"
+        app:layout_constraintHorizontal_bias="0.868032786885246"
+        app:layout_constraintVertical_bias="0.75"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintWidth_percent="0.205729166666667"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:autoSizeTextType="uniform"
+        android:gravity="right"
+        app:autoSizeMinTextSize="1dp"
+        android:maxLines="1"
+        />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,400:400"
+        app:layout_constraintHorizontal_bias="0.0833333333333333"
+        app:layout_constraintVertical_bias="0.948402948402948"
+        app:layout_constraintHeight_percent="0.18"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:clickable="true"
+        android:onClick="onClick_add_order"
+        android:id="@+id/add_order_btn"
+        android:background="@drawable/ic_senior_button_add"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="h,1:5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.95"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="추가주문"
+            />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,1:1.7"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintVertical_bias="0.948402948402948"
+        app:layout_constraintHeight_percent="0.18"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:clickable="true"
+        android:onClick="onClick_payment"
+        android:id="@+id/payment"
+        android:background="@drawable/ic_senior_button_payment"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="h,1:5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.95"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="추가주문"
+            />
+    </android.support.constraint.ConstraintLayout>
+
+   <!-- <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="130dp"
         android:layout_marginTop="80dp"
@@ -167,6 +359,6 @@
 
 
 
-    </LinearLayout>
+    </LinearLayout>-->
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

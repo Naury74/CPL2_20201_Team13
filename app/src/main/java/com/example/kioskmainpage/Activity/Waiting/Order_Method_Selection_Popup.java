@@ -1,5 +1,6 @@
 package com.example.kioskmainpage.Activity.Waiting;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.speech.tts.TextToSpeech;
@@ -8,7 +9,9 @@ import android.os.Bundle;
 import android.text.Spannable;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
+import android.view.Display;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.example.kioskmainpage.Activity.BestNewMenuActivity;
@@ -43,6 +46,11 @@ public class Order_Method_Selection_Popup extends AppCompatActivity {
         newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
         this.setFinishOnTouchOutside(false);
+        Display display = ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+        int width = (int) (display.getWidth());
+        int height = (int) (display.getHeight());
+        getWindow().getAttributes().width = width;
+        getWindow().getAttributes().height = height;
 
         title = (TextView)findViewById(R.id.title_view);
         //Spannable span = (Spannable) title.getText();

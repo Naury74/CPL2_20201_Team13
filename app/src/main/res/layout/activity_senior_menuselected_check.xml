@@ -16,8 +16,8 @@
         android:src="@drawable/ic_right_speech_buble"
         app:civ_border_width="2dp"
         app:civ_border_color="#FFFFFFFF"
-        app:layout_constraintHorizontal_bias="0.161425576519916"
-        app:layout_constraintVertical_bias="0.047952047952048"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.302339901477833"
         app:layout_constraintHeight_percent="0.21796875"
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintHeight_default="percent"
@@ -37,10 +37,10 @@
         app:autoSizeMinTextSize="1dp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        app:layout_constraintHorizontal_bias="0.852173913043478"
-        app:layout_constraintVertical_bias="0.08"
-        app:layout_constraintHeight_percent="0.08671875"
-        app:layout_constraintWidth_percent="0.28125"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.484848484848485"
+        app:layout_constraintHeight_percent="0.04931640625"
+        app:layout_constraintWidth_percent="0.377604166666667"
         app:layout_constraintWidth_default="percent"
         app:layout_constraintHeight_default="percent"
         app:layout_constraintTop_toTopOf="parent"
@@ -53,10 +53,10 @@
         android:id="@+id/menu_price_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintHorizontal_bias="0.789398280802292"
-        app:layout_constraintVertical_bias="0.17"
-        app:layout_constraintHeight_percent="0.04609375"
-        app:layout_constraintWidth_percent="0.1275"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.536723163841808"
+        app:layout_constraintHeight_percent="0.04931640625"
+        app:layout_constraintWidth_percent="0.377604166666667"
         app:layout_constraintWidth_default="percent"
         app:layout_constraintHeight_default="percent"
         app:layout_constraintTop_toTopOf="parent"
@@ -75,10 +75,10 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintHorizontal_bias="0.55"
-        app:layout_constraintVertical_bias="0.310833333333333"
-        app:layout_constraintHeight_percent="0.0625"
-        app:layout_constraintWidth_percent="0.825"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.129132231404959"
+        app:layout_constraintHeight_percent="0.0546875"
+        app:layout_constraintWidth_percent="0.639322916666667"
         app:layout_constraintWidth_default="percent"
         app:layout_constraintHeight_default="percent"
         app:layout_constraintTop_toTopOf="parent"
@@ -93,45 +93,126 @@
         android:textStyle="bold"
         android:text="이 메뉴를 주문하시겠어요?"
         android:bufferType="spannable"
+        android:id="@+id/title_view"
         />
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintHorizontal_bias="0.493392070484582"
-        app:layout_constraintVertical_bias="0.535433070866142"
-        app:layout_constraintHeight_percent="0.20625"
-        app:layout_constraintWidth_percent="0.71625"
+        android:clickable="true"
+        android:id="@+id/btn_checked"
+        app:layout_constraintHorizontal_bias="0.49940119760479"
+        app:layout_constraintVertical_bias="0.689336235038085"
+        app:layout_constraintHeight_percent="0.1025390625"
+        app:layout_constraintWidth_percent="0.728190104166667"
         app:layout_constraintWidth_default="percent"
         app:layout_constraintHeight_default="percent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/senior_checkbox_green"
+        android:elevation="5dp"
         >
-
+        
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintHeight_percent="0.65"
+            app:layout_constraintWidth_percent="0.4"
             app:layout_constraintWidth_default="percent"
             app:layout_constraintHeight_default="percent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintHeight_percent="1"
-            app:layout_constraintDimensionRatio="h,1:1"
-            android:background="@drawable/ic_senior_cancel_button"
+            android:textAlignment="center"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="확 인"
             />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintHeight_percent="0.65"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/ic_senior_check"
+            />
+        
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:id="@+id/btn_cancel"
+        app:layout_constraintHorizontal_bias="0.49940119760479"
+        app:layout_constraintVertical_bias="0.844940152339499"
+        app:layout_constraintHeight_percent="0.1025390625"
+        app:layout_constraintWidth_percent="0.728190104166667"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/senior_checkbox_red"
+        android:elevation="5dp"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintHeight_percent="0.65"
+            app:layout_constraintWidth_percent="0.4"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textAlignment="center"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="취 소"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintHeight_percent="0.65"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/ic_senior_close"
             />
 
     </android.support.constraint.ConstraintLayout>
 
-    <android.support.constraint.ConstraintLayout
+   <!-- <android.support.constraint.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHorizontal_bias="0.53030303030303"
@@ -266,6 +347,72 @@
             android:textColor="@color/white"
             />
     </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_cancel"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:layout_marginRight="40dp"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:background="@drawable/btn_select_background">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/close"
+            android:paddingTop="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="15dp"
+            android:layout_margin="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:text="취소"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_checked"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="40dp"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:background="@drawable/btn_select_background_green">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/checked"
+            android:paddingTop="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="15dp"
+            android:layout_margin="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:text="확인"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+    </LinearLayout>-->
 
     <!--<LinearLayout
         android:layout_width="match_parent"

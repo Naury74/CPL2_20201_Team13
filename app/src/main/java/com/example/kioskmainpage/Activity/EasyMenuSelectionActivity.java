@@ -11,6 +11,7 @@ import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.speech.tts.TextToSpeech;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,7 +48,7 @@ import kr.co.shineware.nlp.komoran.model.KomoranResult;
 import kr.co.shineware.nlp.komoran.model.Token;
 import android.util.Log;
 
-public class EasyMenuSelectionActivity extends AppCompatActivity {
+public class EasyMenuSelectionActivity extends AppCompatActivity implements View.OnClickListener {
 
     Intent intent;
     private TextToSpeech tts;
@@ -60,7 +61,7 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     RecyclerAdapter_MenuType recyclerAdapterMenuType;
     Komoran komoran = new Komoran(DEFAULT_MODEL.LIGHT);
-    String[] arr = {"커피", "음료", "빵", "기타"};
+    /*String[] arr = {"커피", "음료", "빵", "기타"};*/
     public static Activity activity;
 
     @Override
@@ -91,19 +92,28 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
         span.setSpan(new ForegroundColorSpan(getColor(R.color.colorAccent)), 5, 6, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
         span.setSpan(new RelativeSizeSpan(1.1f), 1, 2, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
 
-        voice_recordText1 = (TextView) findViewById(R.id.voice_recordText);
+        ConstraintLayout button_coffee = (ConstraintLayout) findViewById(R.id.button_coffee);
+        button_coffee.setOnClickListener(this);
+        ConstraintLayout button_beverage = (ConstraintLayout) findViewById(R.id.button_beverage);
+        button_beverage.setOnClickListener(this);
+        ConstraintLayout button_bread = (ConstraintLayout) findViewById(R.id.button_bread);
+        button_bread.setOnClickListener(this);
+        ConstraintLayout button_etc = (ConstraintLayout) findViewById(R.id.button_etc);
+        button_etc.setOnClickListener(this);
+
+
+        /*voice_recordText1 = (TextView) findViewById(R.id.voice_recordText);
         Spannable span2 = (Spannable) voice_recordText1.getText();
         span2.setSpan(new ForegroundColorSpan(getColor(R.color.colorAccent)), 1, 3, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-        span2.setSpan(new RelativeSizeSpan(1.1f), 5, 6, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        span2.setSpan(new RelativeSizeSpan(1.1f), 5, 6, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);*/
 
-        recyclerView = findViewById(R.id.menu_type_recyclerview);
+        /*recyclerView = findViewById(R.id.menu_type_recyclerview);
         layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerAdapterMenuType = new RecyclerAdapter_MenuType(arr);
+        recyclerAdapterMenuType = new RecyclerAdapter_MenuType(arr);*/
 
-
-        recyclerView.setAdapter(recyclerAdapterMenuType);
-        recyclerView.setHasFixedSize(true);
+        /*recyclerView.setAdapter(recyclerAdapterMenuType);
+        recyclerView.setHasFixedSize(true);*/
 
         if (Build.VERSION.SDK_INT >= 23) {
             // 퍼미션 체크
@@ -117,14 +127,14 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
         intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getPackageName());
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ko-KR");
-        voice_btn1.setOnClickListener(new View.OnClickListener() {
+       /* voice_btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mRecognizer = SpeechRecognizer.createSpeechRecognizer(EasyMenuSelectionActivity.this);
                 mRecognizer.setRecognitionListener(listener);
                 mRecognizer.startListening(intent);
             }
-        });
+        });*/
 
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -139,7 +149,39 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
         });
     }
 
-    @Override
+    public void onClick(View view) {
+
+        int position = 0;
+        switch (view.getId()) {
+            case R.id.button_coffee:
+                position = 0;
+                intent = new Intent(this, Senior_MainActivity.class);
+                intent.putExtra("position", position);
+                this.startActivity(intent);
+                break;
+            case R.id.button_beverage:
+                position = 1;
+                intent = new Intent(this, Senior_MainActivity.class);
+                intent.putExtra("position", position);
+                this.startActivity(intent);
+                break;
+            case R.id.button_bread:
+                position = 2;
+                intent = new Intent(this, Senior_MainActivity.class);
+                intent.putExtra("position", position);
+                this.startActivity(intent);
+                break;
+            case R.id.button_etc:
+                position = 3;
+                intent = new Intent(this, Senior_MainActivity.class);
+                intent.putExtra("position", position);
+                this.startActivity(intent);
+                break;
+
+        }
+    }
+
+    /*@Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         if (null != intent) {
@@ -559,6 +601,6 @@ public class EasyMenuSelectionActivity extends AppCompatActivity {
         }
         Temp.replaceAll(" ", "");
         return Temp.toCharArray();
-    }
+    }*/
 }
 

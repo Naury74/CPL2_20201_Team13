@@ -8,20 +8,50 @@
     android:orientation="vertical"
     tools:context=".Activity.EasyMenuSelectionActivity">
 
-    <TextView
+    <android.support.constraint.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.0377668308702791"
-        app:layout_constraintHeight_percent="0.0484375"
-        app:layout_constraintWidth_percent="0.79"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHeight_percent="1"
+        app:layout_constraintWidth_percent="0.295572916666667"
         app:layout_constraintWidth_default="percent"
         app:layout_constraintHeight_default="percent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:text="원하시는 종류를 선택해주세요"
+        android:background="@color/red"
+        android:id="@+id/point"
+        />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintHeight_percent="1"
+        app:layout_constraintWidth_percent="0.704427083333333"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+    >
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintVertical_bias="0.102895553257497"
+        app:layout_constraintHeight_percent="0.0556640625"
+        app:layout_constraintWidth_percent="0.49609375"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="종류를 선택해주세요"
         android:textAlignment="center"
         android:gravity="center"
         app:autoSizeTextType="uniform"
@@ -31,51 +61,274 @@
         android:textColor="@color/black"
         android:id="@+id/menu_select_title"
         >
-
     </TextView>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/menu_type_recyclerview"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.322758620689655"
-        app:layout_constraintHeight_percent="0.43359375"
-        app:layout_constraintWidth_percent="0.71"
-        app:layout_constraintWidth_default="percent"
-        app:layout_constraintHeight_default="percent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.168212890625"
+            app:layout_constraintHeight_percent="0.00390625"
+            app:layout_constraintWidth_percent="0.866913123844732"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@color/black"
+            />
 
-    <!--<TextView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintWidth_default="percent"
-        app:layout_constraintHeight_default="percent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHeight_percent="0.05"
-        app:layout_constraintWidth_percent="0.75"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.7"
-        android:background="@drawable/ic_voice_recordtext_box"
-        android:text="마이크를 눌러 아래처럼 말씀해 보세요"
-        android:textAlignment="center"
-        android:gravity="center"
-        app:autoSizeTextType="uniform"
-        app:autoSizeMinTextSize="1dp"
-        android:bufferType="spannable"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:id="@+id/voice_recordText"
-        />-->
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_bias="0.329706202393906"
+            app:layout_constraintHeight_percent="0.1025390625"
+            app:layout_constraintWidth_percent="0.845656192236599"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:elevation="10dp"
+            android:background="@drawable/order_method_box"
+            android:id="@+id/button_coffee"
+            android:clickable="true"
+            >
 
-    <android.support.constraint.ConstraintLayout
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_constraintHeight_percent="0.8"
+                app:layout_constraintDimensionRatio="h,1:1"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="커피"
+                app:layout_constraintHorizontal_bias="0.85"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_constraintHeight_percent="0.633333333333333"
+                app:layout_constraintDimensionRatio="h,1:1"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:textAlignment="center"
+                android:gravity="center"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="1dp"
+                android:bufferType="spannable"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintHeight_percent="0.1025390625"
+            app:layout_constraintWidth_percent="0.845656192236599"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:elevation="10dp"
+            android:background="@drawable/order_method_box"
+            android:id="@+id/button_beverage"
+            android:clickable="true"
+            >
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_constraintHeight_percent="0.8"
+                app:layout_constraintDimensionRatio="h,1:1"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="음료"
+                app:layout_constraintHorizontal_bias="0.85"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_constraintHeight_percent="0.633333333333333"
+                app:layout_constraintDimensionRatio="h,1:1"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:textAlignment="center"
+                android:gravity="center"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="1dp"
+                android:bufferType="spannable"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_bias="0.670293797606094"
+            app:layout_constraintHeight_percent="0.1025390625"
+            app:layout_constraintWidth_percent="0.845656192236599"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:elevation="10dp"
+            android:background="@drawable/order_method_box"
+            android:id="@+id/button_bread"
+            android:clickable="true"
+            >
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_constraintHeight_percent="0.8"
+                app:layout_constraintDimensionRatio="h,1:1"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="빵"
+                app:layout_constraintHorizontal_bias="0.85"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_constraintHeight_percent="0.633333333333333"
+                app:layout_constraintDimensionRatio="h,1:1"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:textAlignment="center"
+                android:gravity="center"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="1dp"
+                android:bufferType="spannable"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_bias="0.840587595212187"
+            app:layout_constraintHeight_percent="0.1025390625"
+            app:layout_constraintWidth_percent="0.845656192236599"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:elevation="10dp"
+            android:background="@drawable/order_method_box"
+            android:id="@+id/button_etc"
+            android:clickable="true"
+            >
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_constraintHeight_percent="0.8"
+                app:layout_constraintDimensionRatio="h,1:1"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="기타"
+                app:layout_constraintHorizontal_bias="0.85"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_constraintHeight_percent="0.633333333333333"
+                app:layout_constraintDimensionRatio="h,1:1"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:textAlignment="center"
+                android:gravity="center"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="1dp"
+                android:bufferType="spannable"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <!--<TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_percent="0.75"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.7"
+            android:background="@drawable/ic_voice_recordtext_box"
+            android:text="마이크를 눌러 아래처럼 말씀해 보세요"
+            android:textAlignment="center"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:bufferType="spannable"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:id="@+id/voice_recordText"
+            />-->
+
+   <!-- <android.support.constraint.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHorizontal_bias="0.53030303030303"
@@ -209,6 +462,8 @@
             android:textStyle="bold"
             android:textColor="@color/white"
             />
+    </android.support.constraint.ConstraintLayout>-->
+
     </android.support.constraint.ConstraintLayout>
 
     <!--

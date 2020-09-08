@@ -1,14 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.qstumn:VerticalTabLayout:1.2.4@aar">
     <CLASSES>
-      <root url="jar://D:/Program Files (x86)/gradle-6.3-bin/gradle-6.3/caches/transforms-2/files-2.1/e090a0b1d52fc395bbef3a47966fe3dc/VerticalTabLayout-1.2.4/jars/classes.jar!/" />
-      <root url="file://D:/Program Files (x86)/gradle-6.3-bin/gradle-6.3/caches/transforms-2/files-2.1/e090a0b1d52fc395bbef3a47966fe3dc/VerticalTabLayout-1.2.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e090a0b1d52fc395bbef3a47966fe3dc/VerticalTabLayout-1.2.4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e090a0b1d52fc395bbef3a47966fe3dc/VerticalTabLayout-1.2.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e090a0b1d52fc395bbef3a47966fe3dc/VerticalTabLayout-1.2.4/res" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://D:/Program Files (x86)/gradle-6.3-bin/gradle-6.3/caches/modules-2/files-2.1/com.github.qstumn/VerticalTabLayout/1.2.4/60ae672476a75b98acf167878e909b7dea836a92/VerticalTabLayout-1.2.4-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.qstumn/VerticalTabLayout/1.2.4/60ae672476a75b98acf167878e909b7dea836a92/VerticalTabLayout-1.2.4-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://D:/Program Files (x86)/gradle-6.3-bin/gradle-6.3/caches/modules-2/files-2.1/com.github.qstumn/VerticalTabLayout/1.2.4/d02909997373ca1d816e0207915b087389aeb651/VerticalTabLayout-1.2.4-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.qstumn/VerticalTabLayout/1.2.4/d02909997373ca1d816e0207915b087389aeb651/VerticalTabLayout-1.2.4-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

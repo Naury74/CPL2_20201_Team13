@@ -12,6 +12,7 @@ import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.speech.tts.TextToSpeech;
+import android.support.constraint.ConstraintLayout;
 import android.support.constraint.solver.widgets.Barrier;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
@@ -54,10 +55,11 @@ public class Senior_MainActivity extends AppCompatActivity {
 
     Intent intent;
     private TextToSpeech tts;
+    private ConstraintLayout background_record_text;
+    private FloatingActionButton voice_btn;
     SpeechRecognizer mRecognizer;
     final int PERMISSION = 1;
     TextView voice_recordText;
-    TextView voice_btn;
     TextView announce_textView;
     int position_category = 0;
     ViewPager viewPager;
@@ -101,8 +103,10 @@ public class Senior_MainActivity extends AppCompatActivity {
                         Manifest.permission.RECORD_AUDIO}, PERMISSION);
             }
 
+
             voice_recordText = (TextView) findViewById(R.id.voice_recordText);
-            voice_btn = (TextView) findViewById(R.id.voice_btn);
+            FloatingActionButton voice_btn = (FloatingActionButton) findViewById(R.id.voice_btn);
+            background_record_text=(ConstraintLayout) findViewById(R.id.background_record_text);
 
             intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
             intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getPackageName());
@@ -110,9 +114,14 @@ public class Senior_MainActivity extends AppCompatActivity {
             voice_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mRecognizer = SpeechRecognizer.createSpeechRecognizer(Senior_MainActivity.this);
-                    mRecognizer.setRecognitionListener(listener);
-                    mRecognizer.startListening(intent);
+                    if( background_record_text.getVisibility()==View.VISIBLE)
+                        background_record_text.setVisibility(View.GONE);
+                    else {
+                        background_record_text.setVisibility(View.VISIBLE);
+                        mRecognizer = SpeechRecognizer.createSpeechRecognizer(Senior_MainActivity.this);
+                        mRecognizer.setRecognitionListener(listener);
+                        mRecognizer.startListening(intent);
+                    }
                 }
             });
 

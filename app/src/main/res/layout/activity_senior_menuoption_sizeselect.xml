@@ -1,224 +1,429 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/senior_size_bg"
     tools:context=".Activity.Senior_MenuOption.Senior_MenuOption_SizeSelect">
-        
-        <TextView
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/menu_image_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginTop="20dp">
+        android:src="@drawable/ic_right_speech_buble"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FFFFFFFF"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.166871921182266"
+        app:layout_constraintHeight_percent="0.21796875"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_marginTop="30dp">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/menu_image_view"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center"
-                android:src="@drawable/senior_test_image"
-                app:civ_border_width="2dp"
-                app:civ_border_color="#FFFFFFFF"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:orientation="vertical"
-            android:layout_marginTop="54dp"
-            android:layout_marginLeft="70dp"
-            android:layout_gravity="center"
-            android:paddingTop="20dp">
-            <TextView
-                android:id="@+id/menu_name_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textSize="35dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:text="Menu Name"/>
-
-            <TextView
-                android:id="@+id/menu_price_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textSize="35dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:lines="1"
-                android:text="Menu Price"/>
-        </LinearLayout>
-    </LinearLayout>
     <TextView
-        android:id="@+id/title_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="40dp"
-        android:textColor="@color/black"
-        android:layout_marginVertical="60dp"
-        android:textStyle="bold"
+        android:id="@+id/menu_name_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textAlignment="center"
         android:gravity="center"
-        android:bufferType="spannable"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="1dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.371854134565999"
+        app:layout_constraintHeight_percent="0.04931640625"
+        app:layout_constraintWidth_percent="0.377604166666667"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="Menu Name"/>
+
+    <TextView
+        android:id="@+id/menu_price_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.423728813559322"
+        app:layout_constraintHeight_percent="0.04931640625"
+        app:layout_constraintWidth_percent="0.377604166666667"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="1dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:lines="1"
-        android:text="원하시는 크기를 선택해주세요"/>
+        android:text="Menu Price"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="18dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginHorizontal="30dp">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.53047520661157"
+        app:layout_constraintHeight_percent="0.0546875"
+        app:layout_constraintWidth_percent="0.678385416666667"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="1dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="원하시는 크기를 선택해주세요"
+        android:bufferType="spannable"
+        android:id="@+id/title_view"
+        />
 
-            <LinearLayout
-                android:id="@+id/btn_normal"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:orientation="vertical"
-                android:layout_marginRight="40dp"
-                android:clickable="true"
-                android:onClick="onClick"
-                android:background="@drawable/btn_select_background">
-
-                <ImageView
-                    android:id="@+id/btn_normal_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@drawable/size_normal"
-                    android:paddingTop="0dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:paddingBottom="0dp"
-                    android:layout_margin="20dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_weight="3"
-                    android:text="보통"
-                    android:textSize="30dp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/btn_large"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:orientation="vertical"
-                android:layout_marginLeft="40dp"
-                android:clickable="true"
-                android:onClick="onClick"
-                android:background="@drawable/btn_select_background">
-
-                <ImageView
-                    android:id="@+id/btn_large_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@drawable/size_big"
-                    android:paddingTop="15dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:paddingBottom="10dp"
-                    android:layout_margin="20dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_weight="3"
-                    android:text="크게"
-                    android:textSize="30dp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="150dp">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        app:layout_constraintHorizontal_bias="0.49940119760479"
+        app:layout_constraintVertical_bias="0.689336235038085"
+        app:layout_constraintHeight_percent="0.1025390625"
+        app:layout_constraintWidth_percent="0.728190104166667"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/senior_checkbox_darkgray"
+        android:elevation="5dp"
+        android:id="@+id/btn_normal"
+        >
 
         <TextView
-            android:id="@+id/voice_btn"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:clickable="true"
-            android:text=" ">
-        </TextView>
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintHeight_percent="0.6"
+            app:layout_constraintWidth_percent="0.2"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="보통"
+            />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:gravity="center_vertical"
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintHeight_percent="0.65"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="기본"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:gravity="center"
+            />
 
-            <TextView
-                android:id="@+id/back_btn"
-                android:layout_width="160dp"
-                android:layout_height="40dp"
-                android:layout_gravity="left"
-                android:clickable="true"
-                android:onClick="onClick"
-                android:background="@drawable/senior_back_btn"
-                android:layout_marginLeft="30dp"/>
+    </android.support.constraint.ConstraintLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:gravity="right"
-                android:layout_marginRight="30dp">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        app:layout_constraintHorizontal_bias="0.49940119760479"
+        app:layout_constraintVertical_bias="0.844940152339499"
+        app:layout_constraintHeight_percent="0.1025390625"
+        app:layout_constraintWidth_percent="0.728190104166667"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/senior_checkbox_purple"
+        android:elevation="5dp"
+        android:id="@+id/btn_large"
+        >
 
-                <TextView
-                    android:id="@+id/voice_recordText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:gravity="right"
-                    android:paddingHorizontal="20dp"
-                    android:textColor="#FF4E00"
-                    android:textSize="22dp"
-                    android:textStyle="bold">
-                </TextView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintHeight_percent="0.6"
+            app:layout_constraintWidth_percent="0.2"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="크게"
+            />
 
-            </LinearLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHorizontal_bias="0.86"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintHeight_percent="0.6"
+            app:layout_constraintDimensionRatio="h,2.5:1"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/ic_senior_size_big"
+            />
 
-        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
 
-    </LinearLayout>
-</LinearLayout>
+
+    <!--   <TextView
+           android:layout_width="160dp"
+           android:layout_height="40dp"
+           android:layout_marginTop="30dp"
+           android:layout_marginLeft="30dp"/>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:layout_gravity="center"
+       android:gravity="center"
+       android:layout_marginTop="20dp">
+
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+
+           android:layout_marginTop="30dp">
+
+           <de.hdodenhof.circleimageview.CircleImageView
+               android:id="@+id/menu_image_view"
+               android:layout_width="200dp"
+               android:layout_height="200dp"
+               android:layout_gravity="center"
+               android:src="@drawable/senior_test_image"
+               app:civ_border_width="2dp"
+               app:civ_border_color="#FFFFFFFF"/>
+
+       </LinearLayout>
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="200dp"
+           android:orientation="vertical"
+           android:layout_marginTop="54dp"
+           android:layout_marginLeft="70dp"
+           android:layout_gravity="center"
+           android:paddingTop="20dp">
+           <TextView
+               android:id="@+id/menu_name_view"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:gravity="center"
+               android:textSize="35dp"
+               android:textColor="@color/black"
+               android:textStyle="bold"
+               android:text="Menu Name"/>
+
+           <TextView
+               android:id="@+id/menu_price_view"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:textSize="35dp"
+               android:textColor="@color/black"
+               android:textStyle="bold"
+               android:gravity="center"
+               android:lines="1"
+               android:text="Menu Price"/>
+       </LinearLayout>
+   </LinearLayout>
+   <TextView
+       android:id="@+id/title_view"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       android:textSize="40dp"
+       android:textColor="@color/black"
+       android:layout_marginVertical="60dp"
+       android:textStyle="bold"
+       android:gravity="center"
+       android:bufferType="spannable"
+       android:lines="1"
+       android:text="원하시는 크기를 선택해주세요"/>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_marginTop="18dp"
+           android:layout_gravity="center"
+           android:gravity="center"
+           android:layout_marginHorizontal="30dp">
+
+           <LinearLayout
+               android:id="@+id/btn_normal"
+               android:layout_width="200dp"
+               android:layout_height="200dp"
+               android:orientation="vertical"
+               android:layout_marginRight="40dp"
+               android:clickable="true"
+               android:onClick="onClick"
+               android:background="@drawable/btn_select_background">
+
+               <ImageView
+                   android:id="@+id/btn_normal_image"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:src="@drawable/size_normal"
+                   android:paddingTop="0dp"
+                   android:paddingLeft="20dp"
+                   android:paddingRight="20dp"
+                   android:paddingBottom="0dp"
+                   android:layout_margin="20dp" />
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:gravity="center"
+                   android:layout_weight="3"
+                   android:text="보통"
+                   android:textSize="30dp"
+                   android:textColor="@color/white"
+                   android:textStyle="bold"/>
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/btn_large"
+               android:layout_width="200dp"
+               android:layout_height="200dp"
+               android:orientation="vertical"
+               android:layout_marginLeft="40dp"
+               android:clickable="true"
+               android:onClick="onClick"
+               android:background="@drawable/btn_select_background">
+
+               <ImageView
+                   android:id="@+id/btn_large_image"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:src="@drawable/size_big"
+                   android:paddingTop="15dp"
+                   android:paddingLeft="20dp"
+                   android:paddingRight="20dp"
+                   android:paddingBottom="10dp"
+                   android:layout_margin="20dp" />
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:gravity="center"
+                   android:layout_weight="3"
+                   android:text="크게"
+                   android:textSize="30dp"
+                   android:textColor="@color/white"
+                   android:textStyle="bold"/>
+
+           </LinearLayout>
+
+       </LinearLayout>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:layout_marginTop="150dp">
+
+       <TextView
+           android:id="@+id/voice_btn"
+           android:layout_width="130dp"
+           android:layout_height="130dp"
+           android:layout_gravity="center"
+           android:layout_marginTop="30dp"
+           android:clickable="true"
+           android:text=" ">
+       </TextView>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_vertical"
+           android:gravity="center_vertical"
+           android:layout_marginTop="25dp"
+           android:orientation="horizontal">
+
+           <TextView
+               android:id="@+id/back_btn"
+               android:layout_width="160dp"
+               android:layout_height="40dp"
+               android:layout_gravity="left"
+               android:clickable="true"
+               android:onClick="onClick"
+               android:background="@drawable/senior_back_btn"
+               android:layout_marginLeft="30dp"/>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_gravity="right"
+               android:gravity="right"
+               android:layout_marginRight="30dp">
+
+               <TextView
+                   android:id="@+id/voice_recordText"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="right"
+                   android:gravity="right"
+                   android:paddingHorizontal="20dp"
+                   android:textColor="#FF4E00"
+                   android:textSize="22dp"
+                   android:textStyle="bold">
+               </TextView>
+
+           </LinearLayout>
+
+       </LinearLayout>
+
+   </LinearLayout>-->
+</android.support.constraint.ConstraintLayout>
