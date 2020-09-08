@@ -97,9 +97,9 @@ public class Senior_MenuOption_SizeSelect extends AppCompatActivity implements V
 
         title_view = (TextView)findViewById(R.id.title_view);
 
-        btn_normal=(ConstraintLayout)findViewById(R.id.btn_cancel);
+        btn_normal=(ConstraintLayout)findViewById(R.id.btn_normal);
         btn_normal.setOnClickListener(this);
-        btn_large=(ConstraintLayout)findViewById(R.id.btn_checked);
+        btn_large=(ConstraintLayout)findViewById(R.id.btn_large);
         btn_large.setOnClickListener(this);
 
         Spannable span = (Spannable) title_view.getText();

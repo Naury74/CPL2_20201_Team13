@@ -92,13 +92,13 @@ public class Senior_MenuOption_TasteSelect extends AppCompatActivity implements 
 
         title_view = (TextView)findViewById(R.id.title_view);
 
-        btn_sweet=(ConstraintLayout)findViewById(R.id.btn_cancel);
+        btn_sweet=(ConstraintLayout)findViewById(R.id.btn_sweet);
         btn_sweet.setOnClickListener(this);
-        btn_normal=(ConstraintLayout)findViewById(R.id.btn_checked);
+        btn_normal=(ConstraintLayout)findViewById(R.id.btn_normal);
         btn_normal.setOnClickListener(this);
-        btn_thick=(ConstraintLayout)findViewById(R.id.btn_cancel);
+        btn_thick=(ConstraintLayout)findViewById(R.id.btn_thick);
         btn_thick.setOnClickListener(this);
-        btn_more_thick=(ConstraintLayout)findViewById(R.id.btn_checked);
+        btn_more_thick=(ConstraintLayout)findViewById(R.id.btn_more_thick);
         btn_more_thick.setOnClickListener(this);
 
         Spannable span = (Spannable) title_view.getText();

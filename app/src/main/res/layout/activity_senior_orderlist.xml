@@ -161,8 +161,9 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="h,1:1.7"
-        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintHorizontal_bias="0.82"
         app:layout_constraintVertical_bias="0.948402948402948"
         app:layout_constraintHeight_percent="0.18"
         app:layout_constraintHeight_default="percent"
@@ -195,7 +196,7 @@
             app:autoSizeMinTextSize="1dp"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:text="추가주문"
+            android:text="결제"
             />
     </android.support.constraint.ConstraintLayout>
 

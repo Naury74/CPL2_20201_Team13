@@ -1,14 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white"
     tools:context=".Activity.Pay.Senior_Pay_TakeoutActivity">
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHeight_percent="1"
+        app:layout_constraintWidth_percent="0.295572916666667"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="#2B2B2B"
+        android:id="@+id/point"
+        />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintHeight_percent="1"
+        app:layout_constraintWidth_percent="0.704427083333333"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHorizontal_bias="0.38"
+            app:layout_constraintVertical_bias="0.15"
+            app:layout_constraintHeight_percent="0.1787109375"
+            app:layout_constraintDimensionRatio="h,1:2"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="매장에서 드실지,&#10;포장해서 가실지&#10;선택해주세요"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:bufferType="spannable"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:id="@+id/menu_select_title"
+            >
+        </TextView>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.33"
+            app:layout_constraintHeight_percent="0.00390625"
+            app:layout_constraintWidth_percent="0.866913123844732"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@color/black"
+            />
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.68757225433526"
+        app:layout_constraintHeight_percent="0.13"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/senior_checkbox_skyblue"
+        android:elevation="5dp"
+        android:id="@+id/btn_here"
+        android:clickable="true"
+        android:onClick="onClick_Hall"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintVertical_bias="0.86"
+            app:layout_constraintHeight_percent="0.4"
+            app:layout_constraintWidth_percent="0.28"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="매장"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintHeight_percent="0.65"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/ic_senior_shop"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.9"
+            app:layout_constraintHeight_percent="0.13"
+            app:layout_constraintWidth_percent="0.8"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/senior_checkbox_green"
+            android:elevation="5dp"
+            android:id="@+id/btn_takeout"
+            android:clickable="true"
+            android:onClick="onClick_TakeOut"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintVertical_bias="0.86"
+                app:layout_constraintHeight_percent="0.4"
+                app:layout_constraintWidth_percent="0.28"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="1dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="포장"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHorizontal_bias="0.9"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_constraintHeight_percent="0.65"
+                app:layout_constraintDimensionRatio="h,1:1"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:background="@drawable/ic_senior_packing"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+   <!-- <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="780dp"
         android:orientation="vertical"
@@ -51,11 +234,12 @@
             android:layout_marginHorizontal="30dp">
 
             <LinearLayout
-                android:id="@+id/btn_here"
+
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:orientation="vertical"
                 android:layout_marginRight="40dp"
+                android:id="@+id/btn_here"
                 android:clickable="true"
                 android:onClick="onClick_Hall"
                 android:background="@drawable/btn_select_background_blue">
@@ -87,11 +271,12 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/btn_takeout"
+
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:orientation="vertical"
                 android:layout_marginLeft="40dp"
+                android:id="@+id/btn_takeout"
                 android:clickable="true"
                 android:onClick="onClick_TakeOut"
                 android:background="@drawable/btn_select_background_green">
@@ -124,6 +309,6 @@
 
         </LinearLayout>
 
-    </LinearLayout>
+    </LinearLayout>-->
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

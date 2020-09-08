@@ -102,9 +102,9 @@ public class Senior_MenuOption_TempSelect extends AppCompatActivity implements V
         voice_recordText = (TextView)findViewById(R.id.voice_recordText);
         voice_btn = (TextView)findViewById(R.id.voice_btn);
 
-        btn_ice=(ConstraintLayout)findViewById(R.id.btn_cancel);
+        btn_ice=(ConstraintLayout)findViewById(R.id.btn_ice);
         btn_ice.setOnClickListener(this);
-        btn_hot=(ConstraintLayout)findViewById(R.id.btn_checked);
+        btn_hot=(ConstraintLayout)findViewById(R.id.btn_hot);
         btn_hot.setOnClickListener(this);
 
         intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);

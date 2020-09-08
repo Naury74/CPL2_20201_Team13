@@ -1,14 +1,253 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white"
     tools:context=".Activity.Pay.Senior_Pay_SelectPaymentMethod_Activity">
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHeight_percent="1"
+        app:layout_constraintWidth_percent="0.295572916666667"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="#2B2B2B"
+        android:id="@+id/point"
+        />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintHeight_percent="1"
+        app:layout_constraintWidth_percent="0.704427083333333"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHorizontal_bias="0.18"
+            app:layout_constraintVertical_bias="0.144124168514412"
+            app:layout_constraintHeight_percent="0.119140625"
+            app:layout_constraintWidth_percent="0.541015625"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="결제수단을&#10;선택해주세요"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:bufferType="spannable"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:id="@+id/menu_select_title"
+            >
+        </TextView>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.26"
+            app:layout_constraintHeight_percent="0.00390625"
+            app:layout_constraintWidth_percent="0.866913123844732"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@color/black"
+            />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.48"
+            app:layout_constraintHeight_percent="0.13"
+            app:layout_constraintWidth_percent="0.8"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/senior_checkbox_gray"
+            android:elevation="5dp"
+            android:id="@+id/btn_money"
+            android:clickable="true"
+            android:onClick="onClick_Money"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintVertical_bias="0.86"
+                app:layout_constraintHeight_percent="0.4"
+                app:layout_constraintWidth_percent="0.28"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="1dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="현금"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHorizontal_bias="0.9"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_constraintHeight_percent="0.6"
+                app:layout_constraintDimensionRatio="h,158:230"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:background="@drawable/ic_senior_money"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.69"
+            app:layout_constraintHeight_percent="0.13"
+            app:layout_constraintWidth_percent="0.8"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/senior_checkbox_red"
+            android:elevation="5dp"
+            android:id="@+id/btn_card"
+            android:clickable="true"
+            android:onClick="onClick_Card"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintVertical_bias="0.86"
+                app:layout_constraintHeight_percent="0.4"
+                app:layout_constraintWidth_percent="0.28"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="1dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="카드"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHorizontal_bias="0.9"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_constraintHeight_percent="0.6"
+                app:layout_constraintDimensionRatio="h,158:230"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:background="@drawable/ic_senior_card"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.9"
+            app:layout_constraintHeight_percent="0.13"
+            app:layout_constraintWidth_percent="0.8"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/senior_checkbox_blue"
+            android:elevation="5dp"
+            android:id="@+id/btn_samsungpay"
+            android:clickable="true"
+            android:onClick="onClick_SamsungPay"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintVertical_bias="0.86"
+                app:layout_constraintHeight_percent="0.4"
+                app:layout_constraintWidth_percent="0.28"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="1dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="삼성페이"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHorizontal_bias="0.9"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_constraintHeight_percent="0.65"
+                app:layout_constraintDimensionRatio="h,1:1"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="780dp"
         android:orientation="vertical"
@@ -39,11 +278,12 @@
             android:layout_marginHorizontal="30dp">
 
             <LinearLayout
-                android:id="@+id/btn_money"
+
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:orientation="vertical"
                 android:layout_marginRight="30dp"
+                android:id="@+id/btn_money"
                 android:clickable="true"
                 android:onClick="onClick_Money"
                 android:background="@drawable/btn_select_background">
@@ -76,12 +316,13 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/btn_card"
+
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:orientation="vertical"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
+                android:id="@+id/btn_card"
                 android:clickable="true"
                 android:onClick="onClick_Card"
                 android:background="@drawable/btn_select_background">
@@ -114,11 +355,12 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/btn_samsungpay"
+
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:orientation="vertical"
                 android:layout_marginLeft="30dp"
+                android:id="@+id/btn_samsungpay"
                 android:clickable="true"
                 android:onClick="onClick_SamsungPay"
                 android:background="@drawable/btn_select_background">
@@ -153,6 +395,6 @@
         </LinearLayout>
 
     </LinearLayout>
+-->
 
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
