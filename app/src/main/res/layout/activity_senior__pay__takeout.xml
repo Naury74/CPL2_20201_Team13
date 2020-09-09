@@ -54,7 +54,7 @@
             android:bufferType="spannable"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:id="@+id/menu_select_title"
+            android:id="@+id/title_view"
             >
         </TextView>
 
