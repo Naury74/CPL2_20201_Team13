@@ -89,8 +89,8 @@ public class EasyMenuSelectionActivity extends AppCompatActivity implements View
 
         menu_select_title = (TextView) findViewById(R.id.menu_select_title);
         Spannable span = (Spannable) menu_select_title.getText();
-        span.setSpan(new ForegroundColorSpan(getColor(R.color.colorAccent)), 5, 6, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-        span.setSpan(new RelativeSizeSpan(1.1f), 1, 2, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        span.setSpan(new ForegroundColorSpan(getColor(R.color.red_color_accent)), 0, 2, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        span.setSpan(new RelativeSizeSpan(1.1f), 0, 2, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
 
         ConstraintLayout button_coffee = (ConstraintLayout) findViewById(R.id.button_coffee);
         button_coffee.setOnClickListener(this);

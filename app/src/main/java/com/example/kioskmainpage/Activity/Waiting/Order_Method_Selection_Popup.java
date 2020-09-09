@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.Spannable;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
@@ -53,8 +54,9 @@ public class Order_Method_Selection_Popup extends AppCompatActivity {
         getWindow().getAttributes().height = height;
 
         title = (TextView)findViewById(R.id.title_view);
-        //Spannable span = (Spannable) title.getText();
-        //span.setSpan(new ForegroundColorSpan(getColor(R.color.light_green)), 27, 34, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        Spannable span = (Spannable) title.getText();
+        span.setSpan(new ForegroundColorSpan(getColor(R.color.red_color_accent)), 0, 5, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        span.setSpan(new RelativeSizeSpan(1.1f), 0, 5, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
 
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override

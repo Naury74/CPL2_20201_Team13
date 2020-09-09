@@ -62,4 +62,5 @@
     <color name="white_blue">#007FE1</color>
     <color name="light_green">#0FD915</color>
     <color name="senior_btn_color">#FE3D3D</color>
+    <color name="red_color_accent">#FD0000</color>
 </resources>
