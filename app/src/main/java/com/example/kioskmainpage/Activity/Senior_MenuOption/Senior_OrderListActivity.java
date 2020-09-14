@@ -7,6 +7,7 @@ import android.speech.tts.TextToSpeech;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -72,6 +73,8 @@ public class Senior_OrderListActivity extends AppCompatActivity {
         newUiOptions ^= View.SYSTEM_UI_FLAG_FULLSCREEN;
         newUiOptions ^= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
+
+
 
         activity = Senior_OrderListActivity.this;
 

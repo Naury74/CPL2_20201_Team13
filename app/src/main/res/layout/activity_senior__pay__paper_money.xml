@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="700dp"
@@ -9,7 +9,193 @@
     android:orientation="vertical"
     tools:context=".Activity.Pay.Senior_Pay_PaperMoneyActivity">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/title_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="화면에 표시된 결제금액을&#10;현금 투입구에 넣은 후,&#10;'결제 진행'버튼을 눌러주세요"
+        android:textColor="@color/black"
+        android:bufferType="spannable"
+        android:textStyle="bold"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="1dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintHeight_percent="0.153942428035044"
+        app:layout_constraintWidth_percent="0.705634987384357"
+        />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHeight_percent="0.438986232790989"
+        app:layout_constraintWidth_percent="0.482447434819176"
+        android:layout_gravity="center"
+        >
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="1dp"
+        android:textStyle="bold"
+        android:text="결재 금액"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintHeight_percent="0.17"
+        app:layout_constraintWidth_percent="0.7"
+        >
+    </TextView>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/price"
+        android:textColor="@color/red"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="1dp"
+        android:textStyle="bold"
+        android:text="0"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHeight_percent="0.17"
+        app:layout_constraintWidth_percent="0.7"
+        >
+    </TextView>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintVertical_bias="0.93"
+        app:layout_constraintHeight_percent="0.169586983729662"
+        app:layout_constraintWidth_percent="0.259041211101766"
+        android:clickable="true"
+        android:onClick="onClick_cancel"
+        android:id="@+id/cancel_btn"
+        android:background="@drawable/ic_senior_cancel_button">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHeight_percent="0.35"
+            app:layout_constraintWidth_percent="0.7"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.99"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:text="취소"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.74"
+        app:layout_constraintVertical_bias="0.93"
+        app:layout_constraintHeight_percent="0.169586983729662"
+        app:layout_constraintWidth_percent="0.259041211101766"
+        android:clickable="true"
+        android:onClick="onClick_confirm"
+        android:id="@+id/pass_btn"
+        android:background="@drawable/ic_senior_confirm_button">
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.28"
+            android:src="@drawable/right_arrow"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHeight_percent="0.4"
+            app:layout_constraintWidth_percent="0.7"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.99"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="1dp"
+            android:gravity="center"
+            android:text="결제진행"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+    </android.support.constraint.ConstraintLayout>
+
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -144,6 +330,6 @@
 
         </LinearLayout>
 
-    </LinearLayout>
+    </LinearLayout>-->
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

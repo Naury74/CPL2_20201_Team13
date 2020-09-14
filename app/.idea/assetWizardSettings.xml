@@ -3,6 +3,11 @@
   <component name="WizardSettings">
     <option name="children">
       <map>
+        <entry key="imageWizard">
+          <value>
+            <PersistentState />
+          </value>
+        </entry>
         <entry key="vectorWizard">
           <value>
             <PersistentState>
@@ -14,8 +19,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_senior_button_add" />
-                            <entry key="sourceFile" value="C:\Users\Lee\Desktop\희망이음 그림 파일\senior_button_add.svg" />
+                            <entry key="outputName" value="ic_senior_confirm_button" />
+                            <entry key="sourceFile" value="C:\Users\Lee\Desktop\희망이음 그림 파일\senior_confirm_button.svg" />
                           </map>
                         </option>
                       </PersistentState>

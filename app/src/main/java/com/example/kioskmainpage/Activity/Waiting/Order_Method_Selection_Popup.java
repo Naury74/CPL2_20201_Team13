@@ -10,6 +10,7 @@ import android.text.Spannable;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
+import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
@@ -40,6 +41,9 @@ public class Order_Method_Selection_Popup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order__method__selection__popup);
 
+
+
+
         int uiOptions = getWindow().getDecorView().getSystemUiVisibility();
         int newUiOptions = uiOptions;
         newUiOptions ^= View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
@@ -51,6 +55,14 @@ public class Order_Method_Selection_Popup extends AppCompatActivity {
         int width = (int) (display.getWidth());
         int height = (int) (display.getHeight());
         getWindow().getAttributes().width = width;
+        getWindow().getAttributes().height = height;
+        DisplayMetrics dm = getApplicationContext().getResources().getDisplayMetrics();
+
+        width = (int) (dm.widthPixels * 0.873); // Display 사이즈의 90%
+        height = (int) (dm.heightPixels * 0.650390625); // Display 사이즈의 90%
+
+        getWindow().getAttributes().width = width;
+
         getWindow().getAttributes().height = height;
 
         title = (TextView)findViewById(R.id.title_view);
