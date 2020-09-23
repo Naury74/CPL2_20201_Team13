@@ -2,10 +2,12 @@ package com.example.kioskmainpage.Activity.Waiting;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.provider.MediaStore;
 import android.speech.RecognitionListener;
@@ -38,9 +40,15 @@ import com.example.kioskmainpage.Activity.EasyMenuSelectionActivity;
 import com.example.kioskmainpage.Activity.MainActivity;
 import com.example.kioskmainpage.Activity.Senior_MenuOption.Senior_MenuSelected_Check;
 import com.example.kioskmainpage.Activity.Senior_MenuOption.Senior_OrderListActivity;
+import com.example.kioskmainpage.Activity.SplashActivity;
 import com.example.kioskmainpage.Adapter.Senior_MainTab_Adapter;
 import com.example.kioskmainpage.Fragment.Senior_Tab_Fragment;
+import com.example.kioskmainpage.Myapplication;
+import com.example.kioskmainpage.NaturalLanguageProcessing;
 import com.example.kioskmainpage.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,7 +61,7 @@ import kr.co.shineware.nlp.komoran.model.KomoranResult;
 
 public class Senior_MainActivity extends AppCompatActivity {
 
-    Intent intent;
+    Intent intent,intent2;
     private TextToSpeech tts;
     private ConstraintLayout background_record_text;
     private FloatingActionButton voice_btn;
@@ -68,11 +76,15 @@ public class Senior_MainActivity extends AppCompatActivity {
     public static Activity activity;
     int cccccc=0;
     int is_call;
-
+    Myapplication myapplication;
+    int[] menus_len;
+    String menus_name;
+    NaturalLanguageProcessing naturalLanguageProcessing;
+    Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        context=this;
         //상하단바 제거
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -90,7 +102,10 @@ public class Senior_MainActivity extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
         setContentView(R.layout.activity_senior__main);
 
+        myapplication=(Myapplication)getApplication();
         activity = Senior_MainActivity.this;
+        menus_len =new int[]{8, 9, 9, 6};
+        menus_name = "아메리카노|카라멜 마끼아또|카페모카|카페라떼|카페모카|화이트초코|아포카토|리스레스토 비얀코|그린 티 크림|모카 푸라푸치노|바닐라크림|에스프레소 프라푸치노|자바칩 푸라푸치노|카라멜 푸라푸치노|화이트 딸기 크림|초콜릿 크림|초콜릿 모카|7레이어 가나슈|레드벨벳 크림치즈|생크림 카스텔라|블루베리 쿠키 치즈케이크|포콜릿 데블스 케이크|촉촉 생크림 케이크|크레이프 치즈|클라우드 치즈|호두 당근 케이크|나이트로 쇼콜라|나이트로 콜드브루|돌체 콜드브루|바닐라크림 콜드브루|콜드브루 폼|콜드브루 몰트";
 
         intent = getIntent();
         position_category = intent.getExtras().getInt("position");
@@ -102,7 +117,6 @@ public class Senior_MainActivity extends AppCompatActivity {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.INTERNET,
                         Manifest.permission.RECORD_AUDIO}, PERMISSION);
             }
-
 
             voice_recordText = (TextView) findViewById(R.id.voice_recordText);
             FloatingActionButton voice_btn = (FloatingActionButton) findViewById(R.id.voice_btn);
@@ -121,6 +135,8 @@ public class Senior_MainActivity extends AppCompatActivity {
                         mRecognizer = SpeechRecognizer.createSpeechRecognizer(Senior_MainActivity.this);
                         mRecognizer.setRecognitionListener(listener);
                         mRecognizer.startListening(intent);
+
+                        voice_recordText.setText("말하신 음료를 못찾았어요");
                     }
                 }
             });
@@ -155,15 +171,14 @@ public class Senior_MainActivity extends AppCompatActivity {
                 }
             });
         intent=getIntent();
-        is_call = intent.getExtras().getInt("is_call");
+       /*
+       is_call = intent.getExtras().getInt("is_call");
         if(is_call==1) {
             int menus_number = intent.getExtras().getInt("menus_number", -1);
             int menu_count = intent.getExtras().getInt("Option_count");
-            String menus_name = "아메리카노|카라멜 마끼아또|카페모카|카페라떼|카페모카|화이트초코|아포카토|리스레스토 비얀코|그린 티 크림|모카 푸라푸치노|바닐라크림|에스프레소 프라푸치노|자바칩 푸라푸치노|카라멜 푸라푸치노|화이트 딸기 크림|초콜릿 크림|초콜릿 모카|7레이어 가나슈|레드벨벳 크림치즈|생크림 카스텔라|블루베리 쿠키 치즈케이크|포콜릿 데블스 케이크|촉촉 생크림 케이크|크레이프 치즈|클라우드 치즈|호두 당근 케이크|나이트로 쇼콜라|나이트로 콜드브루|돌체 콜드브루|바닐라크림 콜드브루|콜드브루 폼|콜드브루 몰트";
             int[] menus_prise = {2500, 3500, 4000, 2800, 4300, 5300, 4400, 5500, 6300, 5600, 4900, 5800, 6100, 5600, 5600, 5700, 5700, 4800, 5500, 4500, 6800, 5900, 5200, 6500, 5500, 6500, 6100, 5800, 5800, 8500, 5800, 8000};
             int[] menus_img_number = {R.drawable.img1_1, R.drawable.img2_1, R.drawable.img3_1, R.drawable.img4_1, R.drawable.img5_1, R.drawable.img6_1, R.drawable.img7_1, R.drawable.img8_1, R.drawable.img1_2, R.drawable.img2_2, R.drawable.img3_2, R.drawable.img4_2, R.drawable.img5_2, R.drawable.img6_2, R.drawable.img7_2, R.drawable.img8_2, R.drawable.img1_3, R.drawable.img9_2, R.drawable.img2_3, R.drawable.img3_3, R.drawable.img4_3, R.drawable.img5_3, R.drawable.img6_3, R.drawable.img7_3, R.drawable.img8_3, R.drawable.img9_3, R.drawable.img1_4, R.drawable.img2_4, R.drawable.img3_4, R.drawable.img4_4, R.drawable.img5_4, R.drawable.img6_4};
             String[] menus_names = menus_name.split("\\|");
-            int[] menus_len = {8, 9, 9, 6};
             for (int i = 0; i < position_category; i++)
                 menus_number += menus_len[i];
             String Option;
@@ -185,8 +200,7 @@ public class Senior_MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-
-
+*/
 
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -280,8 +294,18 @@ public class Senior_MainActivity extends AppCompatActivity {
 
         @Override
         public void onResults(Bundle results) {
+            String key = "";
+            key = SpeechRecognizer.RESULTS_RECOGNITION;
+            ArrayList<String> mResult = results.getStringArrayList(key);
+
+            String[] rs = new String[mResult.size()];
+            mResult.toArray(rs);
+            BackgroundService task=new BackgroundService();
+            task.getString(rs);
+            task.execute();
+
             //말을하면 분석된 예제들을 rs에 저장합니다.
-            if(cccccc==0){
+          /*  if(cccccc==0){
                 String key = "";
                 key = SpeechRecognizer.RESULTS_RECOGNITION;
                 ArrayList<String> mResult = results.getStringArrayList(key);
@@ -499,7 +523,7 @@ public class Senior_MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }
-            }
+            }*/
 
         }
 
@@ -611,4 +635,97 @@ public class Senior_MainActivity extends AppCompatActivity {
         Temp.replaceAll(" ", "");
         return Temp.toCharArray();
     }
+    class BackgroundService extends AsyncTask<String, Void, Void> {
+        ProgressDialog logindialog = new ProgressDialog(Senior_MainActivity.this);
+        String[] data;
+        JSONObject object;
+        public void getString(String[] data){
+            this.data=data;
+        }
+        @Override
+        protected void onPreExecute() {
+            //백그라운드 작업하는동안 보여줄 동작
+            logindialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            logindialog.setMessage("언어를 해석중입니다.");
+            logindialog.show();
+            super.onPreExecute();
+        }
+
+
+        @Override
+        protected void onPostExecute(Void result) {
+            //백그라운드 작업 완료됐을때 호출
+            logindialog.dismiss();
+
+
+            try {
+                boolean temp=(Boolean) object.get("is_intent_go");
+                if(temp){
+
+                    String menus_name_ = "아메리카노|카라멜 마끼아또|카페모카|카페라떼|카페모카|화이트초코|아포카토|리스레스토 비얀코|그린 티 크림|모카 푸라푸치노|바닐라크림|에스프레소 프라푸치노|자바칩 푸라푸치노|카라멜 푸라푸치노|화이트 딸기 크림|초콜릿 크림|초콜릿 모카|7레이어 가나슈|레드벨벳 크림치즈|생크림 카스텔라|블루베리 쿠키 치즈케이크|포콜릿 데블스 케이크|촉촉 생크림 케이크|크레이프 치즈|클라우드 치즈|호두 당근 케이크|나이트로 쇼콜라|나이트로 콜드브루|돌체 콜드브루|바닐라크림 콜드브루|콜드브루 폼|콜드브루 몰트";
+                    int[] menus_prise = {2500, 3500, 4000, 2800, 4300, 5300, 4400, 5500, 6300, 5600, 4900, 5800, 6100, 5600, 5600, 5700, 5700, 4800, 5500, 4500, 6800, 5900, 5200, 6500, 5500, 6500, 6100, 5800, 5800, 8500, 5800, 8000};
+                    int[] menus_img_number = {R.drawable.img1_1, R.drawable.img2_1, R.drawable.img3_1, R.drawable.img4_1, R.drawable.img5_1, R.drawable.img6_1, R.drawable.img7_1, R.drawable.img8_1, R.drawable.img1_2, R.drawable.img2_2, R.drawable.img3_2, R.drawable.img4_2, R.drawable.img5_2, R.drawable.img6_2, R.drawable.img7_2, R.drawable.img8_2, R.drawable.img1_3, R.drawable.img9_2, R.drawable.img2_3, R.drawable.img3_3, R.drawable.img4_3, R.drawable.img5_3, R.drawable.img6_3, R.drawable.img7_3, R.drawable.img8_3, R.drawable.img9_3, R.drawable.img1_4, R.drawable.img2_4, R.drawable.img3_4, R.drawable.img4_4, R.drawable.img5_4, R.drawable.img6_4};
+                    String[] menus_names = menus_name_.split("\\|");
+                    int[] menus_len = {8, 9, 9, 6};
+                    int menus_num=object.getInt("menu_number");
+                    int sum=0;
+                    for(int i=0;i<menus_len.length;i++){
+                        sum=menus_len[i];
+                        if(menus_num<sum){
+                            sum=i;
+                            break;
+                        }
+                    }
+                    intent2 = new Intent(context, Senior_OrderListActivity.class);
+                    intent2.putExtra("menu_count",object.getInt("count"));
+                    String stringTemp=(String)object.get("size")+(String)object.get("adverb")+(String)object.get("speak_thick");
+                    intent2.putExtra("menu_option",stringTemp);
+                    int menus_number=object.getInt("menu_number");
+
+                    intent2.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                    intent2.putExtra("category", sum + 1);
+                    intent2.putExtra("menu_image", menus_img_number[menus_number]);
+                    intent2.putExtra("menu_name", menus_names[menus_number]);
+                    intent2.putExtra("menu_price", Integer.toString(menus_prise[menus_number]));
+                    intent2.putExtra("is_call",1);
+                    startActivity(intent2);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            super.onPostExecute(result);
+        }
+        @Override
+        protected Void doInBackground(String... strings) {
+            String KOMORAN_data=menus_name.replace("|","\tNNP\n");
+            KOMORAN_data=KOMORAN_data+"\tNNP\n";
+            naturalLanguageProcessing=myapplication.getNaturalLanguageProcessing();
+            naturalLanguageProcessing.setNaturalLanguageProcessing(menus_name.split("\\|"),context,1,R.id.background_record_text);
+            String[] KOMORAN_adverb = {"시원", "차갑", "따뜻", "뜨뜻", "뜨겁"};
+            String[] KOMORAN_size = {"크", "작", "조그마하"};
+            String[] KOMORAN_thick = {"달달하게","기본","진하게","더 진하게"};
+
+            for(int i=0;i<KOMORAN_adverb.length;i++) {
+                KOMORAN_data=KOMORAN_data+KOMORAN_adverb[i]+"\tVA\n";
+            }
+            for(int i=0;i<KOMORAN_size.length;i++) {
+                KOMORAN_data=KOMORAN_data+KOMORAN_size[i]+"\tVA\n";
+            }
+            for(int i=0;i<KOMORAN_thick.length;i++) {
+                KOMORAN_data=KOMORAN_data+KOMORAN_thick[i]+"\tVA\n";
+            }
+            naturalLanguageProcessing.setKomoranUserDic(KOMORAN_data);
+
+            try {
+                naturalLanguageProcessing.startSpeechRecognizer(data);
+                object= naturalLanguageProcessing.getJsonObject();
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
 }
+

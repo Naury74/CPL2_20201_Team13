@@ -86,7 +86,7 @@ public class Senior_OrderListActivity extends AppCompatActivity {
         m_price = intent.getExtras().getString("menu_price");
         menu_option = intent.getExtras().getString("menu_option");
         menu_count = intent.getExtras().getInt("menu_count");
-        if(menu_count==0){
+        if(menu_count<1){
             menu_count=1;
         }
         menu_price = Integer.parseInt(m_price);

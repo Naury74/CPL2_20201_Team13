@@ -60,7 +60,6 @@ public class EasyMenuSelectionActivity extends AppCompatActivity implements View
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     RecyclerAdapter_MenuType recyclerAdapterMenuType;
-    Komoran komoran = new Komoran(DEFAULT_MODEL.LIGHT);
     /*String[] arr = {"커피", "음료", "빵", "기타"};*/
     public static Activity activity;
 

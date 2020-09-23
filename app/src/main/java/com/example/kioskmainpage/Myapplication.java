@@ -358,4 +358,10 @@ public class Myapplication extends Application {
             Log.d(TAG, "품절목록에 없는 대상을 제거 요청했습니다.");
         }
     }
+
+    private NaturalLanguageProcessing naturalLanguageProcessing=new NaturalLanguageProcessing();
+
+    public NaturalLanguageProcessing getNaturalLanguageProcessing() {
+        return naturalLanguageProcessing;
+    }
 }
